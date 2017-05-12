@@ -1,6 +1,6 @@
 # Skin Estuary AEL MOD #
 
-Estuary AEL MOD is a modification of Kodi's Estuary skin to support [Advanced Emulator Launcher],
+*Estuary AEL MOD* is a modification of Kodi's *Estuary* skin to support [Advanced Emulator Launcher],
 [Advanced MAME Launcher] and [Advanced DOOM Launcher]. This skin is for Kodi Krypton.
 
 You may install both Estuary and Estuary AEL MOD on the same Kodi box.
@@ -25,6 +25,6 @@ It is important that you follow this instructions.
 
   6) You are done!
 
-## Changes fo Estuary AEL MOD compared with standard Estuary ##
+## New features of Estuary AEL MOD compared with standard Estuary ##
 
  * None yet :(
