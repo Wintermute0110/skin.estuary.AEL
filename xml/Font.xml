@@ -126,6 +126,16 @@
 			<filename>NotoMono-Regular.ttf</filename>
 			<size>30</size>
 		</font>
+		<font>
+			<name>Mono20</name>
+			<filename>NotoMono-Regular.ttf</filename>
+			<size>20</size>
+		</font>
+		<font>
+			<name>Mono22</name>
+			<filename>NotoMono-Regular.ttf</filename>
+			<size>22</size>
+		</font>
 	</fontset>
 	<fontset id="Arial" idloc="31053">
 		<!-- Arial Font better for non English -->

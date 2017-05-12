@@ -27,4 +27,4 @@ It is important that you follow this instructions.
 
 ## New features of Estuary AEL MOD compared with standard Estuary ##
 
- * None yet :(
+ * Text Viewer dialog is bigger and uses a monospaced font.
