@@ -13,6 +13,17 @@
 				<param name="header_label" value="$LOCALIZE[13406]" />
 				<param name="header_id" value="1" />
 			</include>
+			<!-- Only used monospaced font when requested by addons -->
+			<control type="textbox" id="5">
+				<left>1%</left>
+				<top>85</top>
+				<width>93%</width>
+				<height>1000</height>
+				<shadowcolor>black</shadowcolor>
+				<pagecontrol>3000</pagecontrol>
+				<font>font14</font>
+				<visible>!String.IsEqual(Window.Property(FontWidth),monospaced)</visible>
+			</control>
 			<control type="textbox" id="5">
 				<left>1%</left>
 				<top>85</top>
@@ -21,6 +32,7 @@
 				<shadowcolor>black</shadowcolor>
 				<pagecontrol>3000</pagecontrol>
 				<font>Mono22</font>
+				<visible>String.IsEqual(Window.Property(FontWidth),monospaced)</visible>
 			</control>
 			<control type="scrollbar" id="3000">
 				<include>HiddenObject</include>
