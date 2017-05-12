@@ -24,3 +24,7 @@ It is important that you follow this instructions.
   5) In Kodi, use that ZIP file (and not the original one) to install the skin.
 
   6) You are done!
+
+## Changes fo Estuary AEL MOD compared with standard Estuary ##
+
+ * None yet :(
