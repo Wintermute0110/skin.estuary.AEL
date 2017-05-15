@@ -6,19 +6,20 @@
 		<control type="group">
 			<left>5%</left>
 			<centertop>50%</centertop>
-			<height>1150</height>
+			<height>1000</height>
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="95%" />
-				<param name="height" value="1150" />
+				<param name="height" value="1000" />
 				<param name="header_label" value="$LOCALIZE[13406]" />
 				<param name="header_id" value="1" />
 			</include>
+
 			<!-- Only used monospaced font when requested by addons -->
 			<control type="textbox" id="5">
 				<left>1%</left>
 				<top>85</top>
 				<width>93%</width>
-				<height>1000</height>
+				<height>950</height>
 				<shadowcolor>black</shadowcolor>
 				<pagecontrol>3000</pagecontrol>
 				<font>font14</font>
@@ -28,12 +29,13 @@
 				<left>1%</left>
 				<top>85</top>
 				<width>93%</width>
-				<height>1000</height>
+				<height>890</height>
 				<shadowcolor>black</shadowcolor>
 				<pagecontrol>3000</pagecontrol>
 				<font>Mono22</font>
 				<visible>String.IsEqual(Window.Property(FontWidth),monospaced)</visible>
 			</control>
+
 			<control type="scrollbar" id="3000">
 				<include>HiddenObject</include>
 				<ondown>3000</ondown>
@@ -50,7 +52,7 @@
 		<!-- ^ button -->
 		<control type="button">
 			<centerleft>50%</centerleft>
-			<top>113</top>
+			<top>10</top>
 			<width>48</width>
 			<height>20</height>
 			<texturefocus colordiffuse="button_focus" flipy="true">overlays/arrowdown.png</texturefocus>
@@ -64,7 +66,7 @@
 		<!-- v button -->
 		<control type="button">
 			<centerleft>50%</centerleft>
-			<top>1260</top>
+			<top>1050</top>
 			<width>48</width>
 			<height>20</height>
 			<onclick>SetFocus(3000)</onclick>
@@ -77,8 +79,8 @@
 
 		<!-- "Pages n/m" label-->
 		<control type="label">
-			<left>1310</left>
-			<top>1200</top>
+			<left>1475</left>
+			<top>1040</top>
 			<width>330</width>
 			<height>35</height>
 			<font>font12</font>
