@@ -15,6 +15,12 @@
 	<include file="View_500_Wall.xml" />
 	<include file="View_501_Banner.xml" />
 	<include file="View_502_FanArt.xml" />
+
+	<!-- AEL custom views -->
+	<include file="View_950_AEL_Matrix.xml" />
+	<include file="View_951_ROM_FanArt.xml" />
+	<include file="View_952_Launcher_WideList.xml" />
+
 	<include file="Variables.xml" />
 	<include file="Constants_1920.xml" condition="!String.IsEqual(Skin.AspectRatio,21:9)"/>
 	<include file="Constants_2560.xml" condition="String.IsEqual(Skin.AspectRatio,21:9)"/>
