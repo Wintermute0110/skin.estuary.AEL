@@ -136,7 +136,7 @@
 	<!-- Estuary flags defined in <include name="MediaFlag"> in Includes.xml
 		 Original flag size is 115x60, image size is 270x120 -->
 	<include name="AEL_Flags">
-		<control type="image">
+		<control type="group">
 			<left>$PARAM[left]</left>
 			<top>$PARAM[top]</top>
 
