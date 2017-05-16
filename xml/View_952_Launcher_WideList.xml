@@ -8,6 +8,7 @@
 			<include>OpenClose_Right</include>
 			<visible>Control.IsVisible(952)</visible>
 			<include>Visible_Right</include>
+
 			<control type="fixedlist" id="952">
 				<left>594</left>
 				<top>list_y_offset</top>
@@ -23,217 +24,133 @@
 				<onup>952</onup>
 				<ondown>952</ondown>
 				<viewtype label="Launcher WideList">list</viewtype>
-				<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(addons) | Container.Content(actors) | Container.Content(directors) | Container.Content(files) | Container.Content(mixed) | Container.Content(musicvideos) | Container.Content(videos) | Container.Content() | Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(unknown)</visible>
-				<focusedlayout height="list_item_height" width="widelist_width" condition="Container.Content(artists) | Container.Content(albums) | Container.Content(actors) | Container.Content(directors) | Container.Content(files) | Container.Content(mixed) | Container.Content(videos) | Container.Content(musicvideos) | Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(unknown)">
+				<visible>Window.IsActive(MyPrograms.xml)</visible>
+
+				<focusedlayout height="80" width="widelist_width">
 					<control type="image">
 						<left>0</left>
 						<right>0</right>
-						<bottom>0</bottom>
+						<height>80</height>
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
-						<visible>Control.HasFocus(952)</visible>
-					</control>
-					<control type="label">
-						<left>18</left>
-						<top>0</top>
-						<bottom>0</bottom>
-						<width>80</width>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Year]</label>
-						<shadowcolor>text_shadow</shadowcolor>
-						<visible>!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(videos) + !Container.Content(musicvideos) + !Container.Content(movies)</visible>
+						<visible>Control.hasFocus(952)</visible>
 					</control>
 					<control type="image">
-						<left>35</left>
-						<centertop>50%</centertop>
+						<left>20</left>
+						<top>25</top>
 						<width>32</width>
 						<height>32</height>
-						<texture>$VAR[ListWatchedIconVar]</texture>
-						<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(videos) | Container.Content(musicvideos) | String.IsEmpty(ListItem.Year)</visible>
+						<texture>$VAR[AddonsListIconVar]</texture>
 					</control>
 					<control type="label">
-						<left>105</left>
-						<top>0</top>
-						<bottom>0</bottom>
+						<left>75</left>
+						<height>80</height>
 						<right>100</right>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
-						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="label">
 						<left>40</left>
-						<top>0</top>
-						<bottom>0</bottom>
+						<height>80</height>
 						<right>40</right>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$VAR[ListLabel2Var]</label>
-						<shadowcolor>text_shadow</shadowcolor>
+						<font>font27</font>
+						<label>$VAR[AddonsLabel2Var]</label>
 					</control>
 				</focusedlayout>
-				<itemlayout height="list_item_height" width="widelist_width" condition="Container.Content(artists) | Container.Content(albums) | Container.Content(actors) | Container.Content(directors) | Container.Content(files) | Container.Content(mixed) | Container.Content(videos) | Container.Content(musicvideos) | Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(unknown)">
-					<control type="label">
-						<left>18</left>
-						<top>0</top>
-						<bottom>0</bottom>
-						<width>80</width>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Year]</label>
-						<textcolor>button_focus</textcolor>
-						<shadowcolor>text_shadow</shadowcolor>
-						<visible>!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(videos) + !Container.Content(musicvideos) + !Container.Content(movies)</visible>
-					</control>
+
+				<itemlayout height="80" width="widelist_width">
 					<control type="image">
-						<left>35</left>
-						<centertop>50%</centertop>
+						<left>20</left>
+						<top>25</top>
 						<width>32</width>
 						<height>32</height>
-						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
-						<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(videos) | Container.Content(musicvideos) | String.IsEmpty(ListItem.Year)</visible>
+						<texture>$VAR[AddonsListIconVar]</texture>
 					</control>
 					<control type="label">
-						<left>105</left>
-						<top>0</top>
-						<bottom>0</bottom>
+						<left>75</left>
+						<height>80</height>
 						<right>100</right>
 						<aligny>center</aligny>
+						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
-						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="label">
 						<left>40</left>
-						<top>0</top>
-						<bottom>0</bottom>
+						<height>80</height>
 						<right>40</right>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$VAR[ListLabel2Var]</label>
+						<font>font27</font>
+						<label>$VAR[AddonsLabel2Var]</label>
+						<textcolor>grey</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
-					<control type="image">
-						<left>35</left>
-						<centertop>50%</centertop>
-						<visible>String.IsEmpty(ListItem.Year) + String.IsEmpty(ListItem.AddonVersion)</visible>
-						<width>32</width>
-						<height>32</height>
-						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
-					</control>
 				</itemlayout>
-				<include condition="Window.IsActive(music)">SongsListLayout</include>
-				<include>AddonsListLayout</include>
 			</control>
 		</control>
-	</include>
-	<include name="SongsListLayout">
-		<focusedlayout height="80" width="widelist_width" condition="Container.Content(songs)">
+
+		<!-- Right box ------------------------------------------------------------------------- -->
+		<control type="group">
+			<left>0</left>
+			<top>0</top>
+			<visible>Control.IsVisible(952)</visible>
+
+			<!-- Clearlogo -->
 			<control type="image">
+				<left>60</left>
+				<top>110</top>
+				<width>480</width>
+				<height>150</height>
+				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+
+			<!-- Metadata -->
+			<control type="group">
 				<left>0</left>
-				<right>0</right>
-				<height>80</height>
-				<texture colordiffuse="button_focus">lists/focus.png</texture>
-				<visible>Control.hasFocus(952)</visible>
+				<top>280</top>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="0" />
+					<param name="top" value="0" />
+					<param name="text_label" value="Genre" />
+					<param name="text" value="$INFO[ListItem.Genre]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="0" />
+					<param name="top" value="30" />
+					<param name="text_label" value="Studio" />
+					<param name="text" value="$INFO[ListItem.Studio]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="0" />
+					<param name="top" value="60" />
+					<param name="text_label" value="Rating" />
+					<param name="text" value="$INFO[ListItem.Rating]" />
+				</include>
+				<control type="textbox">
+					<left>30</left>
+					<width>520</width>
+					<top>90</top>
+					<height>220</height>
+					<font>font10</font>
+					<label>$INFO[ListItem.Plot]</label>
+					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+				</control>
 			</control>
-			<control type="label">
-				<left>35</left>
-				<height>80</height>
-				<right>90</right>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label>$INFO[ListItem.Label]</label>
-				<shadowcolor>text_shadow</shadowcolor>
-			</control>
-			<control type="label">
-				<left>40</left>
-				<height>80</height>
-				<right>40</right>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label2]</label>
-				<shadowcolor>text_shadow</shadowcolor>
-			</control>
-		</focusedlayout>
-		<itemlayout height="80" width="widelist_width" condition="Container.Content(songs)">
-			<control type="label">
-				<left>35</left>
-				<height>80</height>
-				<right>90</right>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
-				<shadowcolor>text_shadow</shadowcolor>
-			</control>
-			<control type="label">
-				<left>40</left>
-				<height>80</height>
-				<right>40</right>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label2]</label>
-				<textcolor>grey</textcolor>
-				<shadowcolor>text_shadow</shadowcolor>
-			</control>
-		</itemlayout>
-	</include>
-	<include name="AddonsListLayout">
-		<focusedlayout height="80" width="widelist_width" condition="Container.Content(addons)">
+
+			<!-- Icon -->
 			<control type="image">
-				<left>0</left>
-				<right>0</right>
-				<height>80</height>
-				<texture colordiffuse="button_focus">lists/focus.png</texture>
-				<visible>Control.hasFocus(952)</visible>
-			</control>
-			<control type="image">
-				<left>20</left>
-				<top>25</top>
-				<width>32</width>
-				<height>32</height>
-				<texture>$VAR[AddonsListIconVar]</texture>
-			</control>
-			<control type="label">
 				<left>75</left>
-				<height>80</height>
-				<right>100</right>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label>$INFO[ListItem.Label]</label>
+				<top>600</top>
+				<width>450</width>
+				<height>450</height>
+				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
 			</control>
-			<control type="label">
-				<left>40</left>
-				<height>80</height>
-				<right>40</right>
-				<align>right</align>
-				<aligny>center</aligny>
-				<font>font27</font>
-				<label>$VAR[AddonsLabel2Var]</label>
-			</control>
-		</focusedlayout>
-		<itemlayout height="80" width="widelist_width" condition="Container.Content(addons)">
-			<control type="image">
-				<left>20</left>
-				<top>25</top>
-				<width>32</width>
-				<height>32</height>
-				<texture>$VAR[AddonsListIconVar]</texture>
-			</control>
-			<control type="label">
-				<left>75</left>
-				<height>80</height>
-				<right>100</right>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-			<control type="label">
-				<left>40</left>
-				<height>80</height>
-				<right>40</right>
-				<align>right</align>
-				<aligny>center</aligny>
-				<font>font27</font>
-				<label>$VAR[AddonsLabel2Var]</label>
-				<textcolor>grey</textcolor>
-				<shadowcolor>text_shadow</shadowcolor>
-			</control>
-		</itemlayout>
+		</control>
 	</include>
 </includes>
