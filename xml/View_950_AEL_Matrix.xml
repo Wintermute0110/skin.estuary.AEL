@@ -1,5 +1,7 @@
 <!--
-	Original file: View_502_FanArt.xml
+	DEBUG Matrix view for AEL.
+	Template used: View_502_FanArt.xml, View_50_List.xml, skin.confluence.AEL
+	Wintermute0110 <wintermute0110@gmail.com>
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
@@ -9,12 +11,112 @@
 			<left>-5</left>
 			<visible>Control.IsVisible(950)</visible>
 			<include>Visible_Left</include>
-			<!-- ListContainer defined in View_50_List.xml -->
-			<include content="ListContainer_AEL">
-				<param name="list_id" value="950" />
-				<param name="viewtype_label" value="AEL Matrix" />
-			</include>
+
+			<!-- id of the list is the id of the view -->
+			<control type="fixedlist" id="950">
+				<left>0</left>
+				<width>list_width</width>
+				<top>list_y_offset</top>
+				<bottom>list_y_offset</bottom>
+				<movement>5</movement>
+				<focusposition>6</focusposition>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>950600</pagecontrol>
+				<onleft>9000</onleft>
+				<onright>950600</onright>
+				<onup>950</onup>
+				<ondown>950</ondown>
+				<!-- viewtype label defines the view name on Kodi view selector -->
+				<viewtype label="AEL Matrix">list</viewtype>
+				<visible>Window.IsActive(MyPrograms.xml)</visible>
+
+				<focusedlayout height="list_item_height" width="list_width">
+					<control type="image">
+						<left>0</left>
+						<right>0</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
+						<visible>Control.HasFocus(950)</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>70</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus(950])</visible>
+					</control>
+				</focusedlayout>
+
+				<itemlayout height="list_item_height" width="list_width">
+					<control type="label">
+						<left>70</left>
+						<right>70</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<textcolor>grey</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
+					</control>
+				</itemlayout>
+			</control>
 		</control>
+
 		<control type="group">
 			<depth>DepthContentPanel</depth>
 			<include>OpenClose_Right</include>
@@ -29,28 +131,160 @@
 					<param name="top" value="-20" />
 					<param name="flipx" value="true" />
 				</include>
-				<control type="image">
-					<left>38</left>
-					<right>36</right>
-					<top>115</top>
-					<height>644</height>
-					<fadetime>300</fadetime>
-					<texture border="2" fallback="special://skin/extras/home-images/movie.jpg" background="true">$VAR[FanartImageVar]</texture>
-					<aspectratio align="center" aligny="bottom">scale</aspectratio>
-				</control>
+
+				<!-- Matrix of images ---------------------------------------------------------- -->
+				<!-- Matrix A11 -->
+				<include content="AEL_Matrix_Image">
+					<param name="left" value="70" />
+					<param name="top" value="80" />
+					<param name="asset_label" value="Title" />
+					<param name="asset_image" value="$INFO[ListItem.Art(title)]" />
+				</include>
+				<!-- Matrix A12 -->
+				<include content="AEL_Matrix_Image">
+					<param name="left" value="360" />
+					<param name="top" value="80" />
+					<param name="asset_label" value="Snap" />
+					<param name="asset_image" value="$INFO[ListItem.Art(snap)]" />
+				</include>
+				<!-- Matrix A13 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="650" />
+					<param name="top" value="80" />
+					<param name="asset_label" value="Boxfront/Cabinet" />
+					<param name="asset_image" value="$INFO[ListItem.Art(boxfront)]" />
+				</include>
+				<!-- Matrix A14 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="940" />
+					<param name="top" value="80" />
+					<param name="asset_label" value="Boxback/CPanel" />
+					<param name="asset_image" value="$INFO[ListItem.Art(boxback)]" />
+				</include>
+
+				<!-- Matrix A21 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="70" />
+					<param name="top" value="310" />
+					<param name="asset_label" value="Cartridge/PCB" />
+					<param name="asset_image" value="$INFO[ListItem.Art(cartridge)]" />
+				</include>
+				<!-- Matrix A22 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="360" />
+					<param name="top" value="310" />
+					<param name="asset_label" value="Flyer" />
+					<param name="asset_image" value="$INFO[ListItem.Art(cartridge)]" />
+				</include>
+				<!-- Matrix A23 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="650" />
+					<param name="top" value="310" />
+					<param name="asset_label" value="Map" />
+					<param name="asset_image" value="$INFO[ListItem.Art(map)]" />
+				</include>
+				<!-- Matrix A24 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="940" />
+					<param name="top" value="310" />
+					<param name="asset_label" value="Trailer" />
+					<param name="asset_image" value="$INFO[ListItem.Art(trailer)]" />
+				</include>
+
+				<!-- Matrix A31 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="70" />
+					<param name="top" value="540" />
+					<param name="asset_label" value="Icon" />
+					<param name="asset_image" value="$INFO[ListItem.Icon]" />
+				</include>
+				<!-- Matrix A32 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="360" />
+					<param name="top" value="540" />
+					<param name="asset_label" value="Banner/Marquee" />
+					<param name="asset_image" value="$INFO[ListItem.Art(banner)]" />
+				</include>
+				<!-- Matrix A33 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="650" />
+					<param name="top" value="540" />
+					<param name="asset_label" value="Poster" />
+					<param name="asset_image" value="$INFO[ListItem.Art(poster)]" />
+				</include>
+				<!-- Matrix A34 -->
+				<include content="AEL_Matrix_Image_Debug">
+					<param name="left" value="940" />
+					<param name="top" value="540" />
+					<param name="asset_label" value="Clearlogo" />
+					<param name="asset_image" value="$INFO[ListItem.Art(clearlogo)]" />
+				</include>
+
 				<control type="group">
 					<left>600</left>
 					<top>82</top>
 					<include>UserRatingCircle</include>
 				</control>
+
+				<!-- Metadata ------------------------------------------------------------------ -->
+				<!-- Infolabels -->
+				<!-- Year, Genre, Studio, NPlayers, ESRB, Rating, Platform -->
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="70" />
+					<param name="top" value="770" />
+					<param name="text_label" value="Year" />
+					<param name="text" value="$INFO[ListItem.Year]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="70" />
+					<param name="top" value="800" />
+					<param name="text_label" value="Genre" />
+					<param name="text" value="$INFO[ListItem.Genre]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="70" />
+					<param name="top" value="830" />
+					<param name="text_label" value="Studio" />
+					<param name="text" value="$INFO[ListItem.Studio]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="70" />
+					<param name="top" value="860" />
+					<param name="text_label" value="NPlayers" />
+					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
+				</include>
+
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="650" />
+					<param name="top" value="770" />
+					<param name="text_label" value="ESRB" />
+					<param name="text" value="$INFO[ListItem.Property(esrb)]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="650" />
+					<param name="top" value="800" />
+					<param name="text_label" value="Rating" />
+					<param name="text" value="$INFO[ListItem.Rating]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="650" />
+					<param name="top" value="830" />
+					<param name="text_label" value="Platform" />
+					<param name="text" value="$INFO[ListItem.Property(platform)]" />
+				</include>
+
+				<!-- Plot -->
 				<control type="textbox">
-					<left>50</left>
-					<right>50</right>
-					<top>769</top>
-					<bottom>105</bottom>
+					<left>225</left>
+					<width>975</width>
+					<top>890</top>
+					<height>130</height>
+					<font>font10</font>
 					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
+
+				<!-- This is the scrollbar of the list -->
 				<control type="scrollbar" id="502600">
 					<left>20</left>
 					<top>list_y_offset</top>
@@ -61,121 +295,20 @@
 					<orientation>vertical</orientation>
 					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(502600)">conditional</animation>
 				</control>
-				<control type="group">
-					<left>40</left>
-					<top>770</top>
-					<visible>ListItem.IsCollection</visible>
-					<include content="InfoList">
-						<param name="bottom" value="108" />
-						<param name="width" value="1000" />
-						<param name="sortby" value="year" />
-						<param name="sortorder" value="descending" />
-						<param name="font" value="font13" />
-					</include>
-				</control>
-			</control>
-		</control>
-	</include>
 
-	<include name="ListContainer_AEL">
-		<control type="fixedlist" id="$PARAM[list_id]">
-			<left>0</left>
-			<width>list_width</width>
-			<top>list_y_offset</top>
-			<bottom>list_y_offset</bottom>
-			<movement>5</movement>
-			<focusposition>6</focusposition>
-			<scrolltime tween="cubic" easing="out">500</scrolltime>
-			<orientation>vertical</orientation>
-			<pagecontrol>$PARAM[list_id]600</pagecontrol>
-			<onleft>9000</onleft>
-			<onright>$PARAM[list_id]600</onright>
-			<onup>$PARAM[list_id]</onup>
-			<ondown>$PARAM[list_id]</ondown>
-			<viewtype label="$PARAM[viewtype_label]">list</viewtype>
-			<visible>Window.IsActive(MyPrograms.xml)</visible>
-			<focusedlayout height="list_item_height" width="list_width">
-				<control type="image">
-					<left>0</left>
-					<right>0</right>
-					<top>0</top>
-					<bottom>0</bottom>
-					<texture colordiffuse="button_focus">lists/focus.png</texture>
-					<visible>Control.HasFocus($PARAM[list_id])</visible>
-				</control>
-				<control type="label">
-					<left>70</left>
-					<right>70</right>
-					<top>0</top>
-					<bottom>0</bottom>
-					<aligny>center</aligny>
-					<scroll>true</scroll>
-					<font>font27</font>
-					<label>$INFO[ListItem.Label]</label>
-					<shadowcolor>text_shadow</shadowcolor>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<bottom>0</bottom>
-					<left>100</left>
-					<right>20</right>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font12</font>
-					<label>$VAR[ListLabel2Var]</label>
-					<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
-					<shadowcolor>text_shadow</shadowcolor>
-				</control>
-				<control type="image">
-					<left>21</left>
-					<centertop>50%</centertop>
-					<width>32</width>
-					<height>32</height>
-					<texture>$VAR[ListWatchedIconVar]</texture>
-					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
-				</control>
-				<control type="image">
-					<left>21</left>
-					<centertop>50%</centertop>
-					<width>32</width>
-					<height>32</height>
-					<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
-					<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
-					<animation effect="fade" time="150">VisibleChange</animation>
-					<visible>!Control.HasFocus($PARAM[list_id])</visible>
-				</control>
-			</focusedlayout>
-			<itemlayout height="list_item_height" width="list_width">
-				<control type="label">
-					<left>70</left>
-					<right>70</right>
-					<top>0</top>
-					<bottom>0</bottom>
-					<aligny>center</aligny>
-					<font>font27</font>
-					<label>$INFO[ListItem.Label]</label>
-					<shadowcolor>text_shadow</shadowcolor>
-				</control>
-				<control type="label">
-					<left>20</left>
-					<right>20</right>
-					<top>0</top>
-					<bottom>0</bottom>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font12</font>
-					<label>$VAR[ListLabel2Var]</label>
-					<textcolor>grey</textcolor>
-					<shadowcolor>text_shadow</shadowcolor>
-				</control>
-				<control type="image">
-					<left>21</left>
-					<centertop>50%</centertop>
-					<width>32</width>
-					<height>32</height>
-					<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
-				</control>
-			</itemlayout>
+				<!-- Platform AEL icon -->
+				<include content="AEL_Platform_Icon">
+					<param name="left" value="90" />
+					<param name="top" value="905" />
+				</include>
+
+				<!-- Flags --------------------------------------------------------------------- -->
+				<!-- Favourite, Multidisc, Fav status, No-Intro status, Parent/Clone -->
+				<include content="AEL_Flags">
+					<param name="left" value="460" />
+					<param name="top" value="1020" />
+				</include>
+			</control>
 		</control>
 	</include>
 </includes>

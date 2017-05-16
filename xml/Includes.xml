@@ -16,7 +16,8 @@
 	<include file="View_501_Banner.xml" />
 	<include file="View_502_FanArt.xml" />
 
-	<!-- AEL custom views -->
+	<!-- AEL custom views and stuff -->
+	<include file="Includes_addon_AEL.xml" />
 	<include file="View_950_AEL_Matrix.xml" />
 	<include file="View_951_ROM_FanArt.xml" />
 	<include file="View_952_Launcher_WideList.xml" />
