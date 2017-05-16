@@ -29,7 +29,7 @@
 				<onup>951</onup>
 				<ondown>951</ondown>
 				<!-- viewtype label defines the view name on Kodi view selector -->
-				<viewtype label="ROM List">list</viewtype>
+				<viewtype label="ROM Fanart">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
 				<focusedlayout height="list_item_height" width="list_width">
@@ -80,7 +80,7 @@
 						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
 						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
 						<animation effect="fade" time="150">VisibleChange</animation>
-						<visible>!Control.HasFocus(951])</visible>
+						<visible>!Control.HasFocus(951)</visible>
 					</control>
 				</focusedlayout>
 
@@ -142,7 +142,7 @@
 					<onleft>951</onleft>
 					<onright>951</onright>
 					<orientation>vertical</orientation>
-					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(502600)">conditional</animation>
+					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(951600)">conditional</animation>
 				</control>
 				<control type="group">
 					<left>600</left>
@@ -150,7 +150,7 @@
 					<include>UserRatingCircle</include>
 				</control>
 
-				<!-- First row of images ---------------------------------------------------------->
+				<!-- First row of images ======================================================= -->
 				<!-- Boxfront -->
 				<!-- If platform is MAME render flyer instead -->
 				<control type="image">
@@ -230,7 +230,7 @@
 					<aspectratio>keep</aspectratio>
 				</control>
 
-				<!-- Metadata ------------------------------------------------------------------ -->
+				<!-- Metadata ================================================================== -->
 				<control type="group">
 					<left>70</left>
 					<top>630</top>
@@ -288,7 +288,7 @@
 					</include>
 				</control>
 
-				<!-- Second row of images ------------------------------------------------------ -->
+				<!-- Second row of images ====================================================== -->
 				<!-- Title -->
 				<control type="image">
 					<left>70</left>
@@ -324,7 +324,7 @@
 					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 
-				<!-- Flags --------------------------------------------------------------------- -->
+				<!-- Flags ===================================================================== -->
 				<!-- Favourite, Multidisc, Fav status, No-Intro status, Parent/Clone -->
 				<include content="AEL_Flags">
 					<param name="left" value="460" />
