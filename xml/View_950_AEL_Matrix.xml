@@ -1,5 +1,6 @@
 <!--
 	DEBUG Matrix view for AEL.
+
 	Template used: View_502_FanArt.xml, View_50_List.xml, skin.confluence.AEL
 	Wintermute0110 <wintermute0110@gmail.com>
 -->
@@ -133,87 +134,78 @@
 				</include>
 
 				<!-- Matrix of images ---------------------------------------------------------- -->
-				<!-- Matrix A11 -->
+				<!-- First row -->
 				<include content="AEL_Matrix_Image">
 					<param name="left" value="70" />
 					<param name="top" value="80" />
 					<param name="asset_label" value="Title" />
 					<param name="asset_image" value="$INFO[ListItem.Art(title)]" />
 				</include>
-				<!-- Matrix A12 -->
 				<include content="AEL_Matrix_Image">
 					<param name="left" value="360" />
 					<param name="top" value="80" />
 					<param name="asset_label" value="Snap" />
 					<param name="asset_image" value="$INFO[ListItem.Art(snap)]" />
 				</include>
-				<!-- Matrix A13 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="650" />
 					<param name="top" value="80" />
 					<param name="asset_label" value="Boxfront/Cabinet" />
 					<param name="asset_image" value="$INFO[ListItem.Art(boxfront)]" />
 				</include>
-				<!-- Matrix A14 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="940" />
 					<param name="top" value="80" />
 					<param name="asset_label" value="Boxback/CPanel" />
 					<param name="asset_image" value="$INFO[ListItem.Art(boxback)]" />
 				</include>
 
-				<!-- Matrix A21 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<!-- Second row -->
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="70" />
 					<param name="top" value="310" />
 					<param name="asset_label" value="Cartridge/PCB" />
 					<param name="asset_image" value="$INFO[ListItem.Art(cartridge)]" />
 				</include>
-				<!-- Matrix A22 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="360" />
 					<param name="top" value="310" />
 					<param name="asset_label" value="Flyer" />
-					<param name="asset_image" value="$INFO[ListItem.Art(cartridge)]" />
+					<param name="asset_image" value="$INFO[ListItem.Art(flyer)]" />
 				</include>
-				<!-- Matrix A23 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="650" />
 					<param name="top" value="310" />
 					<param name="asset_label" value="Map" />
 					<param name="asset_image" value="$INFO[ListItem.Art(map)]" />
 				</include>
-				<!-- Matrix A24 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="940" />
 					<param name="top" value="310" />
 					<param name="asset_label" value="Trailer" />
 					<param name="asset_image" value="$INFO[ListItem.Art(trailer)]" />
 				</include>
 
-				<!-- Matrix A31 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<!-- Third row -->
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="70" />
 					<param name="top" value="540" />
 					<param name="asset_label" value="Icon" />
 					<param name="asset_image" value="$INFO[ListItem.Icon]" />
 				</include>
-				<!-- Matrix A32 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="360" />
 					<param name="top" value="540" />
 					<param name="asset_label" value="Banner/Marquee" />
 					<param name="asset_image" value="$INFO[ListItem.Art(banner)]" />
 				</include>
-				<!-- Matrix A33 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="650" />
 					<param name="top" value="540" />
 					<param name="asset_label" value="Poster" />
 					<param name="asset_image" value="$INFO[ListItem.Art(poster)]" />
 				</include>
-				<!-- Matrix A34 -->
-				<include content="AEL_Matrix_Image_Debug">
+				<include content="AEL_Matrix_Image">
 					<param name="left" value="940" />
 					<param name="top" value="540" />
 					<param name="asset_label" value="Clearlogo" />

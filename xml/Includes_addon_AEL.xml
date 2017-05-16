@@ -5,11 +5,13 @@
 		<control type="group">
 			<left>$PARAM[left]</left>
 			<top>$PARAM[top]</top>
+			<!--
 			<control type="image">
 				<width>240</width>
 				<height>220</height>
 				<texture border="0">special://skin/extras/backgrounds/pattern4.jpg</texture>
 			</control>
+			-->
 			<control type="label">
 				<width>240</width>
 				<height>25</height>
@@ -29,7 +31,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="AEL_Matrix_Image_Debug">
+	<include name="AEL_Matrix_Image_DEBUG">
 		<control type="group">
 			<left>$PARAM[left]</left>
 			<top>$PARAM[top]</top>
@@ -83,7 +85,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="AEL_Matrix_Text_Debug">
+	<include name="AEL_Matrix_Text_DEBUG">
 		<control type="group">
 			<left>$PARAM[left]</left>
 			<top>$PARAM[top]</top>
