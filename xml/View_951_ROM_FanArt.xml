@@ -298,7 +298,6 @@
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$INFO[ListItem.Art(title)]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
 				</control>
 
 				<!-- Snap -->
@@ -310,7 +309,6 @@
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$INFO[ListItem.Art(snap)]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
 				</control>
 
 				<!-- Plot -->
