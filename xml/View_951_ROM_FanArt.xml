@@ -134,7 +134,7 @@
 				</include>
 
 				<!-- This is the scrollbar of the list -->
-				<control type="scrollbar" id="502600">
+				<control type="scrollbar" id="951600">
 					<left>20</left>
 					<top>list_y_offset</top>
 					<width>12</width>

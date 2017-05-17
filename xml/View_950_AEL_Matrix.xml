@@ -133,6 +133,23 @@
 					<param name="flipx" value="true" />
 				</include>
 
+				<!-- This is the scrollbar of the list -->
+				<control type="scrollbar" id="950600">
+					<left>20</left>
+					<top>list_y_offset</top>
+					<width>12</width>
+					<bottom>list_y_offset</bottom>
+					<onleft>950</onleft>
+					<onright>950</onright>
+					<orientation>vertical</orientation>
+					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(502600)">conditional</animation>
+				</control>
+				<control type="group">
+					<left>600</left>
+					<top>82</top>
+					<include>UserRatingCircle</include>
+				</control>
+
 				<!-- Matrix of images ---------------------------------------------------------- -->
 				<!-- First row -->
 				<include content="AEL_Matrix_Image">
@@ -212,12 +229,6 @@
 					<param name="asset_image" value="$INFO[ListItem.Art(clearlogo)]" />
 				</include>
 
-				<control type="group">
-					<left>600</left>
-					<top>82</top>
-					<include>UserRatingCircle</include>
-				</control>
-
 				<!-- Metadata ------------------------------------------------------------------ -->
 				<!-- Infolabels -->
 				<!-- Year, Genre, Studio, NPlayers, ESRB, Rating, Platform -->
@@ -274,18 +285,6 @@
 					<font>font10</font>
 					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
-				</control>
-
-				<!-- This is the scrollbar of the list -->
-				<control type="scrollbar" id="502600">
-					<left>20</left>
-					<top>list_y_offset</top>
-					<width>12</width>
-					<bottom>list_y_offset</bottom>
-					<onleft>950</onleft>
-					<onright>950</onright>
-					<orientation>vertical</orientation>
-					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(502600)">conditional</animation>
 				</control>
 
 				<!-- Platform AEL icon -->
