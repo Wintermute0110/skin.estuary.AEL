@@ -6,15 +6,15 @@
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="View_951_ROM_FanArt">
+	<include name="View_952_ROM_Simple">
 		<control type="group">
 			<include>OpenClose_Left</include>
 			<left>-5</left>
-			<visible>Control.IsVisible(951)</visible>
+			<visible>Control.IsVisible(952)</visible>
 			<include>Visible_Left</include>
 
 			<!-- id of the list is the id of the view -->
-			<control type="fixedlist" id="951">
+			<control type="fixedlist" id="952">
 				<left>0</left>
 				<width>list_width</width>
 				<top>list_y_offset</top>
@@ -23,13 +23,13 @@
 				<focusposition>6</focusposition>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>vertical</orientation>
-				<pagecontrol>951600</pagecontrol>
+				<pagecontrol>952600</pagecontrol>
 				<onleft>9000</onleft>
-				<onright>951600</onright>
-				<onup>951</onup>
-				<ondown>951</ondown>
+				<onright>952600</onright>
+				<onup>952</onup>
+				<ondown>952</ondown>
 				<!-- viewtype label defines the view name on Kodi view selector -->
-				<viewtype label="ROM Fanart">list</viewtype>
+				<viewtype label="ROM Simple">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
 				<focusedlayout height="list_item_height" width="list_width">
@@ -39,7 +39,7 @@
 						<top>0</top>
 						<bottom>0</bottom>
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
-						<visible>Control.HasFocus(951)</visible>
+						<visible>Control.HasFocus(952)</visible>
 					</control>
 					<control type="label">
 						<left>70</left>
@@ -80,7 +80,7 @@
 						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
 						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
 						<animation effect="fade" time="150">VisibleChange</animation>
-						<visible>!Control.HasFocus(951)</visible>
+						<visible>!Control.HasFocus(952)</visible>
 					</control>
 				</focusedlayout>
 
@@ -121,7 +121,7 @@
 		<control type="group">
 			<depth>DepthContentPanel</depth>
 			<include>OpenClose_Right</include>
-			<visible>Control.IsVisible(951)</visible>
+			<visible>Control.IsVisible(952)</visible>
 			<include>Visible_Right</include>
 			<control type="group">
 				<right>-20</right>
@@ -134,15 +134,15 @@
 				</include>
 
 				<!-- This is the scrollbar of the list -->
-				<control type="scrollbar" id="951600">
+				<control type="scrollbar" id="952600">
 					<left>20</left>
 					<top>list_y_offset</top>
 					<width>12</width>
 					<bottom>list_y_offset</bottom>
-					<onleft>951</onleft>
-					<onright>951</onright>
+					<onleft>952</onleft>
+					<onright>952</onright>
 					<orientation>vertical</orientation>
-					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(951600)">conditional</animation>
+					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(952600)">conditional</animation>
 				</control>
 				<control type="group">
 					<left>600</left>

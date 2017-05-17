@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">52</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<!-- 950 onwards are AEL/AML/ADL custom views -->
-	<views>50,52,55,500,950,951,952</views>
+	<views>50,52,55,500,950,951,952,953,954</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
 		<include>DefaultBackground</include>
@@ -16,8 +16,10 @@
 
 			<!-- AEL/AML/ADL custom views -->
 			<include>View_950_AEL_Matrix</include>
-			<include>View_951_ROM_FanArt</include>
-			<include>View_952_Launcher_WideList</include>
+			<include>View_951_ROM_Complete</include>
+			<include>View_952_ROM_Simple</include>
+			<include>View_953_Launcher</include>
+			<include>View_954_Category</include>
 
 			<control type="group">
 				<include>OpenClose_Left</include>

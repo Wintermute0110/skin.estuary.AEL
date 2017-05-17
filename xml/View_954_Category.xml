@@ -4,13 +4,13 @@
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="View_952_Launcher_WideList">
+	<include name="View_954_Category">
 		<control type="group">
 			<include>OpenClose_Right</include>
-			<visible>Control.IsVisible(952)</visible>
+			<visible>Control.IsVisible(954)</visible>
 			<include>Visible_Right</include>
 
-			<control type="fixedlist" id="952">
+			<control type="fixedlist" id="954">
 				<left>594</left>
 				<top>list_y_offset</top>
 				<bottom>list_y_offset</bottom>
@@ -22,9 +22,9 @@
 				<focusposition>6</focusposition>
 				<onleft>9000</onleft>
 				<onright>531</onright>
-				<onup>952</onup>
-				<ondown>952</ondown>
-				<viewtype label="Launcher WideList">list</viewtype>
+				<onup>954</onup>
+				<ondown>954</ondown>
+				<viewtype label="Launcher">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
 				<focusedlayout height="80" width="widelist_width">
@@ -33,7 +33,7 @@
 						<right>0</right>
 						<height>80</height>
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
-						<visible>Control.hasFocus(952)</visible>
+						<visible>Control.hasFocus(954)</visible>
 					</control>
 					<control type="image">
 						<left>20</left>
@@ -96,7 +96,7 @@
 		<control type="group">
 			<left>0</left>
 			<top>0</top>
-			<visible>Control.IsVisible(952)</visible>
+			<visible>Control.IsVisible(954)</visible>
 
 			<!-- Clearlogo -->
 			<control type="image">

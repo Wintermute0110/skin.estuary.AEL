@@ -6,7 +6,7 @@
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="View_951_ROM_FanArt">
+	<include name="View_951_ROM_Complete">
 		<control type="group">
 			<include>OpenClose_Left</include>
 			<left>-5</left>
@@ -29,7 +29,7 @@
 				<onup>951</onup>
 				<ondown>951</ondown>
 				<!-- viewtype label defines the view name on Kodi view selector -->
-				<viewtype label="ROM Fanart">list</viewtype>
+				<viewtype label="ROM Complete">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
 				<focusedlayout height="list_item_height" width="list_width">

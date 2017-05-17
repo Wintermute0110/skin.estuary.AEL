@@ -19,8 +19,10 @@
 	<!-- AEL custom views and stuff -->
 	<include file="Includes_addon_AEL.xml" />
 	<include file="View_950_AEL_Matrix.xml" />
-	<include file="View_951_ROM_FanArt.xml" />
-	<include file="View_952_Launcher_WideList.xml" />
+	<include file="View_951_ROM_Complete.xml" />
+	<include file="View_952_ROM_Simple.xml" />
+	<include file="View_953_Launcher.xml" />
+	<include file="View_954_Category.xml" />
 
 	<include file="Variables.xml" />
 	<include file="Constants_1920.xml" condition="!String.IsEqual(Skin.AspectRatio,21:9)"/>
