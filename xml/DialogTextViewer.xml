@@ -19,11 +19,11 @@
 				<left>1%</left>
 				<top>85</top>
 				<width>93%</width>
-				<height>950</height>
+				<height>890</height>
 				<shadowcolor>black</shadowcolor>
 				<pagecontrol>3000</pagecontrol>
-				<font>font14</font>
-				<visible>!String.IsEqual(Window.Property(FontWidth),monospaced)</visible>
+				<font>Mono24</font>
+				<visible>String.IsEqual(Window(10147).Property(FontWidth),monospaced)</visible>
 			</control>
 			<control type="textbox" id="5">
 				<left>1%</left>
@@ -32,8 +32,8 @@
 				<height>890</height>
 				<shadowcolor>black</shadowcolor>
 				<pagecontrol>3000</pagecontrol>
-				<font>Mono22</font>
-				<visible>String.IsEqual(Window.Property(FontWidth),monospaced)</visible>
+				<font>font14</font>
+				<visible>!String.IsEqual(Window(10147).Property(FontWidth),monospaced)</visible>
 			</control>
 
 			<control type="scrollbar" id="3000">
@@ -42,6 +42,7 @@
 				<onup>3000</onup>
 			</control>
 		</control>
+
 		<control type="button" id="1000">
 			<include>HiddenObject</include>
 			<onclick>Action(Close)</onclick>
