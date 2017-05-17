@@ -184,7 +184,7 @@
 					<aspectratio>keep</aspectratio>
 					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
 				</control>
-				<!-- If platform is MAME render Boxfront (Cabinet) and Marquee on top of Cabinet -->
+				<!-- If platform is MAME render Boxfront/Cabinet and Banner/Marquee on top of Boxfront/Cabinet -->
 				<control type="image">
 					<left>650</left>
 					<top>200</top>
@@ -197,7 +197,7 @@
 				</control>
 				<control type="image">
 					<left>650</left>
-					<top>200</top>
+					<top>100</top>
 					<width>300</width>
 					<height>100</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern5.jpg</texture> -->
@@ -217,6 +217,16 @@
 					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
+				</control>
+				<control type="image">
+					<left>850</left>
+					<top>150</top>
+					<width>200</width>
+					<height>200</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
 				</control>
 
 				<!-- Cartridge/PCB -->
