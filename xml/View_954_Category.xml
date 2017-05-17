@@ -24,7 +24,7 @@
 				<onright>531</onright>
 				<onup>954</onup>
 				<ondown>954</ondown>
-				<viewtype label="Launcher">list</viewtype>
+				<viewtype label="Category">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
 				<focusedlayout height="80" width="widelist_width">
