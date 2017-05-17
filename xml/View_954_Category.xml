@@ -1,10 +1,13 @@
 <!--
+	NOTE Left panel for WideList view is in MyPrograms.xml, not in View_55_WideList.xml
+
 	Template used: View_55_WideList.xml, skin.confluence.AEL
 	Wintermute0110 <wintermute0110@gmail.com>
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="View_954_Category">
+		<!-- Right wide list =================================================================== -->
 		<control type="group">
 			<include>OpenClose_Right</include>
 			<visible>Control.IsVisible(954)</visible>
@@ -40,7 +43,7 @@
 						<top>25</top>
 						<width>32</width>
 						<height>32</height>
-						<texture>$VAR[AddonsListIconVar]</texture>
+						<texture>$VAR[ListWatchedIconVar]</texture>
 					</control>
 					<control type="label">
 						<left>75</left>
@@ -57,7 +60,7 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>font27</font>
-						<label>$VAR[AddonsLabel2Var]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</focusedlayout>
 
@@ -67,7 +70,7 @@
 						<top>25</top>
 						<width>32</width>
 						<height>32</height>
-						<texture>$VAR[AddonsListIconVar]</texture>
+						<texture>$VAR[ListWatchedIconVar]</texture>
 					</control>
 					<control type="label">
 						<left>75</left>
@@ -84,7 +87,7 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>font27</font>
-						<label>$VAR[AddonsLabel2Var]</label>
+						<label>$INFO[ListItem.Label2]</label>
 						<textcolor>grey</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
@@ -92,19 +95,31 @@
 			</control>
 		</control>
 
-		<!-- Right box ------------------------------------------------------------------------- -->
+		<!-- Left panel ======================================================================== -->
 		<control type="group">
-			<left>0</left>
-			<top>0</top>
+			<include>OpenClose_Left</include>
+			<include>Visible_Left</include>
 			<visible>Control.IsVisible(954)</visible>
+
+			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
+			<depth>DepthContentPanel</depth>
+			<include content="ContentPanel">
+				<param name="width" value="654" />
+			</include>
+
+			<control type="group">
+				<left>273</left>
+				<top>590</top>
+				<include>UserRatingCircle</include>
+			</control>
 
 			<!-- Clearlogo -->
 			<control type="image">
-				<left>60</left>
+				<left>90</left>
 				<top>110</top>
-				<width>480</width>
+				<width>420</width>
 				<height>150</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>  -->
 				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
@@ -134,7 +149,7 @@
 				<control type="textbox">
 					<left>30</left>
 					<width>520</width>
-					<top>90</top>
+					<top>100</top>
 					<height>220</height>
 					<font>font10</font>
 					<label>$INFO[ListItem.Plot]</label>
@@ -144,10 +159,10 @@
 
 			<!-- Icon -->
 			<control type="image">
-				<left>75</left>
-				<top>600</top>
-				<width>450</width>
-				<height>450</height>
+				<left>90</left>
+				<top>630</top>
+				<width>420</width>
+				<height>420</height>
 				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
