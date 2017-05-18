@@ -121,11 +121,7 @@
 			<filename>NotoSans-Bold.ttf</filename>
 			<size>120</size>
 		</font>
-		<font>
-			<name>Mono30</name>
-			<filename>NotoMono-Regular.ttf</filename>
-			<size>30</size>
-		</font>
+		<!-- Monospaced font -->
 		<font>
 			<name>Mono20</name>
 			<filename>NotoMono-Regular.ttf</filename>
@@ -135,6 +131,26 @@
 			<name>Mono22</name>
 			<filename>NotoMono-Regular.ttf</filename>
 			<size>22</size>
+		</font>
+		<font>
+			<name>Mono24</name>
+			<filename>NotoMono-Regular.ttf</filename>
+			<size>24</size>
+		</font>
+		<font>
+			<name>Mono26</name>
+			<filename>NotoMono-Regular.ttf</filename>
+			<size>26</size>
+		</font>
+		<font>
+			<name>Mono28</name>
+			<filename>NotoMono-Regular.ttf</filename>
+			<size>28</size>
+		</font>
+		<font>
+			<name>Mono30</name>
+			<filename>NotoMono-Regular.ttf</filename>
+			<size>30</size>
 		</font>
 	</fontset>
 	<fontset id="Arial" idloc="31053">
