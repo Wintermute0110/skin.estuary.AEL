@@ -22,18 +22,11 @@
 				<height>890</height>
 				<shadowcolor>black</shadowcolor>
 				<pagecontrol>3000</pagecontrol>
+				<!-- Aparently variables don't work on <font> tag. I have to ask about this in
+					 the forum. -->
 				<font>Mono24</font>
-				<visible>String.IsEqual(Window(10147).Property(FontWidth),monospaced)</visible>
-			</control>
-			<control type="textbox" id="5">
-				<left>1%</left>
-				<top>85</top>
-				<width>93%</width>
-				<height>890</height>
-				<shadowcolor>black</shadowcolor>
-				<pagecontrol>3000</pagecontrol>
-				<font>font14</font>
-				<visible>!String.IsEqual(Window(10147).Property(FontWidth),monospaced)</visible>
+				<!-- <font>$VAR[TextViewer_Font_Name]</font> -->
+				<textcolor>$VAR[TextViewer_Text_Colour]</textcolor>
 			</control>
 
 			<control type="scrollbar" id="3000">
@@ -88,6 +81,8 @@
 			<textcolor>grey</textcolor>
 			<align>right</align>
 			<aligny>center</aligny>
+			<!-- DEBUG FontWidth property value -->
+			<!-- <label>$INFO[Window(home).Property(FontWidth)]</label> -->
 			<label>$LOCALIZE[31035] [COLOR=button_focus]$INFO[Container(5).CurrentPage]/$INFO[Container(5).NumPages][/COLOR]</label>
 			<wrapmultiline>true</wrapmultiline>
 			<visible>Integer.IsGreater(Container(5).NumPages,1)</visible>
