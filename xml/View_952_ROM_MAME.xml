@@ -1,0 +1,347 @@
+<!--
+	List view to view ROMs.
+
+	Template used: View_502_FanArt.xml, View_50_List.xml, skin.confluence.AEL
+	Wintermute0110 <wintermute0110@gmail.com>
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_951_ROM_Complete">
+		<control type="group">
+			<include>OpenClose_Left</include>
+			<left>-5</left>
+			<visible>Control.IsVisible(951)</visible>
+			<include>Visible_Left</include>
+
+			<!-- id of the list is the id of the view -->
+			<control type="fixedlist" id="951">
+				<left>0</left>
+				<width>list_width</width>
+				<top>list_y_offset</top>
+				<bottom>list_y_offset</bottom>
+				<movement>5</movement>
+				<focusposition>6</focusposition>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>951600</pagecontrol>
+				<onleft>9000</onleft>
+				<onright>951600</onright>
+				<onup>951</onup>
+				<ondown>951</ondown>
+				<!-- viewtype label defines the view name on Kodi view selector -->
+				<viewtype label="ROM Complete">list</viewtype>
+				<visible>Window.IsActive(MyPrograms.xml)</visible>
+
+				<focusedlayout height="list_item_height" width="list_width">
+					<control type="image">
+						<left>0</left>
+						<right>0</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
+						<visible>Control.HasFocus(951)</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>70</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus(951)</visible>
+					</control>
+				</focusedlayout>
+
+				<itemlayout height="list_item_height" width="list_width">
+					<control type="label">
+						<left>70</left>
+						<right>70</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<textcolor>grey</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
+					</control>
+				</itemlayout>
+			</control>
+		</control>
+
+		<control type="group">
+			<depth>DepthContentPanel</depth>
+			<include>OpenClose_Right</include>
+			<visible>Control.IsVisible(951)</visible>
+			<include>Visible_Right</include>
+			<control type="group">
+				<right>-20</right>
+				<width>1235</width>
+				<include content="ContentPanel">
+					<param name="width" value="1235" />
+					<param name="left" value="0" />
+					<param name="top" value="-20" />
+					<param name="flipx" value="true" />
+				</include>
+
+				<!-- This is the scrollbar of the list -->
+				<control type="scrollbar" id="951600">
+					<left>20</left>
+					<top>list_y_offset</top>
+					<width>12</width>
+					<bottom>list_y_offset</bottom>
+					<onleft>951</onleft>
+					<onright>951</onright>
+					<orientation>vertical</orientation>
+					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(951600)">conditional</animation>
+				</control>
+				<control type="group">
+					<left>600</left>
+					<top>82</top>
+					<include>UserRatingCircle</include>
+				</control>
+
+				<!-- First row of images ======================================================= -->
+				<!-- Boxfront -->
+				<!-- If platform is MAME render flyer instead -->
+				<control type="image">
+					<left>70</left>
+					<top>100</top>
+					<width>500</width>
+					<height>500</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(boxfront)]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
+				</control>
+				<control type="image">
+					<left>70</left>
+					<top>100</top>
+					<width>500</width>
+					<height>500</height>
+					<texture background="true">$INFO[ListItem.Art(flyer)]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
+				</control>
+
+				<!-- Boxback -->
+				<control type="image">
+					<left>650</left>
+					<top>200</top>
+					<width>300</width>
+					<height>300</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(boxback)]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
+				</control>
+				<!-- If platform is MAME render Boxfront/Cabinet and Banner/Marquee on top of Boxfront/Cabinet -->
+				<control type="image">
+					<left>650</left>
+					<top>200</top>
+					<width>300</width>
+					<height>300</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(boxfront)]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
+				</control>
+				<control type="image">
+					<left>650</left>
+					<top>100</top>
+					<width>300</width>
+					<height>100</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern5.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(banner)]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
+				</control>
+
+				<!-- Clearlogo -->
+				<!-- Clearlogo position changes for MAME -->
+				<control type="image">
+					<left>850</left>
+					<top>100</top>
+					<width>200</width>
+					<height>200</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
+				</control>
+				<control type="image">
+					<left>850</left>
+					<top>150</top>
+					<width>200</width>
+					<height>200</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
+				</control>
+
+				<!-- If MAME render Boxback/CPanel -->
+				
+
+				<!-- Cartridge/PCB -->
+				<control type="image">
+					<left>850</left>
+					<top>400</top>
+					<width>200</width>
+					<height>200</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(cartridge)]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<!-- Metadata ================================================================== -->
+				<control type="group">
+					<left>70</left>
+					<top>630</top>
+
+					<!-- Platform AEL icon -->
+					<include content="AEL_Platform_Icon">
+						<param name="left" value="0" />
+						<param name="top" value="0" />
+					</include>
+
+					<!-- Infolabels -->
+					<!-- Year, Genre, Studio, NPlayers, ESRB, Rating, Platform -->
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="100" />
+						<param name="top" value="0" />
+						<param name="text_label" value="Year" />
+						<param name="text" value="$INFO[ListItem.Year]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="100" />
+						<param name="top" value="30" />
+						<param name="text_label" value="Genre" />
+						<param name="text" value="$INFO[ListItem.Genre]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="100" />
+						<param name="top" value="60" />
+						<param name="text_label" value="Studio" />
+						<param name="text" value="$INFO[ListItem.Studio]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="100" />
+						<param name="top" value="90" />
+						<param name="text_label" value="NPlayers" />
+						<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
+					</include>
+
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="580" />
+						<param name="top" value="0" />
+						<param name="text_label" value="ESRB" />
+						<param name="text" value="$INFO[ListItem.Property(esrb)]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="580" />
+						<param name="top" value="30" />
+						<param name="text_label" value="Rating" />
+						<param name="text" value="$INFO[ListItem.Rating]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="580" />
+						<param name="top" value="60" />
+						<param name="text_label" value="Platform" />
+						<param name="text" value="$INFO[ListItem.Property(platform)]" />
+					</include>
+				</control>
+
+				<!-- Second row of images ====================================================== -->
+				<!-- Title -->
+				<control type="image">
+					<left>70</left>
+					<top>770</top>
+					<width>300</width>
+					<height>230</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(title)]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<!-- Snap -->
+				<control type="image">
+					<left>400</left>
+					<top>770</top>
+					<width>300</width>
+					<height>230</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+					<texture background="true">$INFO[ListItem.Art(snap)]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<!-- Plot -->
+				<control type="textbox">
+					<left>720</left>
+					<width>480</width>
+					<top>770</top>
+					<height>220</height>
+					<font>font10</font>
+					<label>$INFO[ListItem.Plot]</label>
+					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+				</control>
+
+				<!-- Flags ===================================================================== -->
+				<!-- Favourite, Multidisc, Fav status, No-Intro status, Parent/Clone -->
+				<include content="AEL_Flags">
+					<param name="left" value="460" />
+					<param name="top" value="1020" />
+				</include>
+			</control>
+		</control>
+	</include>
+</includes>
