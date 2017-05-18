@@ -151,47 +151,42 @@
 				</control>
 
 				<!-- First row of images ======================================================= -->
-				<!-- Boxfront -->
+				<!-- Console: Boxfront/Cabinet
+					 MAME: Flyer, if not Boxfront/Cabinet
+				-->
 				<control type="image">
 					<left>70</left>
 					<top>100</top>
 					<width>500</width>
 					<height>500</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
-					<texture background="true">$INFO[ListItem.Art(boxfront)]</texture>
+					<texture background="true">$VAR[ROM_Simple_Art_Main]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
-				</control>
-				<!-- If platform is MAME render Flyer, if not present Cabinet (Boxfront) -->
-				<control type="image">
-					<left>70</left>
-					<top>100</top>
-					<width>500</width>
-					<height>500</height>
-					<texture background="true">$INFO[ListItem.Art(flyer)]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
 				</control>
 
-				<!-- Title -->
+				<!-- Console: Title, if not present Boxback/CPanel
+					 MAME: Title, if not present Boxback/CPanel
+				-->
 				<control type="image">
 					<left>740</left>
 					<top>100</top>
 					<width>300</width>
 					<height>240</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
-					<texture background="true">$INFO[ListItem.Art(title)]</texture>
+					<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 
-				<!-- Snap -->
+				<!-- Console: Snap , if not present Cartridge/PCB
+					 MAME: Snap, if not present Cartridge/PCB
+				-->
 				<control type="image">
 					<left>740</left>
 					<top>360</top>
 					<width>300</width>
 					<height>240</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
-					<texture background="true">$INFO[ListItem.Art(snap)]</texture>
+					<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 
@@ -251,14 +246,16 @@
 						<param name="top" value="0" />
 					</include>
 
-					<!-- Clearlogo -->
+					<!-- Console: Clearlogo, if not present Banner/Marquee
+						 MAME: Clearlogo, if not present Banner/Marquee
+					-->
 					<control type="image">
 						<left>670</left>
-						<top>110</top>
+						<top>115</top>
 						<width>300</width>
-						<height>100</height>
+						<height>90</height>
 						<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
-						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+						<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 

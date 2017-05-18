@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-	<!-- Parametrizable view includes ---------------------------------------------------------- -->
+	<!-- Variables ============================================================================= -->
+	<variable name="ROM_Simple_Art_Main">
+		<value condition="!String.IsEqual(ListItem.Property(platform),MAME)+ !String.IsEmpty(ListItem.Art(boxfront))">$INFO[ListItem.Art(boxfront)]</value>
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + !String.IsEmpty(ListItem.Art(flyer))">$INFO[ListItem.Art(flyer)]</value>
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + !String.IsEmpty(ListItem.Art(boxfront))">$INFO[ListItem.Art(boxfront)]</value>
+	</variable>
+	<variable name="ROM_Simple_Art_Title">
+		<value condition="!String.IsEmpty(ListItem.Art(title))">$INFO[ListItem.Art(title)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(boxback))">$INFO[ListItem.Art(boxback)]</value>
+	</variable>
+	<variable name="ROM_Simple_Art_Snap">
+		<value condition="!String.IsEmpty(ListItem.Art(snap))">$INFO[ListItem.Art(snap)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(cartridge))">$INFO[ListItem.Art(cartridge)]</value>
+	</variable>
+	<variable name="ROM_Simple_Art_Logo">
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+	</variable>
+
+	<!-- Parametrizable view includes ========================================================== -->
 	<include name="AEL_Matrix_Image">
 		<control type="group">
 			<left>$PARAM[left]</left>
