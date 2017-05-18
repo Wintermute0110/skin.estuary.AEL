@@ -28,7 +28,7 @@
 				<onright>951600</onright>
 				<onup>951</onup>
 				<ondown>951</ondown>
-				<!-- viewtype label defines the view name on Kodi view selector -->
+				<!-- <viewtype> label defines the view name on Kodi view selector -->
 				<viewtype label="ROM Console">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
@@ -152,7 +152,6 @@
 
 				<!-- First row of images ======================================================= -->
 				<!-- Boxfront -->
-				<!-- If platform is MAME render flyer instead -->
 				<control type="image">
 					<left>70</left>
 					<top>100</top>
@@ -161,16 +160,6 @@
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$INFO[ListItem.Art(boxfront)]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
-				</control>
-				<control type="image">
-					<left>70</left>
-					<top>100</top>
-					<width>500</width>
-					<height>500</height>
-					<texture background="true">$INFO[ListItem.Art(flyer)]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
 				</control>
 
 				<!-- Boxback -->
@@ -182,32 +171,9 @@
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$INFO[ListItem.Art(boxback)]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
-				</control>
-				<!-- If platform is MAME render Boxfront/Cabinet and Banner/Marquee on top of Boxfront/Cabinet -->
-				<control type="image">
-					<left>650</left>
-					<top>200</top>
-					<width>300</width>
-					<height>300</height>
-					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
-					<texture background="true">$INFO[ListItem.Art(boxfront)]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
-				</control>
-				<control type="image">
-					<left>650</left>
-					<top>100</top>
-					<width>300</width>
-					<height>100</height>
-					<!-- <texture background="true">special://skin/extras/backgrounds/pattern5.jpg</texture> -->
-					<texture background="true">$INFO[ListItem.Art(banner)]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
 				</control>
 
 				<!-- Clearlogo -->
-				<!-- Clearlogo position changes for MAME -->
 				<control type="image">
 					<left>850</left>
 					<top>100</top>
@@ -216,17 +182,6 @@
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
 					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
-				</control>
-				<control type="image">
-					<left>850</left>
-					<top>150</top>
-					<width>200</width>
-					<height>200</height>
-					<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
-					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
 				</control>
 
 				<!-- Cartridge/PCB -->
