@@ -19,6 +19,11 @@
 		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 	</variable>
 
+	<variable name="Art_Clearlogo_or_Banner">
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+	</variable>
+
 	<!-- Parametrizable view includes ========================================================== -->
 	<include name="AEL_Matrix_Image">
 		<control type="group">

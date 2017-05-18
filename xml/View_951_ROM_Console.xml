@@ -202,29 +202,29 @@
 
 				<!-- Boxback -->
 				<control type="image">
-					<left>650</left>
-					<top>200</top>
-					<width>300</width>
-					<height>300</height>
+					<left>620</left>
+					<top>180</top>
+					<width>340</width>
+					<height>340</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$INFO[ListItem.Art(boxback)]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 
-				<!-- Clearlogo -->
+				<!-- Clearlogo or Banner -->
 				<control type="image">
-					<left>850</left>
+					<left>970</left>
 					<top>100</top>
 					<width>200</width>
-					<height>200</height>
+					<height>100</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
-					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+					<texture background="true">$VAR[Art_Clearlogo_or_Banner]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 
 				<!-- Cartridge/PCB -->
 				<control type="image">
-					<left>850</left>
+					<left>970</left>
 					<top>400</top>
 					<width>200</width>
 					<height>200</height>
