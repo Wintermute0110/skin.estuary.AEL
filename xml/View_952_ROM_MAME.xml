@@ -41,8 +41,39 @@
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
 						<visible>Control.HasFocus(952)</visible>
 					</control>
+					<!-- Render year. If year is empty then render overlay icon -->
 					<control type="label">
-						<left>70</left>
+						<left>18</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<width>80</width>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>35</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
+					</control>
+					<control type="image">
+						<left>35</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus(952)</visible>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
+					</control>
+					<!-- Main label -->
+					<control type="label">
+						<left>105</left>
 						<right>70</right>
 						<top>0</top>
 						<bottom>0</bottom>
@@ -64,16 +95,31 @@
 						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
+				</focusedlayout>
+
+				<itemlayout height="list_item_height" width="list_width">
+					<!-- Render year. If year is empty then render overlay icon -->
+					<control type="label">
+						<left>18</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<width>80</width>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+						<textcolor>button_focus</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
 					<control type="image">
-						<left>21</left>
+						<left>35</left>
 						<centertop>50%</centertop>
 						<width>32</width>
 						<height>32</height>
 						<texture>$VAR[ListWatchedIconVar]</texture>
 						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
 					<control type="image">
-						<left>21</left>
+						<left>35</left>
 						<centertop>50%</centertop>
 						<width>32</width>
 						<height>32</height>
@@ -81,12 +127,11 @@
 						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
 						<animation effect="fade" time="150">VisibleChange</animation>
 						<visible>!Control.HasFocus(952)</visible>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
-				</focusedlayout>
-
-				<itemlayout height="list_item_height" width="list_width">
+					<!-- Main label -->
 					<control type="label">
-						<left>70</left>
+						<left>105</left>
 						<right>70</right>
 						<top>0</top>
 						<bottom>0</bottom>
@@ -106,13 +151,6 @@
 						<label>$VAR[ListLabel2Var]</label>
 						<textcolor>grey</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
-					</control>
-					<control type="image">
-						<left>21</left>
-						<centertop>50%</centertop>
-						<width>32</width>
-						<height>32</height>
-						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
 					</control>
 				</itemlayout>
 			</control>
