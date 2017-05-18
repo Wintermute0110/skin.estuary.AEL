@@ -34,66 +34,179 @@
 					<control type="image">
 						<left>0</left>
 						<right>0</right>
-						<height>80</height>
+						<bottom>0</bottom>
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
 						<visible>Control.hasFocus(954)</visible>
 					</control>
+					<!-- Render year. If year is empty then render overlay icon -->
+					<control type="label">
+						<left>18</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<width>80</width>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
 					<control type="image">
-						<left>20</left>
-						<top>25</top>
+						<left>35</left>
+						<centertop>50%</centertop>
 						<width>32</width>
 						<height>32</height>
 						<texture>$VAR[ListWatchedIconVar]</texture>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
+					<!-- Main label -->
 					<control type="label">
-						<left>75</left>
-						<height>80</height>
+						<left>105</left>
+						<top>0</top>
+						<bottom>0</bottom>
 						<right>100</right>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="label">
 						<left>40</left>
-						<height>80</height>
+						<top>0</top>
+						<bottom>0</bottom>
 						<right>40</right>
 						<align>right</align>
 						<aligny>center</aligny>
-						<font>font27</font>
-						<label>$INFO[ListItem.Label2]</label>
+						<label>$VAR[ListLabel2Var]</label>
+						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 				</focusedlayout>
 
 				<itemlayout height="80" width="widelist_width">
+					<!-- Render year. If year is empty then render overlay icon -->
+					<control type="label">
+						<left>18</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<width>80</width>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+						<textcolor>button_focus</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
 					<control type="image">
-						<left>20</left>
-						<top>25</top>
+						<left>35</left>
+						<centertop>50%</centertop>
 						<width>32</width>
 						<height>32</height>
-						<texture>$VAR[ListWatchedIconVar]</texture>
+						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
+					<!-- Main label -->
 					<control type="label">
-						<left>75</left>
-						<height>80</height>
+						<left>105</left>
+						<top>0</top>
+						<bottom>0</bottom>
 						<right>100</right>
 						<aligny>center</aligny>
-						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="label">
 						<left>40</left>
-						<height>80</height>
+						<top>0</top>
+						<bottom>0</bottom>
 						<right>40</right>
 						<align>right</align>
 						<aligny>center</aligny>
-						<font>font27</font>
-						<label>$INFO[ListItem.Label2]</label>
-						<textcolor>grey</textcolor>
+						<label>$VAR[ListLabel2Var]</label>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 				</itemlayout>
 			</control>
 		</control>
+
+		<!-- List scrollbar, taken from <include name="CommonScrollbars"> @Includes.xml -->
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="System.HasModalDialog">Conditional</animation>
+			<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
+			<control type="scrollbar" id="531">
+				<right>0</right>
+				<top>80</top>
+				<width>13</width>
+				<bottom>80</bottom>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<orientation>vertical</orientation>
+				<texturesliderbackground />
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531)">conditional</animation>
+				<visible>Control.IsVisible(954)</visible>
+			</control>
+		</control>
+
+		<!-- <control type="group"> -->
+			<!-- Stuff, taken from <include>MediaMenuCommon</include> @Includes_MediaMenu.xml -->
+			<!--
+			<include>OpenClose_Left</include>
+			<depth>DepthSideBlade</depth>
+			<left>-520</left>
+			<animation type="Conditional" condition="$EXP[sidebar_visible]" reversible="true">
+				<effect type="slide" start="0" end="520" time="400" tween="cubic" easing="out" />
+			</animation>
+			<control type="image">
+				<width>4000</width>
+				<height>100%</height>
+				<aspectratio>scale</aspectratio>
+				<texture colordiffuse="80FFFFFF">colors/black.png</texture>
+				<visible>$EXP[sidebar_visible] + !System.HasModalDialog</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>520</width>
+				<height>100%</height>
+				<texture border="0,0,52,0">lists/panel-mediamenu.png</texture>
+			</control>
+			<control type="button" id="3">
+				<description>Viewtype Toggle</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="4">
+				<description>Order Toggle</description>
+				<include>HiddenObject</include>
+			</control>
+			-->
+			<!-- <include>MediaMenuCommon</include> UNTIL HERE -->
+
+			<!-- Stuff only visible if Container.Content(addons) is true -->
+			<!--
+			<control type="grouplist" id="9000">
+				<top>50</top>
+				<include>MediaMenuListCommon</include>
+				<control type="label" id="203">
+					<description>Actions</description>
+					<include>MediaMenuLabelCommon</include>
+					<label>$LOCALIZE[31020]</label>
+					<visible>Control.IsVisible(621)</visible>
+				</control>
+				<control type="button" id="624">
+					<include>MediaMenuItemsCommon</include>
+					<label>$LOCALIZE[10140]</label>
+					<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+					<visible>!String.IsEmpty(Container.PluginName)</visible>
+				</control>
+				<control type="button" id="621">
+					<description>Get more</description>
+					<include>MediaMenuItemsCommon</include>
+					<label>$LOCALIZE[21452]</label>
+					<onclick>ActivateWindow(addonbrowser,addons://more/executable/,return)</onclick>
+					<visible>Container.Content(addons)</visible>
+				</control>
+			</control>
+			<include>MediaMenuNowPlaying</include>
+			-->
+		<!-- </control> -->
 
 		<!-- Left panel ======================================================================== -->
 		<control type="group">
@@ -159,10 +272,10 @@
 
 			<!-- Icon -->
 			<control type="image">
-				<left>90</left>
-				<top>630</top>
-				<width>420</width>
-				<height>420</height>
+				<left>100</left>
+				<top>610</top>
+				<width>400</width>
+				<height>400</height>
 				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
