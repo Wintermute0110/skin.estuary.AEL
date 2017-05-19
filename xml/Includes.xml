@@ -22,7 +22,8 @@
 	<include file="View_951_ROM_Console.xml" />
 	<include file="View_952_ROM_MAME.xml" />
 	<include file="View_953_ROM_Simple.xml" />
-	<include file="View_954_Launcher.xml" />
+	<include file="View_954_ROM_Launcher.xml" />
+	<include file="View_955_Std_Launcher.xml" />
 
 	<include file="Variables.xml" />
 	<include file="Constants_1920.xml" condition="!String.IsEqual(Skin.AspectRatio,21:9)"/>

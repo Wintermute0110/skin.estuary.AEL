@@ -6,14 +6,14 @@
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="View_954_Launcher">
+	<include name="View_955_Std_Launcher">
 		<!-- Right wide list =================================================================== -->
 		<control type="group">
 			<include>OpenClose_Right</include>
-			<visible>Control.IsVisible(954)</visible>
+			<visible>Control.IsVisible(955)</visible>
 			<include>Visible_Right</include>
 
-			<control type="fixedlist" id="954">
+			<control type="fixedlist" id="955">
 				<left>594</left>
 				<top>list_y_offset</top>
 				<bottom>list_y_offset</bottom>
@@ -25,9 +25,9 @@
 				<focusposition>6</focusposition>
 				<onleft>9000</onleft>
 				<onright>531</onright>
-				<onup>954</onup>
-				<ondown>954</ondown>
-				<viewtype label="Launcher">list</viewtype>
+				<onup>955</onup>
+				<ondown>955</ondown>
+				<viewtype label="Std Launcher">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
 				<focusedlayout height="80" width="widelist_width">
@@ -36,7 +36,7 @@
 						<right>0</right>
 						<bottom>0</bottom>
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
-						<visible>Control.hasFocus(954)</visible>
+						<visible>Control.hasFocus(955)</visible>
 					</control>
 					<!-- Render year. If year is empty then render overlay icon -->
 					<control type="label">
@@ -140,79 +140,15 @@
 				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531)">conditional</animation>
-				<visible>Control.IsVisible(954)</visible>
+				<visible>Control.IsVisible(955)</visible>
 			</control>
 		</control>
-
-		<!-- <control type="group"> -->
-			<!-- Stuff, taken from <include>MediaMenuCommon</include> @Includes_MediaMenu.xml -->
-			<!--
-			<include>OpenClose_Left</include>
-			<depth>DepthSideBlade</depth>
-			<left>-520</left>
-			<animation type="Conditional" condition="$EXP[sidebar_visible]" reversible="true">
-				<effect type="slide" start="0" end="520" time="400" tween="cubic" easing="out" />
-			</animation>
-			<control type="image">
-				<width>4000</width>
-				<height>100%</height>
-				<aspectratio>scale</aspectratio>
-				<texture colordiffuse="80FFFFFF">colors/black.png</texture>
-				<visible>$EXP[sidebar_visible] + !System.HasModalDialog</visible>
-				<animation effect="fade" time="200">VisibleChange</animation>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>520</width>
-				<height>100%</height>
-				<texture border="0,0,52,0">lists/panel-mediamenu.png</texture>
-			</control>
-			<control type="button" id="3">
-				<description>Viewtype Toggle</description>
-				<include>HiddenObject</include>
-			</control>
-			<control type="button" id="4">
-				<description>Order Toggle</description>
-				<include>HiddenObject</include>
-			</control>
-			-->
-			<!-- <include>MediaMenuCommon</include> UNTIL HERE -->
-
-			<!-- Stuff only visible if Container.Content(addons) is true -->
-			<!--
-			<control type="grouplist" id="9000">
-				<top>50</top>
-				<include>MediaMenuListCommon</include>
-				<control type="label" id="203">
-					<description>Actions</description>
-					<include>MediaMenuLabelCommon</include>
-					<label>$LOCALIZE[31020]</label>
-					<visible>Control.IsVisible(621)</visible>
-				</control>
-				<control type="button" id="624">
-					<include>MediaMenuItemsCommon</include>
-					<label>$LOCALIZE[10140]</label>
-					<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
-					<visible>!String.IsEmpty(Container.PluginName)</visible>
-				</control>
-				<control type="button" id="621">
-					<description>Get more</description>
-					<include>MediaMenuItemsCommon</include>
-					<label>$LOCALIZE[21452]</label>
-					<onclick>ActivateWindow(addonbrowser,addons://more/executable/,return)</onclick>
-					<visible>Container.Content(addons)</visible>
-				</control>
-			</control>
-			<include>MediaMenuNowPlaying</include>
-			-->
-		<!-- </control> -->
 
 		<!-- Left panel ======================================================================== -->
 		<control type="group">
 			<include>OpenClose_Left</include>
 			<include>Visible_Left</include>
-			<visible>Control.IsVisible(954)</visible>
+			<visible>Control.IsVisible(955)</visible>
 
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
@@ -226,14 +162,14 @@
 				<include>UserRatingCircle</include>
 			</control>
 
-			<!-- Clearlogo -->
+			<!-- Clearlogo or Banner -->
 			<control type="image">
 				<left>90</left>
 				<top>110</top>
 				<width>420</width>
 				<height>150</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>  -->
-				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<texture background="true">$VAR[Art_Clearlogo_or_Banner]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 
@@ -260,7 +196,7 @@
 					<param name="text" value="$INFO[ListItem.Rating]" />
 				</include>
 				<control type="textbox">
-					<left>30</left>
+					<left>50</left>
 					<width>520</width>
 					<top>100</top>
 					<height>220</height>
@@ -270,14 +206,14 @@
 				</control>
 			</control>
 
-			<!-- Icon -->
+			<!-- Icon or Poster -->
 			<control type="image">
 				<left>100</left>
 				<top>610</top>
 				<width>400</width>
 				<height>400</height>
 				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$VAR[Art_Icon_or_Poster]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
 			</control>
 		</control>

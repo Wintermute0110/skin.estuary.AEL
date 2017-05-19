@@ -24,6 +24,11 @@
 		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 	</variable>
 
+	<variable name="Art_Icon_or_Poster">
+		<value condition="!String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+	</variable>
+
 	<!-- Proportional font: font14, Monospaced font: Mono24 -->
 	<variable name="TextViewer_Font_Name">
 		<value condition="String.IsEqual(Window(Home).Property(FontWidth),monospaced)">Mono24</value>

@@ -1,0 +1,203 @@
+<!--
+	NOTE Left panel for WideList view is in MyPrograms.xml, not in View_55_WideList.xml
+
+	Template used: View_55_WideList.xml, skin.confluence.AEL
+	Wintermute0110 <wintermute0110@gmail.com>
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_954_ROM_Launcher">
+		<!-- Right wide list =================================================================== -->
+		<control type="group">
+			<include>OpenClose_Right</include>
+			<visible>Control.IsVisible(954)</visible>
+			<include>Visible_Right</include>
+
+			<control type="fixedlist" id="954">
+				<left>594</left>
+				<top>list_y_offset</top>
+				<bottom>list_y_offset</bottom>
+				<right>0</right>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>531</pagecontrol>
+				<movement>5</movement>
+				<focusposition>6</focusposition>
+				<onleft>9000</onleft>
+				<onright>531</onright>
+				<onup>954</onup>
+				<ondown>954</ondown>
+				<viewtype label="ROM Launcher">list</viewtype>
+				<visible>Window.IsActive(MyPrograms.xml)</visible>
+
+				<focusedlayout height="80" width="widelist_width">
+					<control type="image">
+						<left>0</left>
+						<right>0</right>
+						<bottom>0</bottom>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
+						<visible>Control.hasFocus(954)</visible>
+					</control>
+					<!-- Render year. If year is empty then render overlay icon -->
+					<control type="label">
+						<left>18</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<width>80</width>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>35</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
+					</control>
+					<!-- Main label -->
+					<control type="label">
+						<left>105</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<right>100</right>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<left>40</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<right>40</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$VAR[ListLabel2Var]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+				</focusedlayout>
+
+				<itemlayout height="80" width="widelist_width">
+					<!-- Render year. If year is empty then render overlay icon -->
+					<control type="label">
+						<left>18</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<width>80</width>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+						<textcolor>button_focus</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>35</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
+					</control>
+					<!-- Main label -->
+					<control type="label">
+						<left>105</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<right>100</right>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<left>40</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<right>40</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$VAR[ListLabel2Var]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+				</itemlayout>
+			</control>
+		</control>
+
+		<!-- List scrollbar, taken from <include name="CommonScrollbars"> @Includes.xml -->
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="System.HasModalDialog">Conditional</animation>
+			<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
+			<control type="scrollbar" id="531">
+				<right>0</right>
+				<top>80</top>
+				<width>13</width>
+				<bottom>80</bottom>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<orientation>vertical</orientation>
+				<texturesliderbackground />
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531)">conditional</animation>
+				<visible>Control.IsVisible(954)</visible>
+			</control>
+		</control>
+
+		<!-- Left panel ======================================================================== -->
+		<control type="group">
+			<include>OpenClose_Left</include>
+			<include>Visible_Left</include>
+			<visible>Control.IsVisible(954)</visible>
+
+			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
+			<depth>DepthContentPanel</depth>
+			<include content="ContentPanel">
+				<param name="width" value="654" />
+			</include>
+
+			<control type="group">
+				<left>273</left>
+				<top>590</top>
+				<include>UserRatingCircle</include>
+			</control>
+
+			<!-- Clearlogo or Banner -->
+			<control type="image">
+				<left>90</left>
+				<top>110</top>
+				<width>420</width>
+				<height>150</height>
+				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<texture background="true">$VAR[Art_Clearlogo_or_Banner]</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+
+			<!-- Metadata -->
+			<control type="group">
+				<left>0</left>
+				<top>280</top>
+				<control type="textbox">
+					<left>50</left>
+					<width>520</width>
+					<top>0</top>
+					<height>310</height>
+					<font>font10</font>
+					<label>$INFO[ListItem.Plot]</label>
+					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+				</control>
+			</control>
+
+			<!-- Icon or Poster -->
+			<control type="image">
+				<left>100</left>
+				<top>610</top>
+				<width>400</width>
+				<height>400</height>
+				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<texture background="true">$VAR[Art_Icon_or_Poster]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+			</control>
+		</control>
+	</include>
+</includes>
