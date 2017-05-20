@@ -164,24 +164,30 @@
 
 			<!-- Clearlogo or Banner -->
 			<control type="image">
-				<left>90</left>
+				<left>50</left>
 				<top>110</top>
-				<width>420</width>
-				<height>150</height>
+				<width>390</width>
+				<height>100</height>
 				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 				<texture background="true">$VAR[Art_Clearlogo_or_Banner]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 
+			<!-- Platform AEL icon -->
+			<include content="AEL_Platform_Icon">
+				<param name="left" value="465" />
+				<param name="top" value="110" />
+			</include>
+
 			<!-- Metadata -->
 			<control type="group">
 				<left>0</left>
-				<top>280</top>
+				<top>240</top>
 				<control type="textbox">
 					<left>50</left>
 					<width>520</width>
 					<top>0</top>
-					<height>310</height>
+					<height>345</height>
 					<font>font10</font>
 					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
