@@ -326,11 +326,7 @@
 				</control>
 
 				<!-- Flags ===================================================================== -->
-				<!-- Favourite, Multidisc, Fav status, No-Intro status, Parent/Clone -->
-				<include content="AEL_Flags">
-					<param name="left" value="460" />
-					<param name="top" value="1020" />
-				</include>
+				<!-- Included in MyPrograms.xml -->
 			</control>
 		</control>
 	</include>

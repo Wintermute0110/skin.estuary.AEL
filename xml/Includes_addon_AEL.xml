@@ -151,7 +151,7 @@
 		</control>
 	</include>
 
-	<!-- Platform and media flags -------------------------------------------------------------- -->
+	<!-- Platform icon ========================================================================= -->
 	<include name="AEL_Platform_Icon">
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -172,8 +172,150 @@
 		</control>
 	</include>
 
+	<!-- New Media flags to be used in MyPrograms.xml ========================================== -->
+	<variable name="AEL_Fav_Status_text">
+		<value condition="String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_OK)">[COLOR white]OK[/COLOR]</value>
+		<value condition="String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_UnlinkedROM)">[COLOR orange]U ROM[/COLOR]</value>
+		<value condition="String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_UnlinkedLauncher)">[COLOR yellow]U Launch[/COLOR]</value>
+		<value condition="String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_Broken)">[COLOR red]Broken[/COLOR]</value>
+	</variable>
+	<variable name="AEL_NoIntro_text">
+		<value condition="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Have)">[COLOR green]Have[/COLOR]</value>
+		<value condition="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Miss)">[COLOR red]Miss[/COLOR]</value>
+		<value condition="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Unknown)">[COLOR yellow]Unknown[/COLOR]</value>
+	</variable>
+	<variable name="AEL_PClone_text">
+		<value condition="String.IsEqual(ListItem.Property(AEL_PClone_stat),PClone_Parent)">Parent</value>
+		<value condition="String.IsEqual(ListItem.Property(AEL_PClone_stat),PClone_Clone)">[COLOR orange]Clone[/COLOR]</value>
+	</variable>
+
+	<!-- Helper includes
+		 InfoFlag define in Includes.xml @338
+		 MediaFlag define in Includes.xml @359
+	-->
+	<include name="InfoFlag_AEL">
+		<control type="group">
+			<width>180</width>
+			<visible>$PARAM[visible]</visible>
+			<control type="image">
+				<top>-3</top>
+				<left>0</left>
+				<width>40</width>
+				<height>40</height>
+				<texture colordiffuse="white">$PARAM[icon]</texture>
+			</control>
+			<control type="label">
+				<left>50</left>
+				<width>180</width>
+				<height>35</height>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<label>$PARAM[label]</label>
+			</control>
+		</control>
+	</include>
+	<include name="MediaFlag_AEL">
+		<param name="width">115</param>
+		<param name="height">60</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="image">
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<fadetime>0</fadetime>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture>$PARAM[texture]</texture>
+				<visible>$PARAM[visible]</visible>
+			</control>
+		</definition>
+	</include>
+	<include name="TextFlag_AEL">
+		<param name="width">115</param>
+		<param name="height">60</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="group">
+				<width>$PARAM[width]</width>
+				<visible>$PARAM[visible]</visible>
+				<control type="label">
+					<width>115</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$PARAM[text]</label>
+					<font>font_flag</font>
+				</control>
+				<include content="MediaFlag_AEL">
+					<param name="texture" value="flags/flag.png" />
+					<param name="visible" value="$PARAM[visible]" />
+				</include>
+			</control>
+		</definition>
+	</include>
+
+	<include name="MediaFlags_AEL">
+		<!-- http://kodi.wiki/view/Group_List_Control
+			 The group list control is a special case of the group control. It is used for placing 
+			 a set of controls into a list (either horizontally or vertically) and handles all the 
+			 navigation within the list and placement within the list for you.
+		-->
+		<control type="grouplist">
+			<orientation>horizontal</orientation>
+			<right>20</right>
+			<top>0</top>
+			<height>70</height>
+			<align>right</align>
+			<itemgap>28</itemgap>
+			<width>1900</width>
+			<usecontrolcoords>true</usecontrolcoords>
+
+			<!-- AEL InFavourites flag (boolean) -->
+			<include content="TextFlag_AEL">
+				<param name="text" value="[COLOR purple]InFav[/COLOR]" />
+				<param name="visible" value="String.IsEqual(ListItem.Property(AEL_InFav),InFav_True)" />
+			</include>
+			<!-- AEL Multidisc flag (boolean) -->
+			<include content="TextFlag_AEL">
+				<param name="text" value="MD" />
+				<param name="visible" value="String.IsEqual(ListItem.Property(AEL_MultiDisc),MultiDisc_True)" />
+			</include>
+			<!-- AEL Favourite status (multivalue) -->
+			<include content="TextFlag_AEL">
+				<param name="text" value="$VAR[AEL_Fav_Status_text]" />
+				<param name="visible" value="String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_OK) | String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_UnlinkedROM) | String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_UnlinkedLauncher) | String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_Broken)" />
+			</include>
+			<!-- AEL No-Intro status (multivalue) -->
+			<include content="TextFlag_AEL">
+				<param name="text" value="$VAR[AEL_NoIntro_text]" />
+				<param name="visible" value="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Have) | String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Miss) | String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Unknown)" />
+			</include>
+			<!-- AEL PClone status (multivalue) 
+				 Also used by AML
+			-->
+			<include content="TextFlag_AEL">
+				<param name="text" value="$VAR[AEL_PClone_text]" />
+				<param name="visible" value="String.IsEqual(ListItem.Property(AEL_PClone_stat),PClone_Parent) | String.IsEqual(ListItem.Property(AEL_PClone_stat),PClone_Clone)" />
+			</include>
+			<!--
+			<include content="MediaFlag_AEL">
+				<param name="texture" value="$VAR[ResolutionFlagVar]" />
+				<param name="visible" value="!String.IsEmpty(ListItem.VideoResolution)" />
+			</include>
+			-->
+		</control>
+	</include>
+
+	<!-- Old Media flags =========================================================================== -->
 	<!-- Estuary flags defined in <include name="MediaFlag"> in Includes.xml
-		 Original flag size is 115x60, image size is 270x120 -->
+		 Original flag size is 115x60, image size is 270x120 
+		 Old flags to be used in the view includes as xxx
+	-->
+	<!-- Usage
+				<include content="AEL_Flags">
+					<param name="left" value="460" />
+					<param name="top" value="1020" />
+				</include>
+	-->
 	<include name="AEL_Flags">
 		<control type="group">
 			<left>$PARAM[left]</left>
