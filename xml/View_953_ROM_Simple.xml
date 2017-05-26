@@ -50,6 +50,7 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Year]</label>
 						<shadowcolor>text_shadow</shadowcolor>
+						<visible>!String.IsEmpty(ListItem.Year)</visible>
 					</control>
 					<control type="image">
 						<left>35</left>
@@ -108,6 +109,7 @@
 						<label>$INFO[ListItem.Year]</label>
 						<textcolor>button_focus</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
+						<visible>!String.IsEmpty(ListItem.Year)</visible>
 					</control>
 					<control type="image">
 						<left>35</left>
@@ -301,8 +303,8 @@
 					<control type="textbox">
 						<left>0</left>
 						<width>1100</width>
-						<top>220</top>
-						<height>160</height>
+						<top>210</top>
+						<height>190</height>
 						<font>font10</font>
 						<label>$INFO[ListItem.Plot]</label>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
