@@ -49,6 +49,7 @@
 						<width>80</width>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Year]</label>
+						<!-- <textcolor>button_focus</textcolor> -->
 						<shadowcolor>text_shadow</shadowcolor>
 						<visible>!String.IsEmpty(ListItem.Year)</visible>
 					</control>
@@ -61,6 +62,7 @@
 						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
+					<!--
 					<control type="image">
 						<left>35</left>
 						<centertop>50%</centertop>
@@ -72,6 +74,7 @@
 						<visible>!Control.HasFocus(953)</visible>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
+					-->
 					<!-- Main label -->
 					<control type="label">
 						<left>105</left>
@@ -107,7 +110,7 @@
 						<width>80</width>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Year]</label>
-						<textcolor>button_focus</textcolor>
+						<!-- <textcolor>button_focus</textcolor> -->
 						<shadowcolor>text_shadow</shadowcolor>
 						<visible>!String.IsEmpty(ListItem.Year)</visible>
 					</control>
@@ -120,6 +123,7 @@
 						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
+                    <!--
 					<control type="image">
 						<left>35</left>
 						<centertop>50%</centertop>
@@ -131,6 +135,7 @@
 						<visible>!Control.HasFocus(953)</visible>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
+					-->
 					<!-- Main label -->
 					<control type="label">
 						<left>105</left>
