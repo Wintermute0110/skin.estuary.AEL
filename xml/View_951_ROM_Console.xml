@@ -295,7 +295,7 @@
 				<!-- Title -->
 				<control type="image">
 					<left>70</left>
-					<top>770</top>
+					<top>760</top>
 					<width>300</width>
 					<height>230</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
@@ -303,26 +303,26 @@
 					<aspectratio>keep</aspectratio>
 				</control>
 
+				<!-- Plot -->
+				<control type="textbox">
+					<left>390</left>
+					<width>480</width>
+					<top>755</top>
+					<height>250</height>
+					<font>font10</font>
+					<label>$INFO[ListItem.Plot]</label>
+					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+				</control>
+
 				<!-- Snap -->
 				<control type="image">
-					<left>400</left>
-					<top>770</top>
+					<left>890</left>
+					<top>760</top>
 					<width>300</width>
 					<height>230</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$INFO[ListItem.Art(snap)]</texture>
 					<aspectratio>keep</aspectratio>
-				</control>
-
-				<!-- Plot -->
-				<control type="textbox">
-					<left>720</left>
-					<width>480</width>
-					<top>770</top>
-					<height>220</height>
-					<font>font10</font>
-					<label>$INFO[ListItem.Plot]</label>
-					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 
 				<!-- Flags ===================================================================== -->
