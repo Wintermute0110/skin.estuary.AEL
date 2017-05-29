@@ -6,15 +6,15 @@
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="View_953_ROM_Simple">
+	<include name="View_954_ROM_Shots">
 		<control type="group">
 			<include>OpenClose_Left</include>
 			<left>-5</left>
-			<visible>Control.IsVisible(953)</visible>
+			<visible>Control.IsVisible(954)</visible>
 			<include>Visible_Left</include>
 
 			<!-- id of the list is the id of the view -->
-			<control type="fixedlist" id="953">
+			<control type="fixedlist" id="954">
 				<left>0</left>
 				<width>list_width</width>
 				<top>list_y_offset</top>
@@ -23,13 +23,13 @@
 				<focusposition>6</focusposition>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>vertical</orientation>
-				<pagecontrol>953600</pagecontrol>
+				<pagecontrol>954600</pagecontrol>
 				<onleft>9000</onleft>
-				<onright>953600</onright>
-				<onup>953</onup>
-				<ondown>953</ondown>
+				<onright>954600</onright>
+				<onup>954</onup>
+				<ondown>954</ondown>
 				<!-- viewtype label defines the view name on Kodi view selector -->
-				<viewtype label="ROM Simple">list</viewtype>
+				<viewtype label="ROM Shots">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
 				<focusedlayout height="list_item_height" width="list_width">
@@ -39,7 +39,7 @@
 						<top>0</top>
 						<bottom>0</bottom>
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
-						<visible>Control.HasFocus(953)</visible>
+						<visible>Control.HasFocus(954)</visible>
 					</control>
 					<!-- Render year. If year is empty then render overlay icon -->
 					<control type="label">
@@ -71,7 +71,7 @@
 						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
 						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
 						<animation effect="fade" time="150">VisibleChange</animation>
-						<visible>!Control.HasFocus(953)</visible>
+						<visible>!Control.HasFocus(954)</visible>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
 					-->
@@ -123,7 +123,7 @@
 						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
-                    <!--
+					<!--
 					<control type="image">
 						<left>35</left>
 						<centertop>50%</centertop>
@@ -132,7 +132,7 @@
 						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
 						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
 						<animation effect="fade" time="150">VisibleChange</animation>
-						<visible>!Control.HasFocus(953)</visible>
+						<visible>!Control.HasFocus(954)</visible>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
 					-->
@@ -166,7 +166,7 @@
 		<control type="group">
 			<depth>DepthContentPanel</depth>
 			<include>OpenClose_Right</include>
-			<visible>Control.IsVisible(953)</visible>
+			<visible>Control.IsVisible(954)</visible>
 			<include>Visible_Right</include>
 			<control type="group">
 				<right>-20</right>
@@ -179,15 +179,15 @@
 				</include>
 
 				<!-- This is the scrollbar of the list -->
-				<control type="scrollbar" id="953600">
+				<control type="scrollbar" id="954600">
 					<left>20</left>
 					<top>list_y_offset</top>
 					<width>12</width>
 					<bottom>list_y_offset</bottom>
-					<onleft>953</onleft>
-					<onright>953</onright>
+					<onleft>954</onleft>
+					<onright>954</onright>
 					<orientation>vertical</orientation>
-					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(953600)">conditional</animation>
+					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(954600)">conditional</animation>
 				</control>
 				<control type="group">
 					<left>600</left>
@@ -196,27 +196,14 @@
 				</control>
 
 				<!-- First row of images ======================================================= -->
-				<!-- Console: Boxfront/Cabinet
-					 MAME: Flyer, if not Boxfront/Cabinet
-				-->
-				<control type="image">
-					<left>70</left>
-					<top>100</top>
-					<width>500</width>
-					<height>500</height>
-					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
-					<texture background="true">$VAR[ROM_Simple_Art_Main]</texture>
-					<aspectratio>keep</aspectratio>
-				</control>
-
 				<!-- Console: Title, if not present Boxback/CPanel
 					 MAME: Title, if not present Boxback/CPanel
 				-->
 				<control type="image">
-					<left>740</left>
+					<left>70</left>
 					<top>100</top>
-					<width>300</width>
-					<height>240</height>
+					<width>520</width>
+					<height>520</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
 					<aspectratio>keep</aspectratio>
@@ -226,10 +213,10 @@
 					 MAME: Snap, if not present Cartridge/PCB
 				-->
 				<control type="image">
-					<left>740</left>
-					<top>360</top>
-					<width>300</width>
-					<height>240</height>
+					<left>650</left>
+					<top>100</top>
+					<width>520</width>
+					<height>520</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
 					<aspectratio>keep</aspectratio>
@@ -287,16 +274,16 @@
 
 					<!-- Platform AEL icon -->
 					<include content="AEL_Platform_Icon">
-						<param name="left" value="760" />
-						<param name="top" value="0" />
+						<param name="left" value="790" />
+						<param name="top" value="10" />
 					</include>
 
 					<!-- Console: Clearlogo, if not present Banner/Marquee
 						 MAME: Clearlogo, if not present Banner/Marquee
 					-->
 					<control type="image">
-						<left>670</left>
-						<top>115</top>
+						<left>690</left>
+						<top>125</top>
 						<width>300</width>
 						<height>90</height>
 						<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->

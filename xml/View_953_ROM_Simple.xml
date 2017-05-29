@@ -123,7 +123,7 @@
 						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
-                    <!--
+					<!--
 					<control type="image">
 						<left>35</left>
 						<centertop>50%</centertop>
@@ -295,8 +295,8 @@
 						 MAME: Clearlogo, if not present Banner/Marquee
 					-->
 					<control type="image">
-						<left>670</left>
-						<top>115</top>
+						<left>690</left>
+						<top>125</top>
 						<width>300</width>
 						<height>90</height>
 						<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
