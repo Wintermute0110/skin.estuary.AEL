@@ -1,0 +1,324 @@
+<!--
+	List view to view ROMs.
+
+	Template used: View_502_FanArt.xml, View_50_List.xml, skin.confluence.AEL
+	Wintermute0110 <wintermute0110@gmail.com>
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_953_ROM_Simple">
+		<control type="group">
+			<include>OpenClose_Left</include>
+			<left>-5</left>
+			<visible>Control.IsVisible(953)</visible>
+			<include>Visible_Left</include>
+
+			<!-- id of the list is the id of the view -->
+			<control type="fixedlist" id="953">
+				<left>0</left>
+				<width>list_width</width>
+				<top>list_y_offset</top>
+				<bottom>list_y_offset</bottom>
+				<movement>5</movement>
+				<focusposition>6</focusposition>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>953600</pagecontrol>
+				<onleft>9000</onleft>
+				<onright>953600</onright>
+				<onup>953</onup>
+				<ondown>953</ondown>
+				<!-- viewtype label defines the view name on Kodi view selector -->
+				<viewtype label="ROM Simple">list</viewtype>
+				<visible>Window.IsActive(MyPrograms.xml)</visible>
+
+				<focusedlayout height="list_item_height" width="list_width">
+					<control type="image">
+						<left>0</left>
+						<right>0</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
+						<visible>Control.HasFocus(953)</visible>
+					</control>
+					<!-- Render year. If year is empty then render overlay icon -->
+					<control type="label">
+						<left>18</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<width>80</width>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+						<!-- <textcolor>button_focus</textcolor> -->
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>!String.IsEmpty(ListItem.Year)</visible>
+					</control>
+					<control type="image">
+						<left>35</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
+					</control>
+					<!--
+					<control type="image">
+						<left>35</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus(953)</visible>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
+					</control>
+					-->
+					<!-- Main label -->
+					<control type="label">
+						<left>105</left>
+						<right>70</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+				</focusedlayout>
+
+				<itemlayout height="list_item_height" width="list_width">
+					<!-- Render year. If year is empty then render overlay icon -->
+					<control type="label">
+						<left>18</left>
+						<top>0</top>
+						<bottom>0</bottom>
+						<width>80</width>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+						<!-- <textcolor>button_focus</textcolor> -->
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>!String.IsEmpty(ListItem.Year)</visible>
+					</control>
+					<control type="image">
+						<left>35</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
+					</control>
+                    <!--
+					<control type="image">
+						<left>35</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus(953)</visible>
+						<visible>String.IsEmpty(ListItem.Year)</visible>
+					</control>
+					-->
+					<!-- Main label -->
+					<control type="label">
+						<left>105</left>
+						<right>70</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<textcolor>grey</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+				</itemlayout>
+			</control>
+		</control>
+
+		<control type="group">
+			<depth>DepthContentPanel</depth>
+			<include>OpenClose_Right</include>
+			<visible>Control.IsVisible(953)</visible>
+			<include>Visible_Right</include>
+			<control type="group">
+				<right>-20</right>
+				<width>1235</width>
+				<include content="ContentPanel">
+					<param name="width" value="1235" />
+					<param name="left" value="0" />
+					<param name="top" value="-20" />
+					<param name="flipx" value="true" />
+				</include>
+
+				<!-- This is the scrollbar of the list -->
+				<control type="scrollbar" id="953600">
+					<left>20</left>
+					<top>list_y_offset</top>
+					<width>12</width>
+					<bottom>list_y_offset</bottom>
+					<onleft>953</onleft>
+					<onright>953</onright>
+					<orientation>vertical</orientation>
+					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(953600)">conditional</animation>
+				</control>
+				<control type="group">
+					<left>600</left>
+					<top>82</top>
+					<include>UserRatingCircle</include>
+				</control>
+
+				<!-- First row of images ======================================================= -->
+				<!-- Console: Boxfront/Cabinet
+					 MAME: Flyer, if not Boxfront/Cabinet
+				-->
+				<control type="image">
+					<left>70</left>
+					<top>100</top>
+					<width>500</width>
+					<height>500</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+					<texture background="true">$VAR[ROM_Simple_Art_Main]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<!-- Console: Title, if not present Boxback/CPanel
+					 MAME: Title, if not present Boxback/CPanel
+				-->
+				<control type="image">
+					<left>740</left>
+					<top>100</top>
+					<width>300</width>
+					<height>240</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+					<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<!-- Console: Snap , if not present Cartridge/PCB
+					 MAME: Snap, if not present Cartridge/PCB
+				-->
+				<control type="image">
+					<left>740</left>
+					<top>360</top>
+					<width>300</width>
+					<height>240</height>
+					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+					<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<!-- Metadata ================================================================== -->
+				<control type="group">
+					<left>70</left>
+					<top>630</top>
+
+					<!-- Infolabels -->
+					<!-- Year, Genre, Studio, NPlayers, ESRB, Rating, Platform -->
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="0" />
+						<param name="top" value="0" />
+						<param name="text_label" value="Year" />
+						<param name="text" value="$INFO[ListItem.Year]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="0" />
+						<param name="top" value="30" />
+						<param name="text_label" value="Genre" />
+						<param name="text" value="$INFO[ListItem.Genre]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="0" />
+						<param name="top" value="60" />
+						<param name="text_label" value="Studio" />
+						<param name="text" value="$INFO[ListItem.Studio]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="0" />
+						<param name="top" value="90" />
+						<param name="text_label" value="NPlayers" />
+						<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="0" />
+						<param name="top" value="120" />
+						<param name="text_label" value="ESRB" />
+						<param name="text" value="$INFO[ListItem.Property(esrb)]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="0" />
+						<param name="top" value="150" />
+						<param name="text_label" value="Rating" />
+						<param name="text" value="$INFO[ListItem.Rating]" />
+					</include>
+					<include content="AEL_Matrix_Text">
+						<param name="left" value="0" />
+						<param name="top" value="180" />
+						<param name="text_label" value="Platform" />
+						<param name="text" value="$INFO[ListItem.Property(platform)]" />
+					</include>
+
+					<!-- Platform AEL icon -->
+					<include content="AEL_Platform_Icon">
+						<param name="left" value="760" />
+						<param name="top" value="0" />
+					</include>
+
+					<!-- Console: Clearlogo, if not present Banner/Marquee
+						 MAME: Clearlogo, if not present Banner/Marquee
+					-->
+					<control type="image">
+						<left>670</left>
+						<top>115</top>
+						<width>300</width>
+						<height>90</height>
+						<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
+						<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+
+					<!-- Plot -->
+					<control type="textbox">
+						<left>0</left>
+						<width>1100</width>
+						<top>210</top>
+						<height>190</height>
+						<font>font10</font>
+						<label>$INFO[ListItem.Plot]</label>
+						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+					</control>
+				</control>
+
+				<!-- Flags ===================================================================== -->
+				<!-- Included in MyPrograms.xml -->
+			</control>
+		</control>
+	</include>
+</includes>

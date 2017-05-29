@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">52</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<!-- 950 onwards are AEL/AML/ADL custom views -->
-	<views>50,52,55,500,950,951,952,953,954,955</views>
+	<views>50,52,55,500,950,951,952,953,954,955,956</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
 		<include>DefaultBackground</include>
@@ -19,8 +19,9 @@
 			<include>View_951_ROM_Console</include>
 			<include>View_952_ROM_MAME</include>
 			<include>View_953_ROM_Simple</include>
-			<include>View_954_ROM_Launcher</include>
-			<include>View_955_Std_Launcher</include>
+			<include>View_954_ROM_Shots</include>
+			<include>View_955_ROM_Launcher</include>
+			<include>View_956_Std_Launcher</include>
 
 			<control type="group">
 				<include>OpenClose_Left</include>
@@ -34,7 +35,7 @@
 			<include content="BottomBar">
 				<param name="info_visible" value="true" />
 			</include>
-			
+
 			<!-- Media flags on the bottom left corner. Taken from MyVideoNav.xml because
 				 Estuary MyPrograms.xml window has not media flags.
 				 Flags should be here so they will be on top of the lower black shadow.
