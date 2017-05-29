@@ -6,14 +6,14 @@
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="View_954_ROM_Launcher">
+	<include name="View_955_ROM_Launcher">
 		<!-- Right wide list =================================================================== -->
 		<control type="group">
 			<include>OpenClose_Right</include>
-			<visible>Control.IsVisible(954)</visible>
+			<visible>Control.IsVisible(955)</visible>
 			<include>Visible_Right</include>
 
-			<control type="fixedlist" id="954">
+			<control type="fixedlist" id="955">
 				<left>594</left>
 				<top>list_y_offset</top>
 				<bottom>list_y_offset</bottom>
@@ -25,8 +25,8 @@
 				<focusposition>6</focusposition>
 				<onleft>9000</onleft>
 				<onright>531</onright>
-				<onup>954</onup>
-				<ondown>954</ondown>
+				<onup>955</onup>
+				<ondown>955</ondown>
 				<viewtype label="ROM Launcher">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
@@ -36,7 +36,7 @@
 						<right>0</right>
 						<bottom>0</bottom>
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
-						<visible>Control.hasFocus(954)</visible>
+						<visible>Control.hasFocus(955)</visible>
 					</control>
 					<!-- Render year. If year is empty then render overlay icon -->
 					<control type="label">
@@ -140,7 +140,7 @@
 				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531)">conditional</animation>
-				<visible>Control.IsVisible(954)</visible>
+				<visible>Control.IsVisible(955)</visible>
 			</control>
 		</control>
 
@@ -148,7 +148,7 @@
 		<control type="group">
 			<include>OpenClose_Left</include>
 			<include>Visible_Left</include>
-			<visible>Control.IsVisible(954)</visible>
+			<visible>Control.IsVisible(955)</visible>
 
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
