@@ -200,9 +200,9 @@
 					 MAME: Title, if not present Boxback/CPanel
 				-->
 				<control type="image">
-					<left>70</left>
-					<top>100</top>
-					<width>520</width>
+					<left>50</left>
+					<top>90</top>
+					<width>560</width>
 					<height>520</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
@@ -213,9 +213,9 @@
 					 MAME: Snap, if not present Cartridge/PCB
 				-->
 				<control type="image">
-					<left>650</left>
-					<top>100</top>
-					<width>520</width>
+					<left>630</left>
+					<top>90</top>
+					<width>560</width>
 					<height>520</height>
 					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
@@ -224,17 +224,11 @@
 
 				<!-- Metadata ================================================================== -->
 				<control type="group">
-					<left>70</left>
-					<top>630</top>
+					<left>50</left>
+					<top>600</top>
 
 					<!-- Infolabels -->
-					<!-- Year, Genre, Studio, NPlayers, ESRB, Rating, Platform -->
-					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
-						<param name="top" value="0" />
-						<param name="text_label" value="Year" />
-						<param name="text" value="$INFO[ListItem.Year]" />
-					</include>
+					<!-- Genre, Studio, NPlayers, ESRB, Rating, Platform -->
 					<include content="AEL_Matrix_Text">
 						<param name="left" value="0" />
 						<param name="top" value="30" />
@@ -274,16 +268,16 @@
 
 					<!-- Platform AEL icon -->
 					<include content="AEL_Platform_Icon">
-						<param name="left" value="790" />
-						<param name="top" value="10" />
+						<param name="left" value="810" />
+						<param name="top" value="20" />
 					</include>
 
 					<!-- Console: Clearlogo, if not present Banner/Marquee
 						 MAME: Clearlogo, if not present Banner/Marquee
 					-->
 					<control type="image">
-						<left>690</left>
-						<top>125</top>
+						<left>710</left>
+						<top>135</top>
 						<width>300</width>
 						<height>90</height>
 						<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
@@ -295,16 +289,13 @@
 					<control type="textbox">
 						<left>0</left>
 						<width>1100</width>
-						<top>210</top>
+						<top>230</top>
 						<height>190</height>
 						<font>font10</font>
 						<label>$INFO[ListItem.Plot]</label>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
 				</control>
-
-				<!-- Flags ===================================================================== -->
-				<!-- Included in MyPrograms.xml -->
 			</control>
 		</control>
 	</include>

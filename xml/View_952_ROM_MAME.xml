@@ -192,7 +192,7 @@
 				<!-- Boxfront -->
 				<!-- If platform is MAME render flyer instead -->
 				<control type="image">
-					<left>70</left>
+					<left>50</left>
 					<top>100</top>
 					<width>500</width>
 					<height>500</height>
@@ -233,7 +233,7 @@
 					<aspectratio>keep</aspectratio>
 				</control>
 
-				<!-- If MAME render Boxback/CPanel -->
+				<!-- Boxback/CPanel -->
 				<control type="image">
 					<left>950</left>
 					<top>240</top>
@@ -257,7 +257,7 @@
 
 				<!-- Metadata ================================================================== -->
 				<control type="group">
-					<left>70</left>
+					<left>50</left>
 					<top>630</top>
 
 					<!-- Platform AEL icon -->
@@ -267,47 +267,41 @@
 					</include>
 
 					<!-- Infolabels -->
-					<!-- Year, Genre, Studio, NPlayers, ESRB, Rating, Platform -->
+					<!-- Genre, Studio, NPlayers, ESRB, Rating, Platform -->
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="100" />
-						<param name="top" value="0" />
-						<param name="text_label" value="Year" />
-						<param name="text" value="$INFO[ListItem.Year]" />
-					</include>
-					<include content="AEL_Matrix_Text">
-						<param name="left" value="100" />
-						<param name="top" value="30" />
+						<param name="left" value="80" />
+						<param name="top" value="5" />
 						<param name="text_label" value="Genre" />
 						<param name="text" value="$INFO[ListItem.Genre]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="100" />
-						<param name="top" value="60" />
+						<param name="left" value="80" />
+						<param name="top" value="35" />
 						<param name="text_label" value="Studio" />
 						<param name="text" value="$INFO[ListItem.Studio]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="100" />
-						<param name="top" value="90" />
+						<param name="left" value="80" />
+						<param name="top" value="65" />
 						<param name="text_label" value="NPlayers" />
 						<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
 					</include>
 
 					<include content="AEL_Matrix_Text">
 						<param name="left" value="580" />
-						<param name="top" value="0" />
+						<param name="top" value="5" />
 						<param name="text_label" value="ESRB" />
 						<param name="text" value="$INFO[ListItem.Property(esrb)]" />
 					</include>
 					<include content="AEL_Matrix_Text">
 						<param name="left" value="580" />
-						<param name="top" value="30" />
+						<param name="top" value="35" />
 						<param name="text_label" value="Rating" />
 						<param name="text" value="$INFO[ListItem.Rating]" />
 					</include>
 					<include content="AEL_Matrix_Text">
 						<param name="left" value="580" />
-						<param name="top" value="60" />
+						<param name="top" value="65" />
 						<param name="text_label" value="Platform" />
 						<param name="text" value="$INFO[ListItem.Property(platform)]" />
 					</include>
@@ -316,7 +310,7 @@
 				<!-- Second row of images ====================================================== -->
 				<!-- Title -->
 				<control type="image">
-					<left>70</left>
+					<left>50</left>
 					<top>760</top>
 					<width>300</width>
 					<height>230</height>
@@ -327,7 +321,7 @@
 
 				<!-- Plot -->
 				<control type="textbox">
-					<left>390</left>
+					<left>380</left>
 					<width>480</width>
 					<top>755</top>
 					<height>250</height>

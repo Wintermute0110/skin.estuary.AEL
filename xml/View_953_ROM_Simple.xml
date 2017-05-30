@@ -200,7 +200,7 @@
 					 MAME: Flyer, if not Boxfront/Cabinet
 				-->
 				<control type="image">
-					<left>70</left>
+					<left>50</left>
 					<top>100</top>
 					<width>500</width>
 					<height>500</height>
@@ -237,17 +237,11 @@
 
 				<!-- Metadata ================================================================== -->
 				<control type="group">
-					<left>70</left>
-					<top>630</top>
+					<left>50</left>
+					<top>600</top>
 
 					<!-- Infolabels -->
-					<!-- Year, Genre, Studio, NPlayers, ESRB, Rating, Platform -->
-					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
-						<param name="top" value="0" />
-						<param name="text_label" value="Year" />
-						<param name="text" value="$INFO[ListItem.Year]" />
-					</include>
+					<!-- Genre, Studio, NPlayers, ESRB, Rating, Platform -->
 					<include content="AEL_Matrix_Text">
 						<param name="left" value="0" />
 						<param name="top" value="30" />
@@ -287,8 +281,8 @@
 
 					<!-- Platform AEL icon -->
 					<include content="AEL_Platform_Icon">
-						<param name="left" value="760" />
-						<param name="top" value="0" />
+						<param name="left" value="790" />
+						<param name="top" value="20" />
 					</include>
 
 					<!-- Console: Clearlogo, if not present Banner/Marquee
@@ -296,7 +290,7 @@
 					-->
 					<control type="image">
 						<left>690</left>
-						<top>125</top>
+						<top>135</top>
 						<width>300</width>
 						<height>90</height>
 						<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
@@ -308,16 +302,13 @@
 					<control type="textbox">
 						<left>0</left>
 						<width>1100</width>
-						<top>210</top>
+						<top>230</top>
 						<height>190</height>
 						<font>font10</font>
 						<label>$INFO[ListItem.Plot]</label>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
 				</control>
-
-				<!-- Flags ===================================================================== -->
-				<!-- Included in MyPrograms.xml -->
 			</control>
 		</control>
 	</include>

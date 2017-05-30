@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+	<!-- Sking DEBUG settings ================================================================== -->
+    <!-- Values true or false -> NEED TO INVESTIGATE THIS FURTHER  -->
+    <!-- <constant name="DEBUG_AEL_views">true</constant> -->
+
 	<!-- Variables ============================================================================= -->
 	<variable name="ROM_Simple_Art_Main">
 		<value condition="!String.IsEqual(ListItem.Property(platform),MAME)+ !String.IsEmpty(ListItem.Art(boxfront))">$INFO[ListItem.Art(boxfront)]</value>
@@ -105,9 +109,9 @@
 			<top>$PARAM[top]</top>
 			<width>100</width>
 			<height>100</height>
-			<aspectratio>keep</aspectratio>
-            <!-- <texture>special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+			<!-- <texture>special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 			<texture>$INFO[ListItem.Property(platform),special://home/addons/plugin.program.advanced.emulator.launcher/media/p_pixel/,.png]</texture>
+			<aspectratio>keep</aspectratio>
 		</control>
 	</include>
 
