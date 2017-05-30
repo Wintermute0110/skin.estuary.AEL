@@ -70,33 +70,6 @@
 			</control>
 		</control>
 	</include>
-	<include name="AEL_Matrix_Image_DEBUG">
-		<control type="group">
-			<left>$PARAM[left]</left>
-			<top>$PARAM[top]</top>
-			<control type="image">
-				<width>240</width>
-				<height>220</height>
-				<texture border="0">special://skin/extras/backgrounds/pattern4.jpg</texture>
-			</control>
-			<control type="label">
-				<width>240</width>
-				<height>25</height>
-				<label>$PARAM[asset_label]</label>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>font10</font>
-				<textcolor>white</textcolor>
-			</control>
-			<control type="image">
-				<top>30</top>
-				<width>240</width>
-				<height>190</height>
-				<fadetime>200</fadetime>
-				<texture background="true">special://skin/extras/backgrounds/pattern0.jpg</texture>
-			</control>
-		</control>
-	</include>
 
 	<include name="AEL_Matrix_Text">
 		<control type="group">
@@ -124,32 +97,6 @@
 			</control>
 		</control>
 	</include>
-	<include name="AEL_Matrix_Text_DEBUG">
-		<control type="group">
-			<left>$PARAM[left]</left>
-			<top>$PARAM[top]</top>
-			<control type="label">
-				<width>150</width>
-				<height>25</height>
-				<label>Test label</label>
-				<align>right</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>blue</textcolor>
-			</control>
-			<control type="fadelabel">
-				<left>160</left>
-				<width>350</width>
-				<height>25</height>
-				<label fallback="Not set">Lorem ipsum sore dolot</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<scrollout>false</scrollout>
-				<pauseatend>1000</pauseatend>
-			</control>
-		</control>
-	</include>
 
 	<!-- Platform icon ========================================================================= -->
 	<include name="AEL_Platform_Icon">
@@ -159,16 +106,8 @@
 			<width>100</width>
 			<height>100</height>
 			<aspectratio>keep</aspectratio>
+            <!-- <texture>special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 			<texture>$INFO[ListItem.Property(platform),special://home/addons/plugin.program.advanced.emulator.launcher/media/p_pixel/,.png]</texture>
-		</control>
-	</include>
-	<include name="AEL_Platform_Icon_DEBUG">
-		<control type="image">
-			<left>$PARAM[left]</left>
-			<top>$PARAM[top]</top>
-			<width>100</width>
-			<height>100</height>
-			<texture>special://skin/extras/backgrounds/pattern4.jpg</texture>
 		</control>
 	</include>
 
@@ -302,158 +241,6 @@
 				<param name="visible" value="!String.IsEmpty(ListItem.VideoResolution)" />
 			</include>
 			-->
-		</control>
-	</include>
-
-	<!-- Old Media flags =========================================================================== -->
-	<!-- Estuary flags defined in <include name="MediaFlag"> in Includes.xml
-		 Original flag size is 115x60, image size is 270x120 
-		 Old flags to be used in the view includes as xxx
-	-->
-	<!-- Usage
-				<include content="AEL_Flags">
-					<param name="left" value="460" />
-					<param name="top" value="1020" />
-				</include>
-	-->
-	<include name="AEL_Flags">
-		<control type="group">
-			<left>$PARAM[left]</left>
-			<top>$PARAM[top]</top>
-
-			<!-- Favourite -->
-			<control type="image">
-				<left>0</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_InFav_True.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_InFav),InFav_True)</visible>
-			</control>
-
-			<!-- Multidisc -->
-			<control type="image">
-				<left>150</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_Multidisc_True.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_MultiDisc),MultiDisc_True)</visible>
-			</control>
-
-			<!-- Fav status -->
-			<control type="image">
-				<left>300</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_Fav_OK.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_OK)</visible>
-			</control>
-			<control type="image">
-				<left>300</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_Fav_UnlinkedROM.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_UnlinkedROM)</visible>
-			</control>
-			<control type="image">
-				<left>300</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_Fav_UnlinkedLauncher.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_UnlinkedLauncher)</visible>
-			</control>
-			<control type="image">
-				<left>300</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_Fav_Broken.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_Fav_stat),Fav_Broken)</visible>
-			</control>
-
-			<!-- No-Intro status -->
-			<control type="image">
-				<left>450</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_NoIntro_Have.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Have)</visible>
-			</control>
-			<control type="image">
-				<left>450</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_NoIntro_Miss.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Miss)</visible>
-			</control>
-			<control type="image">
-				<left>450</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_NoIntro_Unknown.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Unknown)</visible>
-			</control>
-
-			<!-- Parent/Clone -->
-			<control type="image">
-				<left>600</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_PClone_Parent.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_PClone_stat),PClone_Parent)</visible>
-			</control>
-			<control type="image">
-				<left>600</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://home/addons/plugin.program.advanced.emulator.launcher/media/flags/Estuary_PClone_Clone.png</texture>
-				<visible>String.IsEqual(ListItem.Property(AEL_PClone_stat),PClone_Clone)</visible>
-			</control>
-		</control>
-	</include>
-
-	<include name="AEL_Flags_DEBUG">
-		<control type="group">
-			<left>$PARAM[left]</left>
-			<top>$PARAM[top]</top>
-
-			<!-- Favourite -->
-			<control type="image">
-				<left>0</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://skin/media/flags/videoresolution/1080.png</texture>
-			</control>
-
-			<!-- Multidisc -->
-			<control type="image">
-				<left>150</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://skin/media/flags/videoresolution/1080.png</texture>
-			</control>
-
-			<!-- Fav status -->
-			<control type="image">
-				<left>300</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://skin/media/flags/videoresolution/1080.png</texture>
-			</control>
-
-			<!-- No-Intro status -->
-			<control type="image">
-				<left>450</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://skin/media/flags/videoresolution/1080.png</texture>
-			</control>
-
-			<!-- Parent/Clone -->
-			<control type="image">
-				<left>600</left>
-				<width>135</width>
-				<height>60</height>
-				<texture>special://skin/media/flags/videoresolution/1080.png</texture>
-			</control>
 		</control>
 	</include>
 </includes>
