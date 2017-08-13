@@ -152,11 +152,9 @@
 
 				<!-- Matrix of images ---------------------------------------------------------- -->
 				<!-- First row -->
-				<include content="AEL_Matrix_Image">
+				<include content="AEL_Matrix_Image_Title_or_Controller">
 					<param name="left" value="70" />
 					<param name="top" value="80" />
-					<param name="asset_label" value="Title" />
-					<param name="asset_image" value="$INFO[ListItem.Art(title)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
 					<param name="left" value="360" />
