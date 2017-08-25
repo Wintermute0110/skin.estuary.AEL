@@ -282,4 +282,275 @@
 			-->
 		</control>
 	</include>
+
+	<!-- Include used in MyPrograms.xml Modded to never play videos on the background -->
+	<!-- Original code was in Includes.xml -->
+	<include name="DefaultBackground_AEL">
+		<definition>
+			<!--
+			<control type="videowindow">
+				<depth>DepthBackground</depth>
+				<include>FullScreenDimensions</include>
+				<visible>Player.HasVideo</visible>
+				<visible>!Slideshow.IsActive</visible>
+			</control>
+			-->
+			<control type="visualisation">
+				<include>FullScreenDimensions</include>
+				<visible>!Slideshow.IsActive</visible>
+				<visible>Player.HasAudio + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia)) + Visualisation.Enabled</visible>
+			</control>
+			<control type="group">
+				<include>FullScreenDimensions</include>
+				<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+				<control type="group">
+					<animation effect="fade" start="100" end="bg_alpha" time="0" condition="!Control.IsVisible(31111)">Conditional</animation>
+					<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(startup)">WindowOpen</animation>
+					<include>ColoredBackgroundImages</include>
+				</control>
+				<control type="group" id="31111">
+					<!--
+					<visible>![Player.HasVideo | [Player.HasAudio + Visualisation.Enabled + !String.IsEmpty(Visualisation.Name)]] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+					-->
+					<visible>![[Player.HasAudio + Visualisation.Enabled + !String.IsEmpty(Visualisation.Name)]] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+					<depth>DepthBackground</depth>
+					<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+					<animation effect="fade" time="400">VisibleChange</animation>
+					<control type="image" id="32111">
+						<include>FullScreenDimensions</include>
+						<aspectratio>scale</aspectratio>
+						<fadetime>400</fadetime>
+						<animation effect="fade" time="400">VisibleChange</animation>
+						<texture background="true" colordiffuse="37FFFFFF">$VAR[MediaFanartVar]</texture>
+						<visible>!Control.IsVisible(502) | $EXP[infodialog_active]</visible>
+					</control>
+					<control type="image">
+						<left>-3</left>
+						<top>0</top>
+						<right>1193</right>
+						<height>100%</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<fadetime>400</fadetime>
+						<include>OpenClose_Left</include>
+						<animation effect="fade" time="400">VisibleChange</animation>
+						<texture background="true" colordiffuse="37FFFFFF">$VAR[PosterVar]</texture>
+						<visible>!Control.IsVisible(32111)</visible>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+
+	<!-- Include used in MyPrograms.xml Modded to prevent a bar on the top to show when playing video -->
+	<!-- Original code was in Includes.xml -->
+	<include name="TopBar_AEL">
+		<param name="sublabel">$INFO[Container.SortMethod,$LOCALIZE[31022]: ,  ∙  ]$INFO[Container.CurrentItem,, / ]$INFO[Container.NumItems]</param>
+		<definition>
+			<control type="group">
+				<animation effect="slide" end="0,-112" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+				<depth>DepthBars</depth>
+				<animation effect="fade" start="0" end="100" time="300" condition="[Window.Previous(fullscreenvideo) | Window.Previous(startup)] + !Window.IsVisible(1109)">WindowOpen</animation>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>110%</width>
+					<height>130</height>
+					<texture>frame/InfoBar.png</texture>
+					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
+				</control>
+				<control type="grouplist">
+					<left>35</left>
+					<description>Left side of top bar</description>
+					<width>900</width>
+					<top>-7</top>
+					<height>100</height>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+					<animation effect="slide" end="0,10" time="200" reversible="true" condition="String.IsEmpty(Control.GetLabel(18900))">Conditional</animation>
+					<control type="label">
+						<label>$PARAM[breadcrumbs_label]</label>
+						<include>BreadcrumbsLabel</include>
+					</control>
+					<control type="label">
+						<label>$INFO[Container.ShowTitle, / ]</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>!String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
+					</control>
+					<control type="label">
+						<label>$INFO[Container.FolderName, / ]</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>![Container.Content() + Window.IsActive(videos)]</visible>
+						<visible>![Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml)]</visible>
+					</control>
+					<control type="label">
+						<label>$INFO[Container.PluginCategory, / ]</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>!String.isempty(Container.PluginCategory)</visible>
+					</control>
+					<control type="label">
+						<label>$INFO[Control.GetLabel(10),: ]</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<label>($LOCALIZE[31052])</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>Container.Filtered</visible>
+					</control>
+				</control>
+				<control type="button">
+					<top>0</top>
+					<width>200</width>
+					<height>100</height>
+					<label></label>
+					<onclick>Action(Back)</onclick>
+					<texturefocus />
+					<texturenofocus />
+				</control>
+				<control type="label" id="18900">
+					<top>50</top>
+					<label>$PARAM[sublabel]</label>
+					<left>35</left>
+					<shadowcolor>text_shadow</shadowcolor>
+					<height>100</height>
+					<width>900</width>
+					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+				</control>
+				<control type="grouplist">
+					<top>0</top>
+					<align>right</align>
+					<right>20</right>
+					<height>200</height>
+					<orientation>horizontal</orientation>
+					<width>900</width>
+					<itemgap>10</itemgap>
+					<visible>!Window.IsVisible(extendedprogressdialog)</visible>
+					<animation effect="fade" time="150">VisibleChange</animation>
+					<!--
+					<control type="group">
+						<width>600</width>
+						<visible>Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+						<animation effect="fade" time="200">VisibleChange</animation>
+						<control type="grouplist">
+							<left>-75</left>
+							<orientation>horizontal</orientation>
+							<height>38</height>
+							<top>14</top>
+							<align>right</align>
+							<width>660</width>
+							<itemgap>5</itemgap>
+							<usecontrolcoords>true</usecontrolcoords>
+							<control type="image">
+								<top>4</top>
+								<width>32</width>
+								<height>32</height>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="button_focus">$VAR[NowPlayingIconVar]</texture>
+							</control>
+							<control type="label">
+								<label>$INFO[Player.Title]</label>
+								<font>font27</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<height>35</height>
+								<width min="1" max="602">auto</width>
+							</control>
+						</control>
+						<control type="label" id="7700">
+							<label>$VAR[NowPlayingSublabelVar]</label>
+							<left>-45</left>
+							<top>44</top>
+							<font>font12</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>text_shadow</shadowcolor>
+							<height>25</height>
+							<width>630</width>
+							<align>right</align>
+						</control>
+					</control>
+					-->
+					<control type="label">
+						<font>font_clock</font>
+						<shadowcolor>text_shadow</shadowcolor>
+						<height>200</height>
+						<width>auto</width>
+						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
+						<label>$INFO[System.Time]</label>
+					</control>
+				</control>
+				<control type="grouplist">
+					<right>10</right>
+					<top>70</top>
+					<width>800</width>
+					<height>100</height>
+					<align>right</align>
+					<itemgap>5</itemgap>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="label">
+						<height>50</height>
+						<width>auto</width>
+						<aligny>center</aligny>
+						<textoffsetx>-8</textoffsetx>
+						<label>$INFO[System.AlarmPos]</label>
+						<visible>System.HasAlarm(shutdowntimer)</visible>
+					</control>
+					<control type="image">
+						<top>16</top>
+						<width>40</width>
+						<height>22</height>
+						<fadetime>300</fadetime>
+						<aspectratio aligny="center" align="left">keep</aspectratio>
+						<texture>icons/power.png</texture>
+						<visible>System.HasAlarm(shutdowntimer)</visible>
+					</control>
+					<control type="label">
+						<height>50</height>
+						<width>auto</width>
+						<aligny>center</aligny>
+						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]</label>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+					</control>
+					<control type="image">
+						<top>1</top>
+						<width>50</width>
+						<height>50</height>
+						<fadetime>300</fadetime>
+						<aspectratio aligny="center" align="left">keep</aspectratio>
+						<texture>$INFO[Weather.FanartCode,weather/small/,.png]</texture>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+					</control>
+					<control type="image">
+						<top>8</top>
+						<left>-20</left>
+						<width>74</width>
+						<height>40</height>
+						<fadetime>300</fadetime>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<texture>dialogs/volume/mute.png</texture>
+						<visible>Player.Muted</visible>
+					</control>
+				</control>
+				<control type="label" id="23000">
+					<top>0</top>
+					<left>0</left>
+					<label>$INFO[ListItem.SortLetter]</label>
+					<font>font_MainMenu</font>
+					<width>100%</width>
+					<height>80</height>
+					<align>center</align>
+					<visible>!System.HasModalDialog</visible>
+					<visible>Container.Scrolling</visible>
+					<visible>!Container.Content(seasons)</visible>
+					<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[563])</visible>
+					<animation effect="fade" start="0" end="100" time="200" reversible="true">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+				</control>
+			</control>
+		</definition>
+	</include>
 </includes>

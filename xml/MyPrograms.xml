@@ -6,7 +6,7 @@
 	<views>50,52,55,500,950,951,952,953,954,955,956</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
-		<include>DefaultBackground</include>
+		<include>DefaultBackground_AEL</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<include>View_50_List</include>
@@ -29,14 +29,14 @@
 				<visible>Control.IsVisible(55)</visible>
 				<include>ListThumbInfoPanel</include>
 			</control>
-			<include content="TopBar">
+			<include content="TopBar_AEL">
 				<param name="breadcrumbs_label" value="$LOCALIZE[10001]" />
 			</include>
 			<include content="BottomBar">
 				<param name="info_visible" value="true" />
 			</include>
 
-			<!-- Media flags on the bottom left corner. Taken from MyVideoNav.xml because
+			<!-- Media flags on the bottom left corner. Code taken from MyVideoNav.xml because
 				 Estuary MyPrograms.xml window has not media flags.
 				 Flags should be here so they will be on top of the lower black shadow.
 			-->
