@@ -712,6 +712,131 @@
 						<param name="button2_onclick" value="EjectTray()"/>
 					</include>
 				</control>
+
+				<!-- Wintermute0110 mod -->
+				<control type="group" id="22000">
+					<!-- Container(9000) is the home menu fixedlist defined a few lines below -->
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),ael)</visible>
+					<include content="Visible_Right_Delayed">
+						<param name="id" value="ael"/>
+					</include>
+					<control type="grouplist" id="22001">
+						<include>WidgetGroupListCommon</include>
+
+						<!--
+						<include content="WidgetListCategoriesIcons">
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
+							<param name="list_id" value="22100"/>
+							<param name="widget_target" value="programs"/>
+							<param name="game_submenu" value="true"/>
+						</include>
+						-->
+
+						<!-- Categories -->
+						<include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_CATEGORIES"/>
+							<param name="widget_header" value="Categories"/>
+							<param name="widget_target" value="programs"/>
+							<param name="sortby" value="title"/>
+							<param name="sortorder" value="ascending"/>
+							<param name="list_id" value="22200"/>
+							<param name="fallback_icon" value="DefaultGames.png"/>
+						</include>
+
+						<!-- Launchers -->
+						<include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_LAUNCHERS"/>
+							<param name="widget_header" value="Launchers"/>
+							<param name="widget_target" value="programs"/>
+							<param name="sortby" value="title"/>
+							<param name="sortorder" value="ascending"/>
+							<param name="list_id" value="22300"/>
+							<param name="fallback_icon" value="DefaultGames.png"/>
+						</include>
+
+						<!-- Collections -->
+						<include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_COLLECTIONS"/>
+							<param name="widget_header" value="ROM Collections"/>
+							<param name="widget_target" value="programs"/>
+							<param name="sortby" value="title"/>
+							<param name="sortorder" value="ascending"/>
+							<param name="list_id" value="22400"/>
+							<param name="fallback_icon" value="DefaultGames.png"/>
+						</include>
+
+						<!-- Favourites -->
+						<!-- If ROMs are shown on widgets Kodi complains a lot in the log
+							 ERROR: InputStream
+							 WARNING: XFILE::CFileFactory::CreateLoader
+						-->
+						<!--
+						<include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_FAVOURITES"/>
+							<param name="widget_header" value="Favourite ROMs"/>
+							<param name="widget_target" value="programs"/>
+							<param name="sortby" value="title"/>
+							<param name="sortorder" value="ascending"/>
+							<param name="list_id" value="22500"/>
+							<param name="fallback_icon" value="DefaultGames.png"/>
+						</include>
+						-->
+
+						<!-- Recently played -->
+						<!--
+						<include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_RECENTLY_PLAYED"/>
+							<param name="widget_header" value="Recently played games"/>
+							<param name="widget_target" value="programs"/>
+							<param name="sortby" value="title"/>
+							<param name="sortorder" value="ascending"/>
+							<param name="list_id" value="22600"/>
+							<param name="fallback_icon" value="DefaultGames.png"/>
+						</include>
+						-->
+
+						<!-- Most played -->
+						<!--
+						<include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_MOST_PLAYED"/>
+							<param name="widget_header" value="Most played games"/>
+							<param name="widget_target" value="programs"/>
+							<param name="sortby" value="title"/>
+							<param name="sortorder" value="ascending"/>
+							<param name="list_id" value="22700"/>
+							<param name="fallback_icon" value="DefaultGames.png"/>
+						</include>
+						-->
+					</control>
+				</control>
+
+				<!--
+				<control type="group" id="23000">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),aml)</visible>
+					<include content="Visible_Right_Delayed">
+						<param name="id" value="aml"/>
+					</include>
+					<control type="grouplist" id="23001">
+						<include>WidgetGroupListCommon</include>
+
+						<include content="WidgetListCategoriesIcons">
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
+							<param name="list_id" value="27100"/>
+							<param name="widget_target" value="programs"/>
+							<param name="game_submenu" value="true"/>
+						</include>
+
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.program.advanced.MAME.launcher/"/>
+							<param name="widget_header" value="AML main menu"/>
+							<param name="widget_target" value="programs"/>
+							<param name="sortby" value="random"/>
+							<param name="list_id" value="23100"/>
+						</include>
+					</control>
+				</control>
+				-->
+
 			</control>
 			<control type="group">
 				<depth>DepthContentPanel</depth>
@@ -855,6 +980,27 @@
 							<property name="id">radio</property>
 							<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
 						</item>
+
+						<!-- Wintermute0110 MOD -->
+						<item>
+							<label>AEL</label>
+							<property name="menu_id">$NUMBER[22000]</property>
+							<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.advanced.emulator.launcher/&quot;,return)</onclick>
+							<thumb>games.png</thumb>
+							<property name="id">ael</property>
+							<!-- <visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible> -->
+						</item>
+						<!--
+						<item>
+							<label>AML</label>
+							<property name="menu_id">$NUMBER[22100]</property>
+							<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.advanced.MAME.launcher/&quot;,return)</onclick>
+							<thumb>games.png</thumb>
+							<property name="id">aml</property>
+							<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
+						</item>
+						-->
+
 						<item>
 							<label>$LOCALIZE[24001]</label>
 							<property name="menu_id">$NUMBER[8000]</property>
