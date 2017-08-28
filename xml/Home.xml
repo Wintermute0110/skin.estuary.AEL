@@ -737,7 +737,7 @@
 							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_CATEGORIES"/>
 							<param name="widget_header" value="Categories"/>
 							<param name="widget_target" value="programs"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="random"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="22200"/>
 							<param name="fallback_icon" value="DefaultGames.png"/>
@@ -748,7 +748,7 @@
 							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_LAUNCHERS"/>
 							<param name="widget_header" value="Launchers"/>
 							<param name="widget_target" value="programs"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="random"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="22300"/>
 							<param name="fallback_icon" value="DefaultGames.png"/>
@@ -759,7 +759,7 @@
 							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_COLLECTIONS"/>
 							<param name="widget_header" value="ROM Collections"/>
 							<param name="widget_target" value="programs"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="random"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="22400"/>
 							<param name="fallback_icon" value="DefaultGames.png"/>
