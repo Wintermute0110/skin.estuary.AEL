@@ -553,4 +553,30 @@
 			</control>
 		</definition>
 	</include>
+	
+	<!-- Original code from <include name="ImageWidget"> in Includes_Home.xml -->
+	<include name="AEL_Text_Widget">
+		<param name="visible">true</param>
+		<definition>
+			<control type="group" id="$PARAM[widget_id]889">
+				<visible>$PARAM[visible]</visible>
+				<control type="grouplist" id="$PARAM[widget_id]577">
+					<orientation>vertical</orientation>
+					<top>0</top>
+					<bottom>0</bottom>
+					<left>50</left>
+					<right>50</right>
+					<align>center</align>
+					<control type="textbox">
+						<width>100%</width>
+						<height min="0" max="300">auto</height>
+						<label>$PARAM[text_label]</label>
+						<align>center</align>
+						<font>font14</font>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+
 </includes>

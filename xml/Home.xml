@@ -755,6 +755,11 @@
 						</include>
 
 						<!-- Collections -->
+						<!-- Need to code a new command SHOW_ALL_COLLECTIONS that doesn't warn user if collections are empty,
+						     or even better, crete a set of commands
+							 SKIN_SHOW_ALL_LAUNCHERS, SKIN_SHOW_ALL_COLLECTIONS, SKIN_SHOW_ALL_CATEGORIES
+						-->
+						<!--
 						<include content="WidgetListSquare">
 							<param name="content_path" value="plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_COLLECTIONS"/>
 							<param name="widget_header" value="ROM Collections"/>
@@ -764,6 +769,7 @@
 							<param name="list_id" value="22400"/>
 							<param name="fallback_icon" value="DefaultGames.png"/>
 						</include>
+						-->
 
 						<!-- Favourites -->
 						<!-- If ROMs are shown on widgets Kodi complains a lot in the log
@@ -808,6 +814,23 @@
 						</include>
 						-->
 					</control>
+
+					<!-- If there are no Categories, Launchers or ROM Collections render some text -->
+					<!--
+						This code is from <include name="WidgetListSquare">
+						<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+					-->
+					<include content="AEL_Text_Widget">
+						<param name="visible" value="Integer.IsEqual(Container(22200).NumItems,0) + Integer.IsEqual(Container(22300).NumItems,0)"/>
+						<param name="widget_id" value="22100"/>
+						<param name="text_label" value="Advanced Emulator Launcher Categories and Launchers are empty. Nothing to show." />
+					</include>
+
+					<!-- If AEL is not installed render some text -->
+					<include content="AEL_Text_Widget" condition="!System.HasAddon(plugin.program.advanced.emulator.launcher)">
+						<param name="widget_id" value="22100"/>
+						<param name="text_label" value="Advanced Emulator Launcher is not installed. Nothing to show." />
+					</include>
 				</control>
 
 				<!--
