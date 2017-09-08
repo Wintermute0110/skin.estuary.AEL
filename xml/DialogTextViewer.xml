@@ -19,7 +19,7 @@
 				<left>1%</left>
 				<top>85</top>
 				<width>93%</width>
-				<height>890</height>
+				<height>900</height>
 				<shadowcolor>black</shadowcolor>
 				<pagecontrol>3000</pagecontrol>
 				<!-- Aparently variables don't work on <font> tag. I have to ask about this in
