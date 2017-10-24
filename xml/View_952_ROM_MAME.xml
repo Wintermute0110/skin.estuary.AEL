@@ -95,6 +95,21 @@
 						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
+					<!-- Trailer Trigger -->
+					<control type="button">
+						<left>0</left>
+						<top>0</top>
+						<width>1</width>
+						<height>1</height>
+						<onload condition="!IsEmpty(ListItem.Trailer)">PlayerControl(Repeat)</onload>
+						<onfocus condition="!IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.trailer],1)</onfocus>
+						<onunfocus condition="Player.HasVideo">PlayerControl(Stop)</onunfocus>
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<animation type="Focus">
+							<effect type="fade" delay="250" start="0" end="100" />
+						</animation>
+					</control>
 				</focusedlayout>
 
 				<itemlayout height="list_item_height" width="list_width">
@@ -340,6 +355,13 @@
 					<texture background="true">$INFO[ListItem.Art(snap)]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
+                <control type="videowindow">
+					<left>890</left>
+                    <top>760</top>
+                    <width>300</width>
+                    <height>230</height>
+                    <visible>Player.Playing + !IsEmpty(ListItem.Trailer)</visible>
+                </control>
 
 				<!-- Flags ===================================================================== -->
 				<!-- Included in MyPrograms.xml -->
