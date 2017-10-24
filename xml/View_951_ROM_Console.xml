@@ -324,7 +324,9 @@
 				</control>
 
 				<!-- Snap -->
+				<!-- If available play trailer instead of Snap -->
 				<control type="image">
+					<visible>IsEmpty(ListItem.Trailer)</visible>
 					<left>890</left>
 					<top>760</top>
 					<width>300</width>
@@ -333,13 +335,13 @@
 					<texture background="true">$INFO[ListItem.Art(snap)]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
-                <control type="videowindow">
+				<control type="videowindow">
+					<visible>Player.Playing + !IsEmpty(ListItem.Trailer)</visible>
 					<left>890</left>
-                    <top>760</top>
-                    <width>300</width>
-                    <height>230</height>
-                    <visible>Player.Playing + !IsEmpty(ListItem.Trailer)</visible>
-                </control>
+					<top>760</top>
+					<width>300</width>
+					<height>230</height>
+				</control>
 
 				<!-- Flags ===================================================================== -->
 				<!-- Included in MyPrograms.xml -->

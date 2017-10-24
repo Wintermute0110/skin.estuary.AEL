@@ -226,8 +226,10 @@
 
 				<!-- Console: Snap , if not present Cartridge/PCB
 					 MAME: Snap, if not present Cartridge/PCB
+					 If available play trailer instead of Snap
 				-->
 				<control type="image">
+					<visible>IsEmpty(ListItem.Trailer)</visible>
 					<left>630</left>
 					<top>90</top>
 					<width>560</width>
@@ -236,13 +238,13 @@
 					<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
-                <control type="videowindow">
+				<control type="videowindow">
+					<visible>Player.Playing + !IsEmpty(ListItem.Trailer)</visible>
 					<left>630</left>
-                    <top>90</top>
-                    <width>560</width>
-                    <height>520</height>
-                    <visible>Player.Playing + !IsEmpty(ListItem.Trailer)</visible>
-                </control>
+					<top>90</top>
+					<width>560</width>
+					<height>520</height>
+				</control>
 
 				<!-- Metadata ================================================================== -->
 				<control type="group">
