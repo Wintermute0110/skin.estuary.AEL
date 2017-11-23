@@ -6,13 +6,16 @@
 			<depth>DepthMax</depth>
 			<top>85</top>
 			<right>0</right>
-			<width>640</width>
-			<include>OpenClose_Right</include>
+			<width>840</width>
+			<!-- <include>OpenClose_Right</include> -->
+			<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
+			<include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Right</include>
+			<!-- <include> ends -->
 			<visible>String.IsEmpty(Window(Home).Property(script.cinemavision.running))</visible>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
-				<width>640</width>
+				<width>840</width>
 				<height>160</height>
 				<texture>dialogs/dialog-bg-nobo.png</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
@@ -30,7 +33,7 @@
 				<description>Line 1 Label</description>
 				<left>150</left>
 				<top>40</top>
-				<width>450</width>
+				<width>650</width>
 				<height>18</height>
 				<font>font37</font>
 				<aligny>center</aligny>
@@ -41,7 +44,7 @@
 				<description>Line 2 Label</description>
 				<left>151</left>
 				<top>68</top>
-				<width>450</width>
+				<width>650</width>
 				<height>60</height>
 				<font>font27_narrow</font>
 				<aligny>center</aligny>
