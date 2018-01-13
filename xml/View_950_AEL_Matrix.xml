@@ -257,7 +257,7 @@
 
 				<!-- Metadata ------------------------------------------------------------------ -->
 				<!-- Infolabels -->
-				<!-- Year, Genre, Studio, NPlayers, ESRB, Rating, Platform -->
+				<!-- Year, Genre, Developer, NPlayers, ESRB, Rating, Platform -->
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="70" />
 					<param name="top" value="770" />
@@ -273,7 +273,7 @@
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="70" />
 					<param name="top" value="830" />
-					<param name="text_label" value="Studio" />
+					<param name="text_label" value="Developer" />
 					<param name="text" value="$INFO[ListItem.Studio]" />
 				</include>
 				<include content="AEL_Matrix_Text">

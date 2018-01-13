@@ -186,7 +186,7 @@
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="0" />
 					<param name="top" value="30" />
-					<param name="text_label" value="Studio" />
+					<param name="text_label" value="Developer" />
 					<param name="text" value="$INFO[ListItem.Studio]" />
 				</include>
 				<include content="AEL_Matrix_Text">
