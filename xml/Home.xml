@@ -714,6 +714,7 @@
 				</control>
 
 				<!-- Wintermute0110 mod -->
+				<!-- Advanced Emulator Launcher link in Home main menu -->
 				<control type="group" id="22000">
 					<!-- Container(9000) is the home menu fixedlist defined a few lines below -->
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),ael)</visible>
@@ -833,8 +834,9 @@
 					</include>
 				</control>
 
-				<!--
+				<!-- Advanced MAME Launcher link in Home main menu -->
 				<control type="group" id="23000">
+					<!-- Container(9000) is the home menu fixedlist defined a few lines below -->
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),aml)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="aml"/>
@@ -842,25 +844,39 @@
 					<control type="grouplist" id="23001">
 						<include>WidgetGroupListCommon</include>
 
-						<include content="WidgetListCategoriesIcons">
+						<!-- Custom built set of categories for AML:
+						     Main filters: A, B, C, ...
+							 Binary filters: A, B, C, ...
+						-->
+						<!--
+						<include content="WidgetListCategories">
+							<param name="content_path" value="plugin://plugin.program.advanced.MAME.launcher/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
-							<param name="list_id" value="27100"/>
 							<param name="widget_target" value="programs"/>
-							<param name="game_submenu" value="true"/>
+							<param name="list_id" value="23100"/>
 						</include>
+						-->
 
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.program.advanced.MAME.launcher/"/>
 							<param name="widget_header" value="AML main menu"/>
 							<param name="widget_target" value="programs"/>
-							<param name="sortby" value="random"/>
-							<param name="list_id" value="23100"/>
+							<!-- <param name="sortby" value="random"/> -->
+							<param name="list_id" value="23200"/>
 						</include>
 					</control>
-				</control>
-				-->
 
+					<!-- If AML is not installed render some text -->
+					<!-- For some reason this not work. AML is installed by warning text is displayed ... -->
+					<!--
+					<include content="AEL_Text_Widget" condition="!System.HasAddon(plugin.program.advanced.MAME.launcher)">
+						<param name="widget_id" value="23900"/>
+						<param name="text_label" value="Advanced MAME Launcher is not installed. Nothing to show." />
+					</include>
+					-->
+				</control>
 			</control>
+
 			<control type="group">
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
@@ -1005,24 +1021,25 @@
 						</item>
 
 						<!-- Wintermute0110 MOD -->
+						<!-- Main menu entry for Advanced Emulator Launcher -->
 						<item>
 							<label>AEL</label>
 							<property name="menu_id">$NUMBER[22000]</property>
 							<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.advanced.emulator.launcher/&quot;,return)</onclick>
 							<thumb>games.png</thumb>
 							<property name="id">ael</property>
-							<!-- <visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible> -->
+							<!-- <visible>!Skin.HasSetting(HomeMenuNoAELButton)</visible> -->
 						</item>
-						<!--
+						<!-- Main menu entry for Advanced MAME Launcher -->
 						<item>
 							<label>AML</label>
-							<property name="menu_id">$NUMBER[22100]</property>
+							<property name="menu_id">$NUMBER[23000]</property>
 							<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.advanced.MAME.launcher/&quot;,return)</onclick>
 							<thumb>games.png</thumb>
 							<property name="id">aml</property>
-							<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
+							<!-- <visible>!Skin.HasSetting(HomeMenuNoAMLButton)</visible> -->
 						</item>
-						-->
+						<!-- Main menu entry for Advanced Doom Launcher -->
 
 						<item>
 							<label>$LOCALIZE[24001]</label>
