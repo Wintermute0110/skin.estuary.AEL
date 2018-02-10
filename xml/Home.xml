@@ -904,7 +904,22 @@
 				</control>
 
 				<!-- Advanced DOOM Launcher link in Home main menu -->
-				
+				<control type="group" id="24000">
+					<!-- Container(9000) is the home menu fixedlist defined a few lines below -->
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),aml)</visible>
+					<include content="Visible_Right_Delayed">
+						<param name="id" value="adl"/>
+					</include>
+					<control type="grouplist" id="24001">
+						<include>WidgetGroupListCommon</include>
+					</control>
+
+					<!-- If ADL is not installed render some text -->
+					<include content="AEL_Text_Widget" condition="!System.HasAddon(plugin.program.ADL)">
+						<param name="widget_id" value="24900"/>
+						<param name="text_label" value="Advanced DOOM Launcher is not installed. Nothing to show." />
+					</include>
+				</control>
 			</control>
 
 			<control type="group">
@@ -1058,7 +1073,7 @@
 							<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.advanced.emulator.launcher/&quot;,return)</onclick>
 							<thumb>games.png</thumb>
 							<property name="id">ael</property>
-							<!-- <visible>!Skin.HasSetting(HomeMenuNoAELButton)</visible> -->
+							<visible>!Skin.HasSetting(HomeMenuNoAELButton)</visible>
 						</item>
 						<!-- Main menu entry for Advanced MAME Launcher -->
 						<item>
@@ -1067,9 +1082,17 @@
 							<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.AML/&quot;,return)</onclick>
 							<thumb>games.png</thumb>
 							<property name="id">aml</property>
-							<!-- <visible>!Skin.HasSetting(HomeMenuNoAMLButton)</visible> -->
+							<visible>!Skin.HasSetting(HomeMenuNoAMLButton)</visible>
 						</item>
 						<!-- Main menu entry for Advanced Doom Launcher -->
+						<item>
+							<label>ADL</label>
+							<property name="menu_id">$NUMBER[24000]</property>
+							<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.ADL/&quot;,return)</onclick>
+							<thumb>games.png</thumb>
+							<property name="id">adl</property>
+							<visible>!Skin.HasSetting(HomeMenuNoADLButton)</visible>
+						</item>
 
 						<item>
 							<label>$LOCALIZE[24001]</label>
