@@ -183,6 +183,29 @@
 					<selected>!Skin.HasSetting(HomeMenuNoRadioButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoRadioButton)</onclick>
 				</control>
+
+				<!-- Wintermute0110 MOD BEGIN -->
+				<!-- Boolean variables to enable AEL/AML/ADL entries in Home menu -->
+				<control type="radiobutton" id="6190">
+					<label>Advanced Emulator Launcher</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoAELButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoAELButton)</onclick>
+				</control>
+				<control type="radiobutton" id="6191">
+					<label>Advanced MAME Launcher</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoAMLButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoAMLButton)</onclick>
+				</control>
+				<control type="radiobutton" id="6192">
+					<label>Advanced DOOM Launcher</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoADLButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoADLButton)</onclick>
+				</control>
+				<!-- Wintermute0110 MOD END -->
+
 				<control type="radiobutton" id="614">
 					<label>$LOCALIZE[24001]</label>
 					<include>DefaultSettingButton</include>
@@ -214,6 +237,32 @@
 					<onclick>Skin.ToggleSetting(HomeMenuNoWeatherButton)</onclick>
 				</control>
 			</control>
+
+			<!-- Wintermute0110 MOD BEGIN -->
+			<!-- Debug skin menu in "Settings / Skin settings" window -->
+			<!-- Skin.ToggleDebug is a sking function. I think the debugging information
+			     is rendered by Kodi core, not by the skin! -->
+			<control type="grouplist" id="620">
+				<top>160</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>600</onup>
+				<ondown>600</ondown>
+				<!-- HasFocus(4) must have same number as menu entry id -->
+				<visible>Container(9000).HasFocus(4)</visible>
+				<control type="radiobutton" id="605">
+					<label>Debug skin</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(Skin.ToggleDebug)</onclick>
+					<onclick>Skin.ToggleDebug</onclick>
+					<selected>Skin.HasSetting(Skin.ToggleDebug)</selected>
+				</control>
+			<!-- Wintermute0110 MOD END -->
+			</control>
+
 			<control type="image">
 				<description>Dialog Header image</description>
 				<left>0</left>
@@ -287,6 +336,13 @@
 						<label>$LOCALIZE[31159]</label>
 						<onclick>noop</onclick>
 					</item>
+					<!-- Wintermute0110 MOD BEGIN -->
+					<!-- Skin Debug menu entry in settings. Borrowed from Mimic by Braz. -->
+					<item id="4">
+						<label>Debug</label>
+						<onclick>noop</onclick>
+					</item>
+					<!-- Wintermute0110 MOD END -->
 				</content>
 			</control>
 		</control>
