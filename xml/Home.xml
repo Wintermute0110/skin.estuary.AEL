@@ -843,7 +843,6 @@
 					</include>
 					<control type="grouplist" id="23001">
 						<include>WidgetGroupListCommon</include>
-
 						<!-- Custom built set of categories and menus for AML:
 							 Categories (like in Movies): plugin://plugin.program.AML/?command=SKIN_SHOW_FAV_SLOTS
 							 Main filters: plugin://plugin.program.AML/?command=SKIN_SHOW_MAIN_FILTERS
@@ -852,13 +851,13 @@
 							 DAT file browsers: plugin://plugin.program.AML/?command=SKIN_SHOW_DAT_FILES
 							 Software Lists: plugin://plugin.program.AML/?command=SKIN_SHOW_SL_FILTERS
 						-->
-						<!-- WidgetListCategories defined in Includes_Home.xml 
-							 WidgetListPoster defined in Includes_Home.xml
-                             WidgetListPoster param "sortby" values: "random", ...
+						<!-- WidgetListCategories is defined in Includes_Home.xml 
+							 WidgetListPoster is defined in Includes_Home.xml
+							 WidgetListPoster param "sortby" values: "random", ...
 						  -->
 						<include content="WidgetListCategories">
 							<param name="content_path" value="plugin://plugin.program.AML/?command=SKIN_SHOW_FAV_SLOTS"/>
-							<param name="widget_header" value="AML Favourites"/>
+							<param name="widget_header" value="Advanced MAME Launcher Favourites"/>
 							<param name="widget_target" value="programs"/>
 							<param name="list_id" value="23100"/>
 						</include>
@@ -906,7 +905,7 @@
 				<!-- Advanced DOOM Launcher link in Home main menu -->
 				<control type="group" id="24000">
 					<!-- Container(9000) is the home menu fixedlist defined a few lines below -->
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),aml)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),adl)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="adl"/>
 					</include>
@@ -914,7 +913,13 @@
 						<include>WidgetGroupListCommon</include>
 					</control>
 
-					<!-- If ADL is not installed render some text -->
+					<!-- If ADL is installed render some text to help user. -->
+					<include content="AEL_Text_Widget" condition="System.HasAddon(plugin.program.ADL)">
+						<param name="widget_id" value="24900"/>
+						<param name="text_label" value="Press button to access Advanced DOOM Launcher." />
+					</include>
+
+					<!-- If ADL is not installed render some text. -->
 					<include content="AEL_Text_Widget" condition="!System.HasAddon(plugin.program.ADL)">
 						<param name="widget_id" value="24900"/>
 						<param name="text_label" value="Advanced DOOM Launcher is not installed. Nothing to show." />
@@ -1065,7 +1070,7 @@
 							<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
 						</item>
 
-						<!-- Wintermute0110 MOD -->
+						<!-- Wintermute0110 MOD BEGIN -->
 						<!-- Main menu entry for Advanced Emulator Launcher -->
 						<item>
 							<label>AEL</label>
@@ -1093,6 +1098,7 @@
 							<property name="id">adl</property>
 							<visible>!Skin.HasSetting(HomeMenuNoADLButton)</visible>
 						</item>
+						<!-- Wintermute0110 MOD END -->
 
 						<item>
 							<label>$LOCALIZE[24001]</label>
