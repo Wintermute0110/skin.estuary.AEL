@@ -256,31 +256,40 @@
 				</include>
 
 				<!-- Metadata ------------------------------------------------------------------ -->
+				<!-- Platform AEL icon -->
+				<include content="AEL_Platform_Icon">
+					<param name="left" value="35" />
+					<param name="top" value="770" />
+				</include>
+				<!--
+				<control type="image">
+					<left>35</left>
+					<top>770</top>
+					<width>100</width>
+					<height>100</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+
 				<!-- Infolabels -->
-				<!-- Year, Genre, Developer, NPlayers, ESRB, Rating, Platform -->
+				<!-- Year, Genre, Developer, NPlayers, ESRB, Rating -->
 				<include content="AEL_Matrix_Text">
-					<param name="left" value="70" />
+					<param name="left" value="140" />
 					<param name="top" value="770" />
 					<param name="text_label" value="Year" />
 					<param name="text" value="$INFO[ListItem.Year]" />
 				</include>
 				<include content="AEL_Matrix_Text">
-					<param name="left" value="70" />
+					<param name="left" value="140" />
 					<param name="top" value="800" />
 					<param name="text_label" value="Genre" />
 					<param name="text" value="$INFO[ListItem.Genre]" />
 				</include>
 				<include content="AEL_Matrix_Text">
-					<param name="left" value="70" />
+					<param name="left" value="140" />
 					<param name="top" value="830" />
 					<param name="text_label" value="Developer" />
 					<param name="text" value="$INFO[ListItem.Studio]" />
-				</include>
-				<include content="AEL_Matrix_Text">
-					<param name="left" value="70" />
-					<param name="top" value="860" />
-					<param name="text_label" value="NPlayers" />
-					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
 				</include>
 
 				<include content="AEL_Matrix_Text">
@@ -301,23 +310,67 @@
 					<param name="text_label" value="Platform" />
 					<param name="text" value="$INFO[ListItem.Property(platform)]" />
 				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="650" />
+					<param name="top" value="860" />
+					<param name="text_label" value="NPlayers" />
+					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
+				</include>
+
+				<!-- Properties -->
+				<include content="AEL_Properties_Text">
+					<param name="left" value="50" />
+					<param name="top" value="860" />
+					<param name="text_label" value="Win AEL_Content" />
+					<param name="text" value="$INFO[Window(10000).Property(AEL_Content)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="left" value="50" />
+					<param name="top" value="890" />
+					<param name="text_label" value="LI AEL_Content" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_Content)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="left" value="50" />
+					<param name="top" value="920" />
+					<param name="text_label" value="LI AEL_InFav" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_InFav)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="left" value="50" />
+					<param name="top" value="950" />
+					<param name="text_label" value="LI AEL_MultiDisc" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_MultiDisc)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="left" value="50" />
+					<param name="top" value="980" />
+					<param name="text_label" value="LI AEL_Fav_stat" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_Fav_stat)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="left" value="50" />
+					<param name="top" value="1010" />
+					<param name="text_label" value="LI AEL_NoIntro_stat" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_NoIntro_stat)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="left" value="50" />
+					<param name="top" value="1040" />
+					<param name="text_label" value="LI AEL_PClone_stat" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_PClone_stat)]" />
+				</include>
 
 				<!-- Plot -->
 				<control type="textbox">
-					<left>225</left>
-					<width>975</width>
+					<left>650</left>
+					<width>500</width>
 					<top>890</top>
 					<height>130</height>
 					<font>font10</font>
 					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
-
-				<!-- Platform AEL icon -->
-				<include content="AEL_Platform_Icon">
-					<param name="left" value="90" />
-					<param name="top" value="905" />
-				</include>
 
 				<!-- Flags --------------------------------------------------------------------- -->
 				<!-- Included in MyPrograms.xml -->
