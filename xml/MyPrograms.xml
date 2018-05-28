@@ -15,13 +15,14 @@
 			<include>View_500_Wall</include>
 
 			<!-- AEL/AML/ADL custom views -->
-			<include>View_950_AEL_Matrix</include>
+			<include>View_950_Dynamic</include>
 			<include>View_951_ROM_Console</include>
 			<include>View_952_ROM_MAME</include>
 			<include>View_953_ROM_Simple</include>
 			<include>View_954_ROM_Shots</include>
 			<include>View_955_ROM_Launcher</include>
 			<include>View_956_Std_Launcher</include>
+			<include>View_970_AEL_Matrix</include>
 
 			<control type="group">
 				<include>OpenClose_Left</include>
