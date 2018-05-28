@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">52</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<!-- 950 onwards are AEL/AML/ADL custom views -->
-	<views>50,52,55,500,950,951,952,953,954,955,956</views>
+	<views>50,52,55,500,950,951,952,953,954,955,956,970</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
 		<include>DefaultBackground_AEL</include>
