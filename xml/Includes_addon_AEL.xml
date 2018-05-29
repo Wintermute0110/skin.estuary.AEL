@@ -145,57 +145,71 @@
 	</include>
 
 	<include name="AEL_Matrix_Text">
-		<control type="group">
-			<left>$PARAM[left]</left>
-			<top>$PARAM[top]</top>
-			<control type="label">
-				<width>150</width>
-				<height>25</height>
-				<label>$PARAM[text_label]</label>
-				<align>right</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>blue</textcolor>
+		<param name="left" />
+		<param name="top" />
+		<param name="label_colour" default="blue" />
+		<param name="text_label" />
+		<param name="text" />
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<control type="label">
+					<width>150</width>
+					<height>25</height>
+					<label>$PARAM[text_label]</label>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>$PARAM[label_colour]</textcolor>
+				</control>
+				<control type="fadelabel">
+					<left>160</left>
+					<width>350</width>
+					<height>25</height>
+					<label fallback="">$PARAM[text]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<scrollout>false</scrollout>
+					<pauseatend>1000</pauseatend>
+				</control>
 			</control>
-			<control type="fadelabel">
-				<left>160</left>
-				<width>350</width>
-				<height>25</height>
-				<label fallback="">$PARAM[text]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<scrollout>false</scrollout>
-				<pauseatend>1000</pauseatend>
-			</control>
-		</control>
+		</definition>
 	</include>
 
 	<include name="AEL_Properties_Text">
-		<control type="group">
-			<left>$PARAM[left]</left>
-			<top>$PARAM[top]</top>
-			<control type="label">
-				<width>240</width>
-				<height>25</height>
-				<label>$PARAM[text_label]</label>
-				<align>right</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>blue</textcolor>
+		<param name="left" />
+		<param name="top" />
+		<param name="label_colour" default="blue" />
+		<param name="text_label" />
+		<param name="text" />
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<control type="label">
+					<width>240</width>
+					<height>25</height>
+					<label>$PARAM[text_label]</label>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>$PARAM[label_colour]</textcolor>
+				</control>
+				<control type="fadelabel">
+					<left>250</left>
+					<width>350</width>
+					<height>25</height>
+					<label fallback="">$PARAM[text]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<scrollout>false</scrollout>
+					<pauseatend>1000</pauseatend>
+				</control>
 			</control>
-			<control type="fadelabel">
-				<left>250</left>
-				<width>350</width>
-				<height>25</height>
-				<label fallback="">$PARAM[text]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<scrollout>false</scrollout>
-				<pauseatend>1000</pauseatend>
-			</control>
-		</control>
+		</definition>
 	</include>
 
 	<!-- Platform icon ========================================================================= -->

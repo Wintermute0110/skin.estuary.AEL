@@ -326,60 +326,70 @@
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="650" />
 					<param name="top" value="740" />
-					<param name="text_label" value="Platform" />
-					<param name="text" value="$INFO[ListItem.Property(platform)]" />
-				</include>
-				<include content="AEL_Matrix_Text">
-					<param name="left" value="650" />
-					<param name="top" value="770" />
 					<param name="text_label" value="NPlayers" />
 					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
 				</include>
 
+				<include content="AEL_Matrix_Text">
+					<param name="label_colour" value="orange" />
+					<param name="left" value="650" />
+					<param name="top" value="770" />
+					<param name="text_label" value="Platform" />
+					<param name="text" value="$INFO[ListItem.Property(platform)]" />
+				</include>
+
 				<!-- Properties -->
 				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
 					<param name="left" value="50" />
 					<param name="top" value="770" />
 					<param name="text_label" value="Win AEL_Content" />
 					<param name="text" value="$INFO[Window(10000).Property(AEL_Content)]" />
 				</include>
 				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
 					<param name="left" value="50" />
 					<param name="top" value="800" />
 					<param name="text_label" value="LI AEL_Content" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_Content)]" />
 				</include>
 				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
 					<param name="left" value="50" />
 					<param name="top" value="830" />
 					<param name="text_label" value="LI AEL_NumItems" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_NumItems)]" />
 				</include>
 				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
 					<param name="left" value="50" />
 					<param name="top" value="860" />
 					<param name="text_label" value="LI AEL_InFav" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_InFav)]" />
 				</include>
 				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
 					<param name="left" value="50" />
 					<param name="top" value="890" />
 					<param name="text_label" value="LI AEL_MultiDisc" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_MultiDisc)]" />
 				</include>
 				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
 					<param name="left" value="50" />
 					<param name="top" value="920" />
 					<param name="text_label" value="LI AEL_Fav_stat" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_Fav_stat)]" />
 				</include>
 				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
 					<param name="left" value="50" />
 					<param name="top" value="950" />
 					<param name="text_label" value="LI AEL_NoIntro_stat" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_NoIntro_stat)]" />
 				</include>
 				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
 					<param name="left" value="50" />
 					<param name="top" value="980" />
 					<param name="text_label" value="LI AEL_PClone_stat" />
