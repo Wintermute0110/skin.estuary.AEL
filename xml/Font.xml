@@ -3,6 +3,12 @@
 	<fontset id="Default" idloc="15109">
 		<!-- Normal Fonts -->
 		<font>
+			<name>font9</name>
+			<filename>NotoSans-Regular.ttf</filename>
+			<size>21</size>
+			<style>lighten</style>
+		</font>
+		<font>
 			<name>font10</name>
 			<filename>NotoSans-Regular.ttf</filename>
 			<size>23</size>

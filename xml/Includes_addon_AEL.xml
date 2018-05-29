@@ -48,28 +48,44 @@
 		<control type="group">
 			<left>$PARAM[left]</left>
 			<top>$PARAM[top]</top>
+			<!-- Placeholder -->
 			<!--
 			<control type="image">
-				<width>240</width>
-				<height>220</height>
+				<width>260</width>
+				<height>190</height>
 				<texture border="0">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			<control type="image">
+				<width>260</width>
+				<height>25</height>
+				<texture border="0">special://skin/extras/backgrounds/pattern3.jpg</texture>
 			</control>
 			-->
 			<control type="label">
-				<width>240</width>
+				<width>260</width>
 				<height>25</height>
 				<label>$PARAM[asset_label]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<font>font10</font>
+				<font>font9</font>
 				<textcolor>white</textcolor>
 			</control>
+			<!-- Placeholder -->
+			<!--
 			<control type="image">
-				<top>30</top>
-				<width>240</width>
-				<height>190</height>
+				<top>25</top>
+				<width>260</width>
+				<height>165</height>
+				<fadetime>100</fadetime>
+				<texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture>
+			</control>
+			-->
+			<control type="image">
+				<top>25</top>
+				<width>260</width>
+				<height>165</height>
 				<aspectratio>keep</aspectratio>
-				<fadetime>200</fadetime>
+				<fadetime>100</fadetime>
 				<texture background="true">$PARAM[asset_image]</texture>
 			</control>
 		</control>
@@ -82,29 +98,47 @@
 		<control type="group">
 			<left>$PARAM[left]</left>
 			<top>$PARAM[top]</top>
+			<!-- Placeholder -->
+			<!--
+			<control type="image">
+				<width>260</width>
+				<height>190</height>
+				<texture border="0">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			-->
 			<control type="label">
-				<width>240</width>
+				<width>260</width>
 				<height>25</height>
 				<label>Title or Controller</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<font>font10</font>
+				<font>font9</font>
 				<textcolor>white</textcolor>
 			</control>
+			<!-- Placeholder -->
+			<!--
 			<control type="image">
-				<top>30</top>
-				<width>240</width>
-				<height>190</height>
+				<top>25</top>
+				<width>260</width>
+				<height>165</height>
+				<fadetime>100</fadetime>
+				<texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture>
+			</control>
+			-->
+			<control type="image">
+				<top>25</top>
+				<width>260</width>
+				<height>165</height>
 				<aspectratio>keep</aspectratio>
-				<fadetime>200</fadetime>
+				<fadetime>100</fadetime>
 				<texture background="true">$INFO[ListItem.Art(title)]</texture>
 			</control>
 			<control type="image">
-				<top>30</top>
-				<width>240</width>
-				<height>190</height>
+				<top>25</top>
+				<width>260</width>
+				<height>165</height>
 				<aspectratio>keep</aspectratio>
-				<fadetime>200</fadetime>
+				<fadetime>100</fadetime>
 				<texture background="true">$INFO[ListItem.Art(controller)]</texture>
 			</control>
 		</control>
