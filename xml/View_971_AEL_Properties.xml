@@ -1,0 +1,401 @@
+<!--
+	DEBUG Properties view for AEL.
+
+	Template used: View_502_FanArt.xml, View_50_List.xml, skin.confluence.AEL
+	Wintermute0110 <wintermute0110@gmail.com>
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_971_AEL_Properties">
+		<control type="group">
+			<include>OpenClose_Left</include>
+			<left>-5</left>
+			<visible>Control.IsVisible(971)</visible>
+			<include>Visible_Left</include>
+
+			<!-- id of the list is the id of the view -->
+			<control type="fixedlist" id="971">
+				<left>0</left>
+				<width>list_width</width>
+				<top>list_y_offset</top>
+				<bottom>list_y_offset</bottom>
+				<movement>5</movement>
+				<focusposition>6</focusposition>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>950600</pagecontrol>
+				<onleft>9000</onleft>
+				<onright>950600</onright>
+				<onup>971</onup>
+				<ondown>971</ondown>
+				<!-- viewtype label defines the view name on Kodi view selector -->
+				<viewtype label="AEL Properties">list</viewtype>
+				<visible>Window.IsActive(MyPrograms.xml)</visible>
+
+				<focusedlayout height="list_item_height" width="list_width">
+					<control type="image">
+						<left>0</left>
+						<right>0</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
+						<visible>Control.HasFocus(971)</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>70</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus(971)</visible>
+					</control>
+					<!-- Trailer Trigger -->
+					<control type="button">
+						<left>0</left>
+						<top>0</top>
+						<width>1</width>
+						<height>1</height>
+						<onload condition="!IsEmpty(ListItem.Trailer)">PlayerControl(Repeat)</onload>
+						<onfocus condition="!IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.trailer],1)</onfocus>
+						<onunfocus condition="Player.HasVideo">PlayerControl(Stop)</onunfocus>
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<animation type="Focus">
+							<effect type="fade" delay="250" start="0" end="100" />
+						</animation>
+					</control>
+				</focusedlayout>
+
+				<itemlayout height="list_item_height" width="list_width">
+					<control type="label">
+						<left>70</left>
+						<right>70</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<textcolor>grey</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
+					</control>
+				</itemlayout>
+			</control>
+		</control>
+
+		<control type="group">
+			<depth>DepthContentPanel</depth>
+			<include>OpenClose_Right</include>
+			<visible>Control.IsVisible(971)</visible>
+			<include>Visible_Right</include>
+			<control type="group">
+				<right>-20</right>
+				<width>1235</width>
+				<include content="ContentPanel">
+					<param name="width" value="1235" />
+					<param name="left" value="0" />
+					<param name="top" value="-20" />
+					<param name="flipx" value="true" />
+				</include>
+
+				<!-- This is the scrollbar of the list -->
+				<control type="scrollbar" id="950600">
+					<left>20</left>
+					<top>list_y_offset</top>
+					<width>12</width>
+					<bottom>list_y_offset</bottom>
+					<onleft>971</onleft>
+					<onright>971</onright>
+					<orientation>vertical</orientation>
+					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(502600)">conditional</animation>
+				</control>
+				<control type="group">
+					<left>600</left>
+					<top>82</top>
+					<include>UserRatingCircle</include>
+				</control>
+
+				<!-- Matrix of images ---------------------------------------------------------- -->
+				<!-- First row -->
+				<include content="AEL_Matrix_Image_Title_or_Controller">
+					<param name="left" value="50" />
+					<param name="top" value="80" />
+				</include>
+				<include content="AEL_Matrix_Image">
+					<param name="left" value="340" />
+					<param name="top" value="80" />
+					<param name="asset_label" value="Snap" />
+					<param name="asset_image" value="$INFO[ListItem.Art(snap)]" />
+				</include>
+				<include content="AEL_Matrix_Image">
+					<param name="left" value="630" />
+					<param name="top" value="80" />
+					<param name="asset_label" value="Boxfront/Cabinet" />
+					<param name="asset_image" value="$INFO[ListItem.Art(boxfront)]" />
+				</include>
+				<include content="AEL_Matrix_Image">
+					<param name="left" value="920" />
+					<param name="top" value="80" />
+					<param name="asset_label" value="Cartridge/PCB" />
+					<param name="asset_image" value="$INFO[ListItem.Art(cartridge)]" />
+				</include>
+
+				<!-- Second row -->
+				<include content="AEL_Matrix_Image">
+					<param name="left" value="50" />
+					<param name="top" value="275" />
+					<param name="asset_label" value="Icon" />
+					<param name="asset_image" value="$INFO[ListItem.Icon]" />
+				</include>
+				<include content="AEL_Matrix_Image">
+					<param name="left" value="340" />
+					<param name="top" value="275" />
+					<param name="asset_label" value="Banner/Marquee" />
+					<param name="asset_image" value="$INFO[ListItem.Art(banner)]" />
+				</include>
+				<include content="AEL_Matrix_Image">
+					<param name="left" value="630" />
+					<param name="top" value="275" />
+					<param name="asset_label" value="Poster" />
+					<param name="asset_image" value="$INFO[ListItem.Art(poster)]" />
+				</include>
+				<include content="AEL_Matrix_Image">
+					<param name="left" value="920" />
+					<param name="top" value="275" />
+					<param name="asset_label" value="Clearlogo" />
+					<param name="asset_image" value="$INFO[ListItem.Art(clearlogo)]" />
+				</include>
+
+				<!-- Metadata ------------------------------------------------------------------ -->
+				<!-- Platform AEL icon -->
+				<!-- Placeholder -->
+				<!--
+				<control type="image">
+					<left>50</left>
+					<top>510</top>
+					<width>100</width>
+					<height>100</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+				<include content="AEL_Platform_Icon">
+					<param name="left" value="50" />
+					<param name="top" value="510" />
+				</include>
+
+				<!-- Infolabels -->
+				<!-- Vertical displacement 30 pixels -->
+				<!-- Year, Genre, Developer, NPlayers, ESRB, Rating -->
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="140" />
+					<param name="top" value="500" />
+					<param name="text_label" value="Year" />
+					<param name="text" value="$INFO[ListItem.Year]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="140" />
+					<param name="top" value="530" />
+					<param name="text_label" value="Genre" />
+					<param name="text" value="$INFO[ListItem.Genre]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="140" />
+					<param name="top" value="560" />
+					<param name="text_label" value="Developer" />
+					<param name="text" value="$INFO[ListItem.Studio]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="140" />
+					<param name="top" value="590" />
+					<param name="text_label" value="ESRB" />
+					<param name="text" value="$INFO[ListItem.Property(esrb)]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="140" />
+					<param name="top" value="610" />
+					<param name="text_label" value="Rating" />
+					<param name="text" value="$INFO[ListItem.Rating]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="140" />
+					<param name="top" value="640" />
+					<param name="text_label" value="NPlayers" />
+					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="label_colour" value="orange" />
+					<param name="left" value="140" />
+					<param name="top" value="670" />
+					<param name="text_label" value="Platform" />
+					<param name="text" value="$INFO[ListItem.Property(platform)]" />
+				</include>
+
+				<!-- Window Properties -->
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="50" />
+					<param name="top" value="700" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
+					<param name="text_label" value="Win AEL_Content" />
+					<param name="text" value="$INFO[Window(10000).Property(AEL_Content)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="50" />
+					<param name="top" value="730" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
+					<param name="text_label" value="Win AEL_Launch_Name" />
+					<param name="text" value="$INFO[Window(10000).Property(AEL_Launch_Name)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="50" />
+					<param name="top" value="760" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
+					<param name="text_label" value="Win AEL_Launch_Icon" />
+					<param name="text" value="$INFO[Window(10000).Property(AEL_Launch_Icon)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="50" />
+					<param name="top" value="790" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
+					<param name="text_label" value="Win AEL_Launch_Clearlogo" />
+					<param name="text" value="$INFO[Window(10000).Property(AEL_Launch_Clearlogo)]" />
+				</include>
+
+				<!-- ListItem properties -->
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="650" />
+					<param name="top" value="500" />
+					<param name="text_label" value="LI AEL_Content" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_Content)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="650" />
+					<param name="top" value="530" />
+					<param name="text_label" value="LI AEL_NumItems" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_NumItems)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="650" />
+					<param name="top" value="560" />
+					<param name="text_label" value="LI AEL_InFav" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_InFav)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="650" />
+					<param name="top" value="590" />
+					<param name="text_label" value="LI AEL_MultiDisc" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_MultiDisc)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="650" />
+					<param name="top" value="620" />
+					<param name="text_label" value="LI AEL_Fav_stat" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_Fav_stat)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="650" />
+					<param name="top" value="650" />
+					<param name="text_label" value="LI AEL_NoIntro_stat" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_NoIntro_stat)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="650" />
+					<param name="top" value="680" />
+					<param name="text_label" value="LI AEL_PClone_stat" />
+					<param name="text" value="$INFO[ListItem.Property(AEL_PClone_stat)]" />
+				</include>
+
+				<!-- Plot -->
+				<!--
+				<control type="image">
+					<left>60</left>
+					<width>1120</width>
+					<top>830</top>
+					<height>190</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+				<control type="textbox">
+					<left>60</left>
+					<width>1120</width>
+					<top>830</top>
+					<height>190</height>
+					<font>font10</font>
+					<label>$INFO[ListItem.Plot]</label>
+					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+				</control>
+
+				<!-- Flags --------------------------------------------------------------------- -->
+				<!-- Included in MyPrograms.xml -->
+			</control>
+		</control>
+	</include>
+</includes>

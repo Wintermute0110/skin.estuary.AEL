@@ -182,6 +182,9 @@
 		<param name="left" />
 		<param name="top" />
 		<param name="label_colour" default="blue" />
+		<param name="label_width" default="240" />
+		<param name="text_left" default="250" />
+		<param name="text_width" default="350" />
 		<param name="text_label" />
 		<param name="text" />
 		<definition>
@@ -189,7 +192,7 @@
 				<left>$PARAM[left]</left>
 				<top>$PARAM[top]</top>
 				<control type="label">
-					<width>240</width>
+					<width>$PARAM[label_width]</width>
 					<height>25</height>
 					<label>$PARAM[text_label]</label>
 					<align>right</align>
@@ -198,8 +201,8 @@
 					<textcolor>$PARAM[label_colour]</textcolor>
 				</control>
 				<control type="fadelabel">
-					<left>250</left>
-					<width>350</width>
+					<left>$PARAM[text_left]</left>
+					<width>$PARAM[text_width]</width>
 					<height>25</height>
 					<label fallback="">$PARAM[text]</label>
 					<align>left</align>

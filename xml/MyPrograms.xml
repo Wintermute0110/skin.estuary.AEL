@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">52</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<!-- 950 onwards are AEL/AML/ADL custom views -->
-	<views>50,52,55,500,950,951,952,953,954,955,956,970</views>
+	<views>50,52,55,500,950,951,952,953,954,955,956,970,971</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
 		<include>DefaultBackground_AEL</include>
@@ -25,6 +25,7 @@
 			<include>View_956_Std_Launcher</include>
 			-->
 			<include>View_970_AEL_Matrix</include>
+			<include>View_971_AEL_Properties</include>
 
 			<control type="group">
 				<include>OpenClose_Left</include>
