@@ -211,39 +211,94 @@
 				</control>
 
 				<!-- First row of images ======================================================= -->
-				<!-- Console: Title, if not present Boxback/CPanel
-					 MAME: Title, if not present Boxback/CPanel
+				<!--
+					Console: Snap , if not present Cartridge/PCB
+					MAME: Snap, if not present Cartridge/PCB
+					If available play trailer instead of Snap
 				-->
+				<!--
 				<control type="image">
-					<left>50</left>
+					<visible>IsEmpty(ListItem.Trailer)</visible>
+					<left>40</left>
 					<top>90</top>
-					<width>560</width>
+					<width>800</width>
 					<height>520</height>
-					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
-					<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
-					<aspectratio>keep</aspectratio>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 				</control>
-
-				<!-- Console: Snap , if not present Cartridge/PCB
-					 MAME: Snap, if not present Cartridge/PCB
-					 If available play trailer instead of Snap
 				-->
 				<control type="image">
 					<visible>IsEmpty(ListItem.Trailer)</visible>
-					<left>630</left>
+					<left>40</left>
 					<top>90</top>
-					<width>560</width>
+					<width>800</width>
 					<height>520</height>
-					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="videowindow">
 					<visible>Player.Playing + !IsEmpty(ListItem.Trailer)</visible>
-					<left>630</left>
+					<left>40</left>
 					<top>90</top>
-					<width>560</width>
+					<width>800</width>
 					<height>520</height>
+				</control>
+
+				<!--
+					Console: Title, if not present Boxback/CPanel
+					MAME: Title, if not present Boxback/CPanel
+				-->
+				<!--
+				<control type="image">
+					<left>860</left>
+					<top>90</top>
+					<width>340</width>
+					<height>290</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+				<control type="image">
+					<left>860</left>
+					<top>90</top>
+					<width>340</width>
+					<height>290</height>
+					<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<!-- Platform AEL icon -->
+				<!--
+				<control type="image">
+					<left>980</left>
+					<top>395</top>
+					<width>100</width>
+					<height>100</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+				<include content="AEL_Platform_Icon">
+					<param name="left" value="980" />
+					<param name="top" value="395" />
+				</include>
+
+				<!-- Console: Clearlogo, if not present Banner/Marquee
+					 MAME: Clearlogo, if not present Banner/Marquee
+				-->
+				<!--
+				<control type="image">
+					<left>860</left>
+					<top>510</top>
+					<width>340</width>
+					<height>100</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+				<control type="image">
+					<left>860</left>
+					<top>510</top>
+					<width>340</width>
+					<height>100</height>
+					<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
+					<aspectratio>keep</aspectratio>
 				</control>
 
 				<!-- Metadata ================================================================== -->
@@ -254,65 +309,55 @@
 					<!-- Infolabels -->
 					<!-- Genre, Studio, NPlayers, ESRB, Rating, Platform -->
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
+						<param name="left" value="100" />
 						<param name="top" value="30" />
 						<param name="text_label" value="Genre" />
 						<param name="text" value="$INFO[ListItem.Genre]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
+						<param name="left" value="100" />
 						<param name="top" value="60" />
 						<param name="text_label" value="Developer" />
 						<param name="text" value="$INFO[ListItem.Studio]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
+						<param name="left" value="100" />
 						<param name="top" value="90" />
 						<param name="text_label" value="NPlayers" />
 						<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
+						<param name="left" value="100" />
 						<param name="top" value="120" />
 						<param name="text_label" value="ESRB" />
 						<param name="text" value="$INFO[ListItem.Property(esrb)]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
+						<param name="left" value="100" />
 						<param name="top" value="150" />
 						<param name="text_label" value="Rating" />
 						<param name="text" value="$INFO[ListItem.Rating]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
+						<param name="left" value="100" />
 						<param name="top" value="180" />
 						<param name="text_label" value="Platform" />
 						<param name="text" value="$INFO[ListItem.Property(platform)]" />
 					</include>
 
-					<!-- Platform AEL icon -->
-					<include content="AEL_Platform_Icon">
-						<param name="left" value="810" />
-						<param name="top" value="20" />
-					</include>
-
-					<!-- Console: Clearlogo, if not present Banner/Marquee
-						 MAME: Clearlogo, if not present Banner/Marquee
-					-->
-					<control type="image">
-						<left>710</left>
-						<top>135</top>
-						<width>300</width>
-						<height>90</height>
-						<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
-						<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
-						<aspectratio>keep</aspectratio>
-					</control>
-
 					<!-- Plot -->
+					<!--
+					<control type="image">
+						<left>0</left>
+						<width>1140</width>
+						<top>230</top>
+						<height>190</height>
+						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+					</control>
+					-->
 					<control type="textbox">
 						<left>0</left>
-						<width>1100</width>
+						<width>1140</width>
 						<top>230</top>
 						<height>190</height>
 						<font>font10</font>

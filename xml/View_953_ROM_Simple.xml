@@ -211,52 +211,80 @@
 				</control>
 
 				<!-- First row of images ======================================================= -->
-				<!-- Console: Boxfront/Cabinet
-					 MAME: Flyer, if not Boxfront/Cabinet
+				<!--
+					Console: Boxfront/Cabinet
+					MAME: Flyer, if not Boxfront/Cabinet
+				-->
+				<!--
+				<control type="image">
+					<left>50</left>
+					<top>100</top>
+					<width>400</width>
+					<height>520</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
 				-->
 				<control type="image">
 					<left>50</left>
 					<top>100</top>
-					<width>500</width>
+					<width>400</width>
 					<height>500</height>
-					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
 					<texture background="true">$VAR[ROM_Simple_Art_Main]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 
-				<!-- Console: Title, if not present Boxback/CPanel
-					 MAME: Title, if not present Boxback/CPanel
+				<!--
+					Console: Snap , if not present Cartridge/PCB
+					MAME: Snap, if not present Cartridge/PCB
+					If available play trailer instead of Snap
+					Ratio 710/520 = 1.36
 				-->
+				<!--
 				<control type="image">
-					<left>740</left>
+					<left>480</left>
 					<top>100</top>
-					<width>300</width>
-					<height>240</height>
-					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
-					<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
-					<aspectratio>keep</aspectratio>
+					<width>710</width>
+					<height>520</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 				</control>
-
-				<!-- Console: Snap , if not present Cartridge/PCB
-					 MAME: Snap, if not present Cartridge/PCB
-					 If available play trailer instead of Snap
 				-->
 				<control type="image">
 					<visible>IsEmpty(ListItem.Trailer)</visible>
-					<left>740</left>
-					<top>360</top>
-					<width>300</width>
-					<height>240</height>
-					<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+					<left>480</left>
+					<top>100</top>
+					<width>710</width>
+					<height>520</height>
 					<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="videowindow">
 					<visible>Player.Playing + !IsEmpty(ListItem.Trailer)</visible>
-					<left>740</left>
-					<top>360</top>
-					<width>300</width>
-					<height>240</height>
+					<left>480</left>
+					<top>100</top>
+					<width>710</width>
+					<height>520</height>
+				</control>
+
+				<!--
+					Console: Title, if not present Boxback/CPanel
+					MAME: Title, if not present Boxback/CPanel
+				-->
+				<!--
+				<control type="image">
+					<left>900</left>
+					<top>400</top>
+					<width>270</width>
+					<height>200</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+				<control type="image">
+					<left>900</left>
+					<top>400</top>
+					<width>270</width>
+					<height>200</height>
+					<texture colordiffuse="FFD0D0D0" background="true">$VAR[ROM_Simple_Art_Title]</texture>
+					<aspectratio>keep</aspectratio>
 				</control>
 
 				<!-- Metadata ================================================================== -->
@@ -304,28 +332,54 @@
 					</include>
 
 					<!-- Platform AEL icon -->
+					<!--
+					<control type="image">
+						<left>860</left>
+						<top>25</top>
+						<width>100</width>
+						<height>100</height>
+						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+					</control>
+					-->
 					<include content="AEL_Platform_Icon">
-						<param name="left" value="790" />
-						<param name="top" value="20" />
+						<param name="left" value="860" />
+						<param name="top" value="25" />
 					</include>
 
 					<!-- Console: Clearlogo, if not present Banner/Marquee
 						 MAME: Clearlogo, if not present Banner/Marquee
 					-->
+					<!--
 					<control type="image">
 						<left>690</left>
 						<top>135</top>
-						<width>300</width>
+						<width>450</width>
 						<height>90</height>
-						<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
+						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+					</control>
+					-->
+					<control type="image">
+						<left>690</left>
+						<top>135</top>
+						<width>450</width>
+						<height>90</height>
 						<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 
 					<!-- Plot -->
+					<!--
+					<control type="image">
+						<left>0</left>
+						<width>1140</width>
+						<top>230</top>
+						<height>190</height>
+						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+					</control>
+					-->
 					<control type="textbox">
 						<left>0</left>
-						<width>1100</width>
+						<width>1140</width>
 						<top>230</top>
 						<height>190</height>
 						<font>font10</font>
