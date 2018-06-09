@@ -9,7 +9,7 @@
 	<include name="View_950_Dynamic">
 		<!-- Right wide list =================================================================== -->
 		<control type="group">
-			<include>OpenClose_Right</include>
+			<include>OpenClose_FadeSlide_Right</include>
 			<visible>Control.IsVisible(950)</visible>
 			<include>Visible_Right</include>
 
@@ -147,13 +147,18 @@
 		<!-- Left panel for Categories ======================================================== -->
 		<control type="group">
 			<!-- Common code START -->
-			<include>OpenClose_Left</include>
-			<include>Visible_Left</include>
+			<!-- <include>OpenClose_Left</include> -->
+			<!-- <include>OpenClose_FadeSlide_Right</include> -->
+			<!-- <include>Visible_Left</include> -->
+			<!--
+			<animation effect="fade" end="100" time="200">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			-->
 
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="1000" />
+				<param name="width" value="1010" />
 			</include>
 
 			<control type="group">
@@ -169,51 +174,70 @@
 				<left>35</left>
 				<top>80</top>
 				<height>50</height>
-				<width>100</width>
+				<width>200</width>
 				<label>CATEGORY</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font9</font>
+				<font>font10</font>
 				<textcolor>white</textcolor>
 			</control>
 
 			<!-- Clearlogo or Banner -->
+			<!--
 			<control type="image">
-				<left>50</left>
-				<top>110</top>
-				<width>390</width>
-				<height>100</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<left>170</left>
+				<top>130</top>
+				<width>600</width>
+				<height>120</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			-->
+			<control type="image">
+				<left>170</left>
+				<top>130</top>
+				<width>600</width>
+				<height>120</height>
 				<texture background="true">$VAR[Art_Clearlogo_or_Banner]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 
-			<!-- Platform AEL icon -->
-			<include content="AEL_Platform_Icon">
-				<param name="left" value="465" />
-				<param name="top" value="110" />
-			</include>
-
 			<!-- Icon or Poster -->
+			<!--
 			<control type="image">
-				<left>100</left>
-				<top>610</top>
+				<left>250</left>
+				<top>600</top>
 				<width>400</width>
-				<height>400</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<height>450</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			-->
+			<control type="image">
+				<left>250</left>
+				<top>600</top>
+				<width>400</width>
+				<height>450</height>
 				<texture background="true">$VAR[Art_Icon_or_Poster]</texture>
-				<aspectratio aligny="bottom">keep</aspectratio>
+				<aspectratio aligny="top">keep</aspectratio>
 			</control>
 
-			<!-- Metadata -->
+			<!-- Metadata (only Plot for Categories) -->
 			<control type="group">
-				<left>0</left>
-				<top>240</top>
-				<control type="textbox">
-					<left>50</left>
-					<width>520</width>
+				<left>70</left>
+				<top>270</top>
+				<!--
+				<control type="image">
+					<left>0</left>
 					<top>0</top>
-					<height>345</height>
+					<width>800</width>
+					<height>315</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+				<control type="textbox">
+					<left>0</left>
+					<top>0</top>
+					<width>800</width>
+					<height>315</height>
 					<font>font10</font>
 					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
@@ -224,13 +248,18 @@
 		<!-- Left panel for Standalone Launchers ============================================== -->
 		<control type="group">
 			<!-- Common code START -->
-			<include>OpenClose_Left</include>
-			<include>Visible_Left</include>
+			<!-- <include>OpenClose_Left</include> -->
+			<!-- <include>OpenClose_FadeSlide_Right</include> -->
+			<!-- <include>Visible_Left</include> -->
+			<!--
+			<animation effect="fade" end="100" time="200">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			-->
 
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="1000" />
+				<param name="width" value="1010" />
 			</include>
 
 			<control type="group">
@@ -246,62 +275,90 @@
 				<left>35</left>
 				<top>80</top>
 				<height>50</height>
-				<width>250</width>
+				<width>300</width>
 				<label>STANDALONE LAUNCHER</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font9</font>
+				<font>font10</font>
 				<textcolor>white</textcolor>
 			</control>
 
 			<!-- Clearlogo or Banner -->
+			<!--
 			<control type="image">
-				<left>90</left>
-				<top>110</top>
-				<width>420</width>
-				<height>150</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<left>170</left>
+				<top>130</top>
+				<width>600</width>
+				<height>120</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			-->
+			<control type="image">
+				<left>170</left>
+				<top>130</top>
+				<width>600</width>
+				<height>120</height>
 				<texture background="true">$VAR[Art_Clearlogo_or_Banner]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 
 			<!-- Icon or Poster -->
+			<!--
 			<control type="image">
-				<left>100</left>
-				<top>610</top>
+				<left>250</left>
+				<top>600</top>
 				<width>400</width>
-				<height>400</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<height>450</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			-->
+			<control type="image">
+				<left>250</left>
+				<top>600</top>
+				<width>400</width>
+				<height>450</height>
 				<texture background="true">$VAR[Art_Icon_or_Poster]</texture>
-				<aspectratio aligny="bottom">keep</aspectratio>
+				<aspectratio aligny="top">keep</aspectratio>
 			</control>
 
 			<!-- Metadata -->
 			<control type="group">
-				<left>0</left>
-				<top>280</top>
+				<left>70</left>
+				<top>270</top>
+
 				<include content="AEL_Matrix_Text">
-					<param name="left" value="0" />
+					<param name="left" value="120" />
 					<param name="top" value="0" />
 					<param name="text_label" value="Genre" />
 					<param name="text" value="$INFO[ListItem.Genre]" />
 				</include>
 				<include content="AEL_Matrix_Text">
-					<param name="left" value="0" />
+					<param name="left" value="120" />
 					<param name="top" value="30" />
 					<param name="text_label" value="Developer" />
 					<param name="text" value="$INFO[ListItem.Studio]" />
 				</include>
 				<include content="AEL_Matrix_Text">
-					<param name="left" value="0" />
+					<param name="left" value="120" />
 					<param name="top" value="60" />
 					<param name="text_label" value="Rating" />
 					<param name="text" value="$INFO[ListItem.Rating]" />
 				</include>
-				<control type="textbox">
-					<left>50</left>
-					<width>520</width>
+
+				<!-- Plot -->
+				<!--
+				<control type="image">
+					<left>0</left>
 					<top>100</top>
+					<width>800</width>
+					<height>220</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+				<control type="textbox">
+					<left>0</left>
+					<top>100</top>
+					<width>800</width>
 					<height>220</height>
 					<font>font10</font>
 					<label>$INFO[ListItem.Plot]</label>
@@ -313,13 +370,18 @@
 		<!-- Left panel for ROM Launchers ===================================================== -->
 		<control type="group">
 			<!-- Common code START -->
-			<include>OpenClose_Left</include>
-			<include>Visible_Left</include>
+			<!-- <include>OpenClose_Left</include> -->
+			<!-- <include>OpenClose_FadeSlide_Right</include> -->
+			<!-- <include>Visible_Left</include> -->
+			<!--
+			<animation effect="fade" end="100" time="200">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			-->
 
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="1000" />
+				<param name="width" value="1010" />
 			</include>
 
 			<control type="group">
@@ -335,51 +397,85 @@
 				<left>35</left>
 				<top>80</top>
 				<height>50</height>
-				<width>200</width>
+				<width>300</width>
 				<label>ROM LAUNCHER</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font9</font>
+				<font>font10</font>
 				<textcolor>white</textcolor>
 			</control>
 
 			<!-- Clearlogo or Banner -->
+			<!--
 			<control type="image">
-				<left>50</left>
-				<top>110</top>
-				<width>390</width>
-				<height>100</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<left>170</left>
+				<top>130</top>
+				<width>600</width>
+				<height>120</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			-->
+			<control type="image">
+				<left>170</left>
+				<top>130</top>
+				<width>600</width>
+				<height>120</height>
 				<texture background="true">$VAR[Art_Clearlogo_or_Banner]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 
 			<!-- Platform AEL icon -->
+			<!--
+			<control type="image">
+				<left>800</left>
+				<top>140</top>
+				<width>100</width>
+				<height>100</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
+			</control>
+			-->
 			<include content="AEL_Platform_Icon">
-				<param name="left" value="465" />
-				<param name="top" value="110" />
+				<param name="left" value="800" />
+				<param name="top" value="140" />
 			</include>
 
 			<!-- Icon or Poster -->
+			<!--
 			<control type="image">
-				<left>100</left>
-				<top>610</top>
+				<left>250</left>
+				<top>600</top>
 				<width>400</width>
-				<height>400</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<height>450</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			-->
+			<control type="image">
+				<left>250</left>
+				<top>600</top>
+				<width>400</width>
+				<height>450</height>
 				<texture background="true">$VAR[Art_Icon_or_Poster]</texture>
-				<aspectratio aligny="bottom">keep</aspectratio>
+				<aspectratio aligny="top">keep</aspectratio>
 			</control>
 
-			<!-- Metadata -->
+			<!-- Metadata (only plot for ROM launchers) -->
 			<control type="group">
-				<left>0</left>
-				<top>240</top>
-				<control type="textbox">
-					<left>50</left>
-					<width>520</width>
+				<left>70</left>
+				<top>270</top>
+				<!--
+				<control type="image">
+					<left>0</left>
 					<top>0</top>
-					<height>345</height>
+					<width>800</width>
+					<height>315</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				-->
+				<control type="textbox">
+					<left>0</left>
+					<top>0</top>
+					<width>800</width>
+					<height>315</height>
 					<font>font10</font>
 					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
@@ -390,13 +486,18 @@
 		<!-- Left panel for non-MAME ROMs ===================================================== -->
 		<control type="group">
 			<!-- Common code START -->
-			<include>OpenClose_Left</include>
-			<include>Visible_Left</include>
+			<!-- <include>OpenClose_Left</include> -->
+			<!-- <include>OpenClose_FadeSlide_Right</include> -->
+			<!-- <include>Visible_Left</include> -->
+			<!--
+			<animation effect="fade" end="100" time="200">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			-->
 
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="1000" />
+				<param name="width" value="1010" />
 			</include>
 
 			<control type="group">
@@ -412,66 +513,101 @@
 				<left>35</left>
 				<top>80</top>
 				<height>50</height>
-				<width>200</width>
+				<width>300</width>
 				<label>NON-MAME ROM</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font9</font>
+				<font>font10</font>
 				<textcolor>white</textcolor>
 			</control>
 
 			<!-- Artwork ====================================================================== -->
-			<!-- Console: Snap , if not present Cartridge/PCB
-				 MAME: Snap, if not present Cartridge/PCB
-				 If available play trailer instead of Snap
+			<!--
+				Console: Snap , if not present Cartridge/PCB
+				MAME: Snap, if not present Cartridge/PCB
+				If available play trailer instead of Snap
+			-->
+			<!--
+			<control type="image">
+				<left>60</left>
+				<top>130</top>
+				<width>850</width>
+				<height>650</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
 			-->
 			<control type="image">
-				<visible>IsEmpty(ListItem.Trailer)</visible>
-				<left>25</left>
-				<top>50</top>
-				<width>900</width>
-				<height>900</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<left>60</left>
+				<top>130</top>
+				<width>850</width>
+				<height>650</height>
 				<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 
-			<!-- Console: Title, if not present Boxback/CPanel
-				 MAME: Title, if not present Boxback/CPanel
+			<!--
+				Console: Title, if not present Boxback/CPanel
+				MAME: Title, if not present Boxback/CPanel
+			-->
+			<!--
+			<control type="image">
+				<left>550</left>
+				<top>510</top>
+				<width>330</width>
+				<height>250</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
+			</control>
 			-->
 			<control type="image">
 				<left>550</left>
-				<top>500</top>
-				<width>350</width>
-				<height>350</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture> -->
+				<top>510</top>
+				<width>330</width>
+				<height>250</height>
 				<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 
-			<!-- Console: Clearlogo, if not present Banner/Marquee
-				 MAME: Clearlogo, if not present Banner/Marquee
+			<!--
+				Console: Clearlogo, if not present Banner/Marquee
+				MAME: Clearlogo, if not present Banner/Marquee
+			-->
+			<!--
+			<control type="image">
+				<left>580</left>
+				<top>160</top>
+				<width>300</width>
+				<height>100</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
+			</control>
 			-->
 			<control type="image">
-				<left>630</left>
-				<top>180</top>
+				<left>580</left>
+				<top>160</top>
 				<width>300</width>
-				<height>90</height>
-				<!-- <texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture> -->
+				<height>100</height>
 				<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 
 			<!-- Platform AEL icon -->
+			<!--
+			<control type="image">
+				<left>40</left>
+				<top>790</top>
+				<width>100</width>
+				<height>100</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
+			</control>
+			-->
 			<include content="AEL_Platform_Icon">
 				<param name="left" value="40" />
-				<param name="top" value="850" />
+				<param name="top" value="790" />
 			</include>
 
 			<!-- Metadata ================================================================== -->
 			<control type="group">
 				<left>140</left>
-				<top>825</top>
+				<top>760</top>
 
 				<!-- Infolabels -->
 				<!-- Genre, Studio, NPlayers, ESRB, Rating, Platform -->
@@ -484,41 +620,44 @@
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="0" />
 					<param name="top" value="60" />
-					<param name="text_label" value="Developer" />
-					<param name="text" value="$INFO[ListItem.Studio]" />
-				</include>
-				<include content="AEL_Matrix_Text">
-					<param name="left" value="0" />
-					<param name="top" value="90" />
 					<param name="text_label" value="NPlayers" />
 					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
 				</include>
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="0" />
-					<param name="top" value="120" />
+					<param name="top" value="90" />
+					<param name="text_label" value="Developer" />
+					<param name="text" value="$INFO[ListItem.Studio]" />
+				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="left" value="280" />
+					<param name="top" value="30" />
 					<param name="text_label" value="ESRB" />
 					<param name="text" value="$INFO[ListItem.Property(esrb)]" />
 				</include>
 				<include content="AEL_Matrix_Text">
-					<param name="left" value="0" />
-					<param name="top" value="150" />
+					<param name="left" value="280" />
+					<param name="top" value="60" />
 					<param name="text_label" value="Rating" />
 					<param name="text" value="$INFO[ListItem.Rating]" />
-				</include>
-				<include content="AEL_Matrix_Text">
-					<param name="left" value="0" />
-					<param name="top" value="180" />
-					<param name="text_label" value="Platform" />
-					<param name="text" value="$INFO[ListItem.Property(platform)]" />
 				</include>
 			</control>
 
 			<!-- Plot -->
+			<!--
+			<control type="image">
+				<left>40</left>
+				<width>870</width>
+				<top>900</top>
+				<height>120</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			-->
 			<control type="textbox">
 				<left>40</left>
-				<width>890</width>
-				<top>1040</top>
-				<height>130</height>
+				<width>870</width>
+				<top>900</top>
+				<height>120</height>
 				<font>font10</font>
 				<label>$INFO[ListItem.Plot]</label>
 				<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
@@ -528,13 +667,18 @@
 		<!-- Left panel for MAME ROMs ========================================================= -->
 		<control type="group">
 			<!-- Common code START -->
-			<include>OpenClose_Left</include>
-			<include>Visible_Left</include>
+			<!-- <include>OpenClose_Left</include> -->
+			<!-- <include>OpenClose_FadeSlide_Right</include> -->
+			<!-- <include>Visible_Left</include> -->
+			<!--
+			<animation effect="fade" end="100" time="200">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			-->
 
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="1000" />
+				<param name="width" value="1010" />
 			</include>
 
 			<control type="group">
@@ -550,18 +694,19 @@
 				<left>35</left>
 				<top>80</top>
 				<height>50</height>
-				<width>200</width>
+				<width>300</width>
 				<label>MAME ROM</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font9</font>
+				<font>font10</font>
 				<textcolor>white</textcolor>
 			</control>
 
 			<!-- Artwork ====================================================================== -->
-			<!-- Console: Snap , if not present Cartridge/PCB
-				 MAME: Snap, if not present Cartridge/PCB
-				 If available play trailer instead of Snap
+			<!--
+				Console: Snap , if not present Cartridge/PCB
+				MAME: Snap, if not present Cartridge/PCB
+				If available play trailer instead of Snap
 			-->
 			<control type="image">
 				<visible>IsEmpty(ListItem.Trailer)</visible>
@@ -574,8 +719,9 @@
 				<aspectratio>keep</aspectratio>
 			</control>
 
-			<!-- Console: Title, if not present Boxback/CPanel
-				 MAME: Title, if not present Boxback/CPanel
+			<!--
+				Console: Title, if not present Boxback/CPanel
+				MAME: Title, if not present Boxback/CPanel
 			-->
 			<control type="image">
 				<left>550</left>
@@ -587,8 +733,9 @@
 				<aspectratio>keep</aspectratio>
 			</control>
 
-			<!-- Console: Clearlogo, if not present Banner/Marquee
-				 MAME: Clearlogo, if not present Banner/Marquee
+			<!--
+				Console: Clearlogo, if not present Banner/Marquee
+				MAME: Clearlogo, if not present Banner/Marquee
 			-->
 			<control type="image">
 				<left>630</left>

@@ -165,7 +165,7 @@
 				</control>
 				<control type="fadelabel">
 					<left>160</left>
-					<width>350</width>
+					<width>400</width>
 					<height>25</height>
 					<label fallback="">$PARAM[text]</label>
 					<align>left</align>
