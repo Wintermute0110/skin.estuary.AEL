@@ -279,7 +279,7 @@
 				<!--
 				<control type="image">
 					<left>50</left>
-					<top>670</top>
+					<top>685</top>
 					<width>100</width>
 					<height>100</height>
 					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
@@ -287,7 +287,7 @@
 				-->
 				<include content="AEL_Platform_Icon">
 					<param name="left" value="50" />
-					<param name="top" value="670" />
+					<param name="top" value="685" />
 				</include>
 
 				<!-- Infolabels -->
@@ -310,6 +310,13 @@
 					<param name="text_label" value="Developer" />
 					<param name="text" value="$INFO[ListItem.Studio]" />
 				</include>
+				<include content="AEL_Matrix_Text">
+					<param name="label_colour" value="orange" />
+					<param name="left" value="140" />
+					<param name="top" value="770" />
+					<param name="text_label" value="Platform" />
+					<param name="text" value="$INFO[ListItem.Property(platform)]" />
+				</include>
 
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="650" />
@@ -330,85 +337,19 @@
 					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
 				</include>
 
-				<include content="AEL_Matrix_Text">
-					<param name="label_colour" value="orange" />
-					<param name="left" value="650" />
-					<param name="top" value="770" />
-					<param name="text_label" value="Platform" />
-					<param name="text" value="$INFO[ListItem.Property(platform)]" />
-				</include>
-
-				<!-- Properties -->
-				<include content="AEL_Properties_Text">
-					<param name="label_colour" value="violet" />
-					<param name="left" value="50" />
-					<param name="top" value="770" />
-					<param name="text_label" value="Win AEL_Content" />
-					<param name="text" value="$INFO[Window(10000).Property(AEL_Content)]" />
-				</include>
-				<include content="AEL_Properties_Text">
-					<param name="label_colour" value="violet" />
-					<param name="left" value="50" />
-					<param name="top" value="800" />
-					<param name="text_label" value="LI AEL_Content" />
-					<param name="text" value="$INFO[ListItem.Property(AEL_Content)]" />
-				</include>
-				<include content="AEL_Properties_Text">
-					<param name="label_colour" value="violet" />
-					<param name="left" value="50" />
-					<param name="top" value="830" />
-					<param name="text_label" value="LI AEL_NumItems" />
-					<param name="text" value="$INFO[ListItem.Property(AEL_NumItems)]" />
-				</include>
-				<include content="AEL_Properties_Text">
-					<param name="label_colour" value="violet" />
-					<param name="left" value="50" />
-					<param name="top" value="860" />
-					<param name="text_label" value="LI AEL_InFav" />
-					<param name="text" value="$INFO[ListItem.Property(AEL_InFav)]" />
-				</include>
-				<include content="AEL_Properties_Text">
-					<param name="label_colour" value="violet" />
-					<param name="left" value="50" />
-					<param name="top" value="890" />
-					<param name="text_label" value="LI AEL_MultiDisc" />
-					<param name="text" value="$INFO[ListItem.Property(AEL_MultiDisc)]" />
-				</include>
-				<include content="AEL_Properties_Text">
-					<param name="label_colour" value="violet" />
-					<param name="left" value="50" />
-					<param name="top" value="920" />
-					<param name="text_label" value="LI AEL_Fav_stat" />
-					<param name="text" value="$INFO[ListItem.Property(AEL_Fav_stat)]" />
-				</include>
-				<include content="AEL_Properties_Text">
-					<param name="label_colour" value="violet" />
-					<param name="left" value="50" />
-					<param name="top" value="950" />
-					<param name="text_label" value="LI AEL_NoIntro_stat" />
-					<param name="text" value="$INFO[ListItem.Property(AEL_NoIntro_stat)]" />
-				</include>
-				<include content="AEL_Properties_Text">
-					<param name="label_colour" value="violet" />
-					<param name="left" value="50" />
-					<param name="top" value="980" />
-					<param name="text_label" value="LI AEL_PClone_stat" />
-					<param name="text" value="$INFO[ListItem.Property(AEL_PClone_stat)]" />
-				</include>
-
 				<!-- Plot -->
 				<!--
 				<control type="image">
-					<left>650</left>
-					<width>540</width>
+					<left>50</left>
+					<width>1140</width>
 					<top>800</top>
 					<height>220</height>
 					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 				</control>
 				-->
 				<control type="textbox">
-					<left>650</left>
-					<width>540</width>
+					<left>50</left>
+					<width>1140</width>
 					<top>800</top>
 					<height>220</height>
 					<font>font10</font>
