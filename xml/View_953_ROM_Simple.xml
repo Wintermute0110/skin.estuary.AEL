@@ -239,15 +239,6 @@
 					If available play trailer instead of Snap
 					Ratio 710/520 = 1.36
 				-->
-				<!--
-				<control type="image">
-					<left>480</left>
-					<top>100</top>
-					<width>710</width>
-					<height>520</height>
-					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-				</control>
-				-->
 				<control type="image">
 					<visible>IsEmpty(ListItem.Trailer)</visible>
 					<left>480</left>
@@ -264,28 +255,36 @@
 					<width>710</width>
 					<height>520</height>
 				</control>
-
-				<!--
-					Console: Title, if not present Boxback/CPanel
-					MAME: Title, if not present Boxback/CPanel
-				-->
 				<!--
 				<control type="image">
-					<left>900</left>
-					<top>400</top>
-					<width>270</width>
-					<height>200</height>
+					<left>480</left>
+					<top>100</top>
+					<width>710</width>
+					<height>520</height>
 					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 				</control>
 				-->
+
+				<!-- Console: Clearlogo, if not present Banner/Marquee
+					 MAME: Clearlogo, if not present Banner/Marquee
+				-->
 				<control type="image">
-					<left>900</left>
-					<top>400</top>
-					<width>270</width>
-					<height>200</height>
-					<texture colordiffuse="FFD0D0D0" background="true">$VAR[ROM_Simple_Art_Title]</texture>
+					<left>830</left>
+					<top>110</top>
+					<width>350</width>
+					<height>90</height>
+					<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
+				<!--
+				<control type="image">
+					<left>830</left>
+					<top>110</top>
+					<width>350</width>
+					<height>90</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
+				</control>
+				-->
 
 				<!-- Metadata ================================================================== -->
 				<control type="group">
@@ -295,97 +294,99 @@
 					<!-- Infolabels -->
 					<!-- Genre, Studio, NPlayers, ESRB, Rating, Platform -->
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
+						<param name="left" value="80" />
 						<param name="top" value="30" />
 						<param name="text_label" value="Genre" />
 						<param name="text" value="$INFO[ListItem.Genre]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
+						<param name="left" value="80" />
 						<param name="top" value="60" />
 						<param name="text_label" value="Developer" />
 						<param name="text" value="$INFO[ListItem.Studio]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
+						<param name="left" value="80" />
 						<param name="top" value="90" />
 						<param name="text_label" value="NPlayers" />
 						<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
 					</include>
+
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
-						<param name="top" value="120" />
+						<param name="left" value="500" />
+						<param name="top" value="30" />
 						<param name="text_label" value="ESRB" />
 						<param name="text" value="$INFO[ListItem.Property(esrb)]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
-						<param name="top" value="150" />
+						<param name="left" value="500" />
+						<param name="top" value="60" />
 						<param name="text_label" value="Rating" />
 						<param name="text" value="$INFO[ListItem.Rating]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="0" />
-						<param name="top" value="180" />
+						<param name="left" value="500" />
+						<param name="top" value="90" />
 						<param name="text_label" value="Platform" />
 						<param name="text" value="$INFO[ListItem.Property(platform)]" />
 					</include>
 
 					<!-- Platform AEL icon -->
+					<include content="AEL_Platform_Icon">
+						<param name="left" value="0" />
+						<param name="top" value="25" />
+					</include>
 					<!--
 					<control type="image">
-						<left>860</left>
+						<left>0</left>
 						<top>25</top>
 						<width>100</width>
 						<height>100</height>
 						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 					</control>
 					-->
-					<include content="AEL_Platform_Icon">
-						<param name="left" value="860" />
-						<param name="top" value="25" />
-					</include>
 
-					<!-- Console: Clearlogo, if not present Banner/Marquee
-						 MAME: Clearlogo, if not present Banner/Marquee
-					-->
 					<!--
-					<control type="image">
-						<left>690</left>
-						<top>135</top>
-						<width>450</width>
-						<height>90</height>
-						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-					</control>
+						Console: Title, if not present Boxback/CPanel
+						MAME: Title, if not present Boxback/CPanel
 					-->
 					<control type="image">
-						<left>690</left>
-						<top>135</top>
-						<width>450</width>
-						<height>90</height>
-						<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
+						<left>0</left>
+						<top>130</top>
+						<width>380</width>
+						<height>280</height>
+						<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
-
-					<!-- Plot -->
 					<!--
 					<control type="image">
 						<left>0</left>
-						<width>1140</width>
-						<top>230</top>
-						<height>190</height>
+						<top>130</top>
+						<width>380</width>
+						<height>280</height>
 						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 					</control>
 					-->
+
+					<!-- Plot -->
 					<control type="textbox">
-						<left>0</left>
-						<width>1140</width>
-						<top>230</top>
-						<height>190</height>
+						<left>400</left>
+						<width>730</width>
+						<top>130</top>
+						<height>280</height>
 						<font>font10</font>
 						<label>$INFO[ListItem.Plot]</label>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
+					<!--
+					<control type="image">
+						<left>400</left>
+						<width>730</width>
+						<top>130</top>
+						<height>280</height>
+						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+					</control>
+					-->
 				</control>
 			</control>
 		</control>
