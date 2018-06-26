@@ -215,23 +215,23 @@
 					Console: Boxfront/Cabinet
 					MAME: Flyer, if not Boxfront/Cabinet
 				-->
+				<control type="image">
+					<left>40</left>
+					<top>90</top>
+					<width>400</width>
+					<height>520</height>
+					<texture background="true">$VAR[ROM_Simple_Art_Main]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
 				<!--
 				<control type="image">
-					<left>50</left>
-					<top>100</top>
+					<left>40</left>
+					<top>90</top>
 					<width>400</width>
 					<height>520</height>
 					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 				</control>
 				-->
-				<control type="image">
-					<left>50</left>
-					<top>100</top>
-					<width>400</width>
-					<height>500</height>
-					<texture background="true">$VAR[ROM_Simple_Art_Main]</texture>
-					<aspectratio>keep</aspectratio>
-				</control>
 
 				<!--
 					Console: Snap , if not present Cartridge/PCB
@@ -241,25 +241,25 @@
 				-->
 				<control type="image">
 					<visible>IsEmpty(ListItem.Trailer)</visible>
-					<left>480</left>
-					<top>100</top>
-					<width>710</width>
+					<left>460</left>
+					<top>90</top>
+					<width>730</width>
 					<height>520</height>
 					<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="videowindow">
 					<visible>Player.Playing + !IsEmpty(ListItem.Trailer)</visible>
-					<left>480</left>
-					<top>100</top>
-					<width>710</width>
+					<left>460</left>
+					<top>90</top>
+					<width>730</width>
 					<height>520</height>
 				</control>
 				<!--
 				<control type="image">
-					<left>480</left>
-					<top>100</top>
-					<width>710</width>
+					<left>460</left>
+					<top>90</top>
+					<width>730</width>
 					<height>520</height>
 					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 				</control>
@@ -269,7 +269,7 @@
 					 MAME: Clearlogo, if not present Banner/Marquee
 				-->
 				<control type="image">
-					<left>830</left>
+					<left>810</left>
 					<top>110</top>
 					<width>350</width>
 					<height>90</height>
@@ -278,7 +278,7 @@
 				</control>
 				<!--
 				<control type="image">
-					<left>830</left>
+					<left>810</left>
 					<top>110</top>
 					<width>350</width>
 					<height>90</height>
@@ -288,7 +288,7 @@
 
 				<!-- Metadata ================================================================== -->
 				<control type="group">
-					<left>50</left>
+					<left>40</left>
 					<top>600</top>
 
 					<!-- Infolabels -->
@@ -313,19 +313,19 @@
 					</include>
 
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="500" />
+						<param name="left" value="550" />
 						<param name="top" value="30" />
 						<param name="text_label" value="ESRB" />
 						<param name="text" value="$INFO[ListItem.Property(esrb)]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="500" />
+						<param name="left" value="550" />
 						<param name="top" value="60" />
 						<param name="text_label" value="Rating" />
 						<param name="text" value="$INFO[ListItem.Rating]" />
 					</include>
 					<include content="AEL_Matrix_Text">
-						<param name="left" value="500" />
+						<param name="left" value="550" />
 						<param name="top" value="90" />
 						<param name="text_label" value="Platform" />
 						<param name="text" value="$INFO[ListItem.Property(platform)]" />
@@ -352,38 +352,38 @@
 					-->
 					<control type="image">
 						<left>0</left>
-						<top>130</top>
-						<width>380</width>
-						<height>280</height>
+						<top>140</top>
+						<width>400</width>
+						<height>270</height>
 						<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<!--
 					<control type="image">
 						<left>0</left>
-						<top>130</top>
-						<width>380</width>
-						<height>280</height>
+						<top>140</top>
+						<width>400</width>
+						<height>270</height>
 						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 					</control>
 					-->
 
 					<!-- Plot -->
 					<control type="textbox">
-						<left>400</left>
+						<left>420</left>
+						<top>140</top>
 						<width>730</width>
-						<top>130</top>
-						<height>280</height>
+						<height>270</height>
 						<font>font10</font>
 						<label>$INFO[ListItem.Plot]</label>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
 					<!--
 					<control type="image">
-						<left>400</left>
+						<left>420</left>
+						<top>140</top>
 						<width>730</width>
-						<top>130</top>
-						<height>280</height>
+						<height>270</height>
 						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
 					</control>
 					-->
