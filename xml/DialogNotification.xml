@@ -7,10 +7,7 @@
 			<top>85</top>
 			<right>0</right>
 			<width>840</width>
-			<!-- <include>OpenClose_Right</include> -->
-			<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
-			<include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Right</include>
-			<!-- <include> ends -->
+			<include>OpenClose_Right</include>
 			<visible>String.IsEmpty(Window(Home).Property(script.cinemavision.running))</visible>
 			<control type="image">
 				<left>0</left>
@@ -48,6 +45,8 @@
 				<height>60</height>
 				<font>font27_narrow</font>
 				<aligny>center</aligny>
+				<scrollout>false</scrollout>
+				<pauseatend>2000</pauseatend>
 			</control>
 		</control>
 	</controls>
