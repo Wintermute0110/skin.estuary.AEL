@@ -1,13 +1,20 @@
 # Skin Estuary AEL MOD #
 
-*Estuary AEL MOD* is a modification of Kodi's *Estuary* skin to support [Advanced Emulator Launcher],
-[Advanced MAME Launcher] and [Advanced DOOM Launcher]. This skin is for Kodi Krypton.
+*Estuary AEL MOD* is a modification of Kodi's *Estuary* skin to provide better support for the
+addons [Advanced Emulator Launcher], [Advanced MAME Launcher] and [Advanced DOOM Launcher].
+This skin is for **Kodi Krypton** and **Kodi Leia**.
 
-You may install both Estuary and Estuary AEL MOD on the same Kodi box.
+You may install safely both *Estuary* and *Estuary AEL MOD* on the same Kodi box.
 
 [Advanced Emulator Launcher]: http://forum.kodi.tv/showthread.php?tid=287826
 [Advanced MAME Launcher]: http://forum.kodi.tv/showthread.php?tid=304186
 [Advanced DOOM Launcher]: https://github.com/Wintermute0110/plugin.program.advanced.DOOM.launcher
+
+## Important ##
+
+For **Kodi Krypton** use the branch `Krypton`.
+
+For **Kodi Leia** use the branch `master` (default branch).
 
 ## Installing the skin ##
 
