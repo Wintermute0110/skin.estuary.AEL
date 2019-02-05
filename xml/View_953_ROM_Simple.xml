@@ -251,6 +251,7 @@
 					Ratio 710/520 = 1.36
 				-->
 				<control type="image">
+					<!-- In Leia next line must be commented, otherwise snap is never displayed -->
 					<!-- <visible>IsEmpty(ListItem.Trailer)</visible> -->
 					<left>460</left>
 					<top>90</top>

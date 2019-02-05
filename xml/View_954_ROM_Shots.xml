@@ -228,7 +228,8 @@
 					If available play trailer instead of Snap
 				-->
 				<control type="image">
-					<visible>IsEmpty(ListItem.Trailer)</visible>
+					<!-- In Leia next line must be commented, otherwise snap is never displayed -->
+					<!-- <visible>IsEmpty(ListItem.Trailer)</visible> -->
 					<left>40</left>
 					<top>90</top>
 					<width>800</width>
