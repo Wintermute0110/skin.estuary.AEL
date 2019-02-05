@@ -15,9 +15,9 @@
 
 			<control type="fixedlist" id="955">
 				<left>594</left>
+				<right>0</right>
 				<top>list_y_offset</top>
 				<bottom>list_y_offset</bottom>
-				<right>0</right>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>vertical</orientation>
 				<pagecontrol>531</pagecontrol>

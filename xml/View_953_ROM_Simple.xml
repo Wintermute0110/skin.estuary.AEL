@@ -9,14 +9,13 @@
 	<include name="View_953_ROM_Simple">
 		<control type="group">
 			<include>OpenClose_Left</include>
-			<left>-5</left>
 			<visible>Control.IsVisible(953)</visible>
 			<include>Visible_Left</include>
 
 			<!-- id of the list is the id of the view -->
 			<control type="fixedlist" id="953">
-				<left>0</left>
-				<width>list_width</width>
+				<left>-5</left>
+				<right>1195</right>
 				<top>list_y_offset</top>
 				<bottom>list_y_offset</bottom>
 				<movement>5</movement>
@@ -28,11 +27,11 @@
 				<onright>953600</onright>
 				<onup>953</onup>
 				<ondown>953</ondown>
-				<!-- viewtype label defines the view name on Kodi view selector -->
+				<!-- viewtype label attribute defines the view name on Kodi view selector -->
 				<viewtype label="ROM Simple">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
-				<focusedlayout height="list_item_height" width="list_width">
+				<focusedlayout height="list_item_height">
 					<control type="image">
 						<left>0</left>
 						<right>0</right>
@@ -116,7 +115,7 @@
 					</control>
 				</focusedlayout>
 
-				<itemlayout height="list_item_height" width="list_width">
+				<itemlayout height="list_item_height">
 					<!-- Render year. If year is empty then render overlay icon -->
 					<control type="label">
 						<left>18</left>
@@ -204,13 +203,25 @@
 					<orientation>vertical</orientation>
 					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(953600)">conditional</animation>
 				</control>
+
+				<!--
 				<control type="group">
-					<left>600</left>
-					<top>82</top>
-					<include>UserRatingCircle</include>
+					<left>310</left>
+					<top>936</top>
+					<include content="RatingCircle">
+						<param name="animation" value="True" />
+					</include>
+				</control>
+				-->
+				<control type="group">
+					<left>310</left>
+					<top>936</top>
+					<include content="RatingCircle">
+						<param name="animation" value="True" />
+					</include>
 				</control>
 
-				<!-- First row of images ======================================================= -->
+				<!-- Upper part of the view ==================================================== -->
 				<!--
 					Console: Boxfront/Cabinet
 					MAME: Flyer, if not Boxfront/Cabinet
@@ -240,7 +251,7 @@
 					Ratio 710/520 = 1.36
 				-->
 				<control type="image">
-					<visible>IsEmpty(ListItem.Trailer)</visible>
+					<!-- <visible>IsEmpty(ListItem.Trailer)</visible> -->
 					<left>460</left>
 					<top>90</top>
 					<width>730</width>
@@ -255,6 +266,7 @@
 					<width>730</width>
 					<height>520</height>
 				</control>
+
 				<!--
 				<control type="image">
 					<left>460</left>
@@ -346,6 +358,7 @@
 					</control>
 					-->
 
+					<!-- Lower part ============================================================ -->
 					<!--
 						Console: Title, if not present Boxback/CPanel
 						MAME: Title, if not present Boxback/CPanel
