@@ -22,14 +22,11 @@
 				<height>900</height>
 				<shadowcolor>black</shadowcolor>
 				<pagecontrol>3000</pagecontrol>
-				<!-- <monofont> tag is new in Leia -->
-				<font>font14</font>
+				<!-- <monofont> tag is new in Kodi Leia
+				     I have to update AEL to use the bool parameter when calling this dialog.
+				  -->
+				<font>Mono26</font>
 				<monofont>Mono26</monofont>
-				<!-- Old Krypton code.
-					 Aparently variables don't work on <font> tag. I have to ask about this in
-					 the forum. -->
-				<!-- <font>Mono24</font> -->
-				<!-- <font>$VAR[TextViewer_Font_Name]</font> -->
 				<textcolor>$VAR[TextViewer_Text_Colour]</textcolor>
 			</control>
 
@@ -71,7 +68,7 @@
 			<texturenofocus colordiffuse="button_focus">overlays/arrowdown.png</texturenofocus>
 		</control>
 
-		<!-- "Pages n/m" label-->
+		<!-- "Pages n/m" label -->
 		<control type="label">
 			<left>1475</left>
 			<top>1040</top>
@@ -81,9 +78,22 @@
 			<textcolor>grey</textcolor>
 			<align>right</align>
 			<aligny>center</aligny>
-			<!-- DEBUG FontWidth property value -->
-			<!-- <label>$INFO[Window(home).Property(FontWidth)]</label> -->
 			<label>$LOCALIZE[31035] [COLOR=button_focus]$INFO[Container(5).CurrentPage]/$INFO[Container(5).NumPages][/COLOR]</label>
+			<wrapmultiline>true</wrapmultiline>
+			<visible>Integer.IsGreater(Container(5).NumPages,1)</visible>
+		</control>
+
+		<!-- DEBUG FontWidth property value -->
+		<control type="label">
+			<left>800</left>
+			<top>1040</top>
+			<width>800</width>
+			<height>35</height>
+			<font>font12</font>
+			<textcolor>grey</textcolor>
+			<align>right</align>
+			<aligny>center</aligny>
+			<label>Window(Home).Property(Fontwidth) [COLOR=button_focus]$INFO[Window(home).Property(FontWidth)][/COLOR]</label>
 			<wrapmultiline>true</wrapmultiline>
 			<visible>Integer.IsGreater(Container(5).NumPages,1)</visible>
 		</control>
