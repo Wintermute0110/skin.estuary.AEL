@@ -20,10 +20,8 @@
 			<include>View_952_ROM_MAME</include>
 			<include>View_953_ROM_Simple</include>
 			<include>View_954_ROM_Shots</include>
-			<!--
 			<include>View_955_ROM_Launcher</include>
 			<include>View_956_Std_Launcher</include>
-			-->
 			<include>View_970_AEL_Matrix</include>
 			<include>View_971_AEL_Properties</include>
 

@@ -24,10 +24,8 @@
 	<include file="View_952_ROM_MAME.xml" />
 	<include file="View_953_ROM_Simple.xml" />
 	<include file="View_954_ROM_Shots.xml" />
-	<!--
 	<include file="View_955_ROM_Launcher.xml" />
 	<include file="View_956_Std_Launcher.xml" />
-	-->
 	<include file="View_970_AEL_Matrix.xml" />
 	<include file="View_971_AEL_Properties.xml" />
 
