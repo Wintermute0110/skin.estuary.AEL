@@ -631,7 +631,7 @@
 			</control>
 		</definition>
 	</include>
-	
+
 	<!-- Original code from <include name="ImageWidget"> in Includes_Home.xml -->
 	<include name="AEL_Text_Widget">
 		<param name="visible">true</param>

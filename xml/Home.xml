@@ -927,18 +927,20 @@
 					</include>
 					<control type="grouplist" id="23001">
 						<include>WidgetGroupListCommon</include>
-						<!-- Custom built set of categories and menus for AML:
-							 Categories (like in Movies): plugin://plugin.program.AML/?command=SKIN_SHOW_FAV_SLOTS
-							 Main filters: plugin://plugin.program.AML/?command=SKIN_SHOW_MAIN_FILTERS
-							 Binary filters: plugin://plugin.program.AML/?command=SKIN_SHOW_BINARY_FILTERS
-							 Catalog filters: plugin://plugin.program.AML/?command=SKIN_SHOW_CATALOG_FILTERS
-							 DAT file browsers: plugin://plugin.program.AML/?command=SKIN_SHOW_DAT_FILES
-							 Software Lists: plugin://plugin.program.AML/?command=SKIN_SHOW_SL_FILTERS
+						<!--
+							Custom built set of categories and menus for AML:
+							Categories (like in Movies): plugin://plugin.program.AML/?command=SKIN_SHOW_FAV_SLOTS
+							Main filters: plugin://plugin.program.AML/?command=SKIN_SHOW_MAIN_FILTERS
+							Binary filters: plugin://plugin.program.AML/?command=SKIN_SHOW_BINARY_FILTERS
+							Catalog filters: plugin://plugin.program.AML/?command=SKIN_SHOW_CATALOG_FILTERS
+							DAT file browsers: plugin://plugin.program.AML/?command=SKIN_SHOW_DAT_FILES
+							Software Lists: plugin://plugin.program.AML/?command=SKIN_SHOW_SL_FILTERS
 						-->
-						<!-- WidgetListCategories is defined in Includes_Home.xml 
-							 WidgetListPoster is defined in Includes_Home.xml
-							 WidgetListPoster param "sortby" values: "random", ...
-						  -->
+						<!--
+							WidgetListCategories is defined in Includes_Home.xml
+							WidgetListPoster is defined in Includes_Home.xml
+							WidgetListPoster param "sortby" values: "random", ...
+						-->
 						<include content="WidgetListCategories">
 							<param name="content_path" value="plugin://plugin.program.AML/?command=SKIN_SHOW_FAV_SLOTS"/>
 							<param name="widget_header" value="Advanced MAME Launcher Favourites"/>
@@ -979,11 +981,14 @@
 					</control>
 
 					<!-- If AML is not installed render some text -->
-					<!-- For some reason this doesn't work. AML is installed by warning text is displayed ??? -->
-					<include content="AEL_Text_Widget" condition="!System.HasAddon(plugin.program.AML)">
-						<param name="widget_id" value="23900"/>
+					<!-- For some reason this doesn't work. AML is installed but warning text is displayed ??? -->
+					<!--
+					<include content="AEL_Text_Widget">
+						<param name="visible" value="!System.HasAddon(plugin.program.AML)" />
+						<param name="widget_id" value="23900" />
 						<param name="text_label" value="Advanced MAME Launcher is not installed. Nothing to show." />
 					</include>
+					-->
 				</control>
 
 				<!-- Advanced DOOM Launcher link in Home main menu -->
