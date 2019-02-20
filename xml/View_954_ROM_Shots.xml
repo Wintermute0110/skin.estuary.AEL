@@ -99,6 +99,9 @@
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<!-- Trailer Trigger -->
+					<!-- Causes problems in Leia. Make strange transitions when changing rows
+					     on the listitem. Commented until I find a solution. -->
+					<!--
 					<control type="button">
 						<left>0</left>
 						<top>0</top>
@@ -113,6 +116,7 @@
 							<effect type="fade" delay="250" start="0" end="100" />
 						</animation>
 					</control>
+					-->
 				</focusedlayout>
 
 				<itemlayout height="list_item_height">
