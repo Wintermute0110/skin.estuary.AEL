@@ -348,37 +348,27 @@
 					<param name="text_label" value="LI AEL_PClone_stat" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_PClone_stat)]" />
 				</include>
-
-				<!-- Window Properties -->
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
 					<param name="top" value="530" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
-					<param name="text_width" value="500" />
-					<param name="text_label" value="Win AEL_Content" />
-					<param name="text" value="$INFO[Window(10000).Property(AEL_Content)]" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="LI filename" />
+					<param name="text" value="$INFO[ListItem.Property(filename)]" />
 				</include>
-				<include content="AEL_Properties_Text">
-					<param name="label_colour" value="violet" />
-					<param name="left" value="0" />
-					<param name="top" value="560" />
-					<param name="label_width" value="350" />
-					<param name="text_left" value="360" />
-					<param name="text_width" value="500" />
-					<param name="text_label" value="Win AEL_Launch_Name" />
-					<param name="text" value="$INFO[Window(10000).Property(AEL_Launch_Name)]" />
-				</include>
+
+				<!-- Window Properties -->
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
 					<param name="top" value="590" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
-					<param name="text_width" value="500" />
-					<param name="text_label" value="Win AEL_Launch_Icon" />
-					<param name="text" value="$INFO[Window(10000).Property(AEL_Launch_Icon)]" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="Win AEL_Content" />
+					<param name="text" value="$INFO[Window(10000).Property(AEL_Content)]" />
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
@@ -386,7 +376,27 @@
 					<param name="top" value="620" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
-					<param name="text_width" value="500" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="Win AEL_Launch_Name" />
+					<param name="text" value="$INFO[Window(10000).Property(AEL_Launch_Name)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="650" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="Win AEL_Launch_Icon" />
+					<param name="text" value="$INFO[Window(10000).Property(AEL_Launch_Icon)]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="680" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
 					<param name="text_label" value="Win AEL_Launch_Clearlogo" />
 					<param name="text" value="$INFO[Window(10000).Property(AEL_Launch_Clearlogo)]" />
 				</include>
@@ -396,7 +406,7 @@
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
-					<param name="top" value="680" />
+					<param name="top" value="740" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="800" />
@@ -406,7 +416,7 @@
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
-					<param name="top" value="710" />
+					<param name="top" value="770" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="800" />
@@ -416,7 +426,7 @@
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
-					<param name="top" value="740" />
+					<param name="top" value="800" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="800" />
@@ -426,7 +436,7 @@
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
-					<param name="top" value="770" />
+					<param name="top" value="830" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="800" />
@@ -436,7 +446,7 @@
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
-					<param name="top" value="800" />
+					<param name="top" value="860" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="800" />
@@ -446,7 +456,7 @@
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
-					<param name="top" value="830" />
+					<param name="top" value="890" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="800" />
@@ -457,7 +467,7 @@
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
-					<param name="top" value="860" />
+					<param name="top" value="920" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="800" />
@@ -467,7 +477,7 @@
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
 					<param name="left" value="0" />
-					<param name="top" value="890" />
+					<param name="top" value="950" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="800" />
