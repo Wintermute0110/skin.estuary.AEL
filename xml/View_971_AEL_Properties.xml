@@ -182,116 +182,97 @@
 				</control>
 
 				<!-- Matrix of images ---------------------------------------------------------- -->
-				<!-- First row -->
-				<include content="AEL_Matrix_Image_Title_or_Controller">
+				<!-- Platform AEL icon -->
+				<include content="AEL_Platform_Icon">
+					<param name="debug_control" value="false" />
 					<param name="left" value="50" />
-					<param name="top" value="80" />
-				</include>
-				<include content="AEL_Matrix_Image">
-					<param name="left" value="340" />
-					<param name="top" value="80" />
-					<param name="asset_label" value="Snap" />
-					<param name="asset_image" value="$INFO[ListItem.Art(snap)]" />
-				</include>
-				<include content="AEL_Matrix_Image">
-					<param name="left" value="630" />
-					<param name="top" value="80" />
-					<param name="asset_label" value="Boxfront/Cabinet" />
-					<param name="asset_image" value="$INFO[ListItem.Art(boxfront)]" />
-				</include>
-				<include content="AEL_Matrix_Image">
-					<param name="left" value="920" />
-					<param name="top" value="80" />
-					<param name="asset_label" value="Cartridge/PCB" />
-					<param name="asset_image" value="$INFO[ListItem.Art(cartridge)]" />
+					<param name="top" value="90" />
+					<param name="box_width" value="210" />
+					<param name="box_height" value="210" />
 				</include>
 
-				<!-- Second row -->
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="50" />
-					<param name="top" value="275" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="280" />
+					<param name="top" value="90" />
+					<param name="box_width" value="210" />
+					<param name="box_height" value="210" />
 					<param name="asset_label" value="Icon" />
 					<param name="asset_image" value="$INFO[ListItem.Icon]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="340" />
-					<param name="top" value="275" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="510" />
+					<param name="top" value="90" />
+					<param name="box_width" value="210" />
+					<param name="box_height" value="210" />
 					<param name="asset_label" value="Banner/Marquee" />
 					<param name="asset_image" value="$INFO[ListItem.Art(banner)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="630" />
-					<param name="top" value="275" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="740" />
+					<param name="top" value="90" />
+					<param name="box_width" value="210" />
+					<param name="box_height" value="210" />
 					<param name="asset_label" value="Poster" />
 					<param name="asset_image" value="$INFO[ListItem.Art(poster)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="920" />
-					<param name="top" value="275" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="970" />
+					<param name="top" value="90" />
+					<param name="box_width" value="210" />
+					<param name="box_height" value="210" />
 					<param name="asset_label" value="Clearlogo" />
 					<param name="asset_image" value="$INFO[ListItem.Art(clearlogo)]" />
 				</include>
 
 				<!-- Metadata ------------------------------------------------------------------ -->
-				<!-- Platform AEL icon -->
-				<!-- Placeholder -->
-				<!--
-				<control type="image">
-					<left>50</left>
-					<top>510</top>
-					<width>100</width>
-					<height>100</height>
-					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-				</control>
-				-->
-				<include content="AEL_Platform_Icon">
-					<param name="left" value="50" />
-					<param name="top" value="510" />
-				</include>
 
 				<!-- Infolabels -->
 				<!-- Vertical displacement 30 pixels -->
 				<!-- Year, Genre, Developer, NPlayers, ESRB, Rating -->
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="600" />
-					<param name="top" value="500" />
+					<param name="top" value="320" />
 					<param name="text_label" value="Year" />
 					<param name="text" value="$INFO[ListItem.Year]" />
 				</include>
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="600" />
-					<param name="top" value="530" />
+					<param name="top" value="350" />
 					<param name="text_label" value="Genre" />
 					<param name="text" value="$INFO[ListItem.Genre]" />
 				</include>
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="600" />
-					<param name="top" value="560" />
+					<param name="top" value="380" />
 					<param name="text_label" value="Developer" />
 					<param name="text" value="$INFO[ListItem.Studio]" />
 				</include>
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="600" />
-					<param name="top" value="590" />
+					<param name="top" value="410" />
 					<param name="text_label" value="ESRB" />
 					<param name="text" value="$INFO[ListItem.Property(esrb)]" />
 				</include>
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="600" />
-					<param name="top" value="620" />
+					<param name="top" value="440" />
 					<param name="text_label" value="Rating" />
 					<param name="text" value="$INFO[ListItem.Rating]" />
 				</include>
 				<include content="AEL_Matrix_Text">
 					<param name="left" value="600" />
-					<param name="top" value="650" />
+					<param name="top" value="470" />
 					<param name="text_label" value="NPlayers" />
 					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
 				</include>
 				<include content="AEL_Matrix_Text">
 					<param name="label_colour" value="orange" />
 					<param name="left" value="600" />
-					<param name="top" value="680" />
+					<param name="top" value="500" />
 					<param name="text_label" value="Platform" />
 					<param name="text" value="$INFO[ListItem.Property(platform)]" />
 				</include>
@@ -299,50 +280,71 @@
 				<!-- ListItem properties -->
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="140" />
-					<param name="top" value="500" />
+					<param name="left" value="0" />
+					<param name="top" value="320" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
 					<param name="text_label" value="LI AEL_Content" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_Content)]" />
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="140" />
-					<param name="top" value="530" />
+					<param name="left" value="0" />
+					<param name="top" value="350" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
 					<param name="text_label" value="LI AEL_NumItems" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_NumItems)]" />
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="140" />
-					<param name="top" value="560" />
+					<param name="left" value="0" />
+					<param name="top" value="380" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
 					<param name="text_label" value="LI AEL_InFav" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_InFav)]" />
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="140" />
-					<param name="top" value="590" />
+					<param name="left" value="0" />
+					<param name="top" value="410" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
 					<param name="text_label" value="LI AEL_MultiDisc" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_MultiDisc)]" />
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="140" />
-					<param name="top" value="620" />
+					<param name="left" value="0" />
+					<param name="top" value="440" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
 					<param name="text_label" value="LI AEL_Fav_stat" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_Fav_stat)]" />
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="140" />
-					<param name="top" value="650" />
+					<param name="left" value="0" />
+					<param name="top" value="470" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
 					<param name="text_label" value="LI AEL_NoIntro_stat" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_NoIntro_stat)]" />
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="140" />
-					<param name="top" value="680" />
+					<param name="left" value="0" />
+					<param name="top" value="500" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="500" />
 					<param name="text_label" value="LI AEL_PClone_stat" />
 					<param name="text" value="$INFO[ListItem.Property(AEL_PClone_stat)]" />
 				</include>
@@ -350,8 +352,8 @@
 				<!-- Window Properties -->
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="30" />
-					<param name="top" value="710" />
+					<param name="left" value="0" />
+					<param name="top" value="530" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="500" />
@@ -360,8 +362,8 @@
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="30" />
-					<param name="top" value="740" />
+					<param name="left" value="0" />
+					<param name="top" value="560" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="500" />
@@ -370,8 +372,8 @@
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="30" />
-					<param name="top" value="770" />
+					<param name="left" value="0" />
+					<param name="top" value="590" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="500" />
@@ -380,8 +382,8 @@
 				</include>
 				<include content="AEL_Properties_Text">
 					<param name="label_colour" value="violet" />
-					<param name="left" value="30" />
-					<param name="top" value="800" />
+					<param name="left" value="0" />
+					<param name="top" value="620" />
 					<param name="label_width" value="350" />
 					<param name="text_left" value="360" />
 					<param name="text_width" value="500" />
@@ -389,25 +391,89 @@
 					<param name="text" value="$INFO[Window(10000).Property(AEL_Launch_Clearlogo)]" />
 				</include>
 
-				<!-- Plot -->
-				<!--
-				<control type="image">
-					<left>60</left>
-					<width>1120</width>
-					<top>830</top>
-					<height>190</height>
-					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-				</control>
-				-->
-				<control type="textbox">
-					<left>60</left>
-					<width>1120</width>
-					<top>830</top>
-					<height>190</height>
-					<font>font10</font>
-					<label>$INFO[ListItem.Plot]</label>
-					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
-				</control>
+				<!-- Rufoo needs the filename of the ROM to determine the aspect ratio of the
+					 images. -->
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="680" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="ListItem.FileName" />
+					<param name="text" value="$INFO[ListItem.FileName]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="710" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="ListItem.Path" />
+					<param name="text" value="$INFO[ListItem.Path]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="740" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="ListItem.FolderName" />
+					<param name="text" value="$INFO[ListItem.FolderName]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="770" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="ListItem.FolderPath" />
+					<param name="text" value="$INFO[ListItem.FolderPath]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="800" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="ListItem.FileNameAndPath" />
+					<param name="text" value="$INFO[ListItem.FileNameAndPath]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="830" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="ListItem.FileExtension" />
+					<param name="text" value="$INFO[ListItem.FileExtension]" />
+				</include>
+
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="860" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="Container.Content" />
+					<param name="text" value="$INFO[Container.Content]" />
+				</include>
+				<include content="AEL_Properties_Text">
+					<param name="label_colour" value="violet" />
+					<param name="left" value="0" />
+					<param name="top" value="890" />
+					<param name="label_width" value="350" />
+					<param name="text_left" value="360" />
+					<param name="text_width" value="800" />
+					<param name="text_label" value="Container.FolderPath" />
+					<param name="text" value="$INFO[Container.FolderPath]" />
+				</include>
 
 				<!-- Flags --------------------------------------------------------------------- -->
 				<!-- Included in MyPrograms.xml -->

@@ -45,55 +45,64 @@
 
 	<!-- Parametrizable view includes ========================================================== -->
 	<include name="AEL_Matrix_Image">
-		<control type="group">
-			<left>$PARAM[left]</left>
-			<top>$PARAM[top]</top>
-			<!-- Placeholder -->
-			<!--
-			<control type="image">
-				<width>260</width>
-				<height>190</height>
-				<texture border="0">special://skin/extras/backgrounds/pattern4.jpg</texture>
+		<!-- true or false -->
+		<param name="debug_control" default="false" />
+		<param name="box_width" default="260" />
+		<param name="box_height" default="190" />
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+
+				<!-- Placeholder image for whole box, display if debug is true -->
+				<control type="image">
+					<visible>$PARAM[debug_control]</visible>
+					<width>$PARAM[box_width]</width>
+					<height>$PARAM[box_height]</height>
+					<texture border="0">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				<!-- Placeholder image for label, display if debug is true -->
+				<control type="image">
+					<visible>$PARAM[debug_control]</visible>
+					<width>$PARAM[box_width]</width>
+					<height>25</height>
+					<texture border="0">special://skin/extras/backgrounds/pattern3.jpg</texture>
+				</control>
+				<!-- Actual label -->
+				<control type="label">
+					<width>$PARAM[box_width]</width>
+					<height>25</height>
+					<label>$PARAM[asset_label]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font9</font>
+					<textcolor>white</textcolor>
+				</control>
+
+				<!-- Placeholder image for image, display if debug is true -->
+				<control type="image">
+					<visible>$PARAM[debug_control]</visible>
+					<top>25</top>
+					<width>$PARAM[box_width]</width>
+					<height>165</height>
+					<texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture>
+				</control>
+				<!-- Actual image -->
+				<control type="image">
+					<top>25</top>
+					<width>$PARAM[box_width]</width>
+					<height>165</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$PARAM[asset_image]</texture>
+				</control>
 			</control>
-			<control type="image">
-				<width>260</width>
-				<height>25</height>
-				<texture border="0">special://skin/extras/backgrounds/pattern3.jpg</texture>
-			</control>
-			-->
-			<control type="label">
-				<width>260</width>
-				<height>25</height>
-				<label>$PARAM[asset_label]</label>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>font9</font>
-				<textcolor>white</textcolor>
-			</control>
-			<!-- Placeholder -->
-			<!--
-			<control type="image">
-				<top>25</top>
-				<width>260</width>
-				<height>165</height>
-				<fadetime>100</fadetime>
-				<texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture>
-			</control>
-			-->
-			<control type="image">
-				<top>25</top>
-				<width>260</width>
-				<height>165</height>
-				<aspectratio>keep</aspectratio>
-				<fadetime>100</fadetime>
-				<texture background="true">$PARAM[asset_image]</texture>
-			</control>
-		</control>
+		</definition>
 	</include>
 
-	<!-- Title and Controller are never be set at the same time. Title is only for ROMs and
-		 Controller is only for Launchers
-	  -->
+	<!--
+		Title and Controller are never be set at the same time. Title is only for ROMs and
+		Controller is only for Launchers
+	-->
 	<include name="AEL_Matrix_Image_Title_or_Controller">
 		<control type="group">
 			<left>$PARAM[left]</left>
@@ -215,17 +224,31 @@
 		</definition>
 	</include>
 
-	<!-- Platform icon ========================================================================= -->
+	<!-- Platform icon ------------------------------------------------------------------------- -->
 	<include name="AEL_Platform_Icon">
-		<control type="image">
-			<left>$PARAM[left]</left>
-			<top>$PARAM[top]</top>
-			<width>100</width>
-			<height>100</height>
-			<!-- <texture>special://skin/extras/backgrounds/pattern4.jpg</texture> -->
-			<texture>$INFO[ListItem.Property(platform),special://home/addons/plugin.program.advanced.emulator.launcher/media/p_pixel/,.png]</texture>
-			<aspectratio>keep</aspectratio>
-		</control>
+		<param name="debug_control" default="false" />
+		<param name="box_width" default="200" />
+		<param name="box_height" default="200" />
+		<definition>
+			<!-- Placeholder -->
+			<control type="image">
+				<visible>$PARAM[debug_control]</visible>
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<width>$PARAM[box_width]</width>
+				<height>$PARAM[box_height]</height>
+				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+			</control>
+			<!-- Actual platform icon -->
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<width>$PARAM[box_width]</width>
+				<height>$PARAM[box_height]</height>
+				<texture>$INFO[ListItem.Property(platform),special://home/addons/plugin.program.advanced.emulator.launcher/media/p_pixel/,.png]</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+		</definition>
 	</include>
 
 	<!-- New Media flags to be used in MyPrograms.xml ========================================== -->
@@ -245,9 +268,10 @@
 		<value condition="String.IsEqual(ListItem.Property(AEL_PClone_stat),PClone_Clone)">[COLOR orange]Clone[/COLOR]</value>
 	</variable>
 
-	<!-- Helper includes
-		 InfoFlag define in Includes.xml @338
-		 MediaFlag define in Includes.xml @359
+	<!--
+		Helper includes
+		InfoFlag defined in Includes.xml @338
+		MediaFlag defined in Includes.xml @359
 	-->
 	<include name="InfoFlag_AEL">
 		<control type="group">

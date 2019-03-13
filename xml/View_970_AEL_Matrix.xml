@@ -186,6 +186,7 @@
 					<param name="top" value="80" />
 				</include>
 				<include content="AEL_Matrix_Image">
+					<param name="debug_control" value="false" />
 					<param name="left" value="340" />
 					<param name="top" value="80" />
 					<param name="asset_label" value="Snap" />
@@ -289,19 +290,12 @@
 
 				<!-- Metadata ------------------------------------------------------------------ -->
 				<!-- Platform AEL icon -->
-				<!-- Placeholder -->
-				<!--
-				<control type="image">
-					<left>50</left>
-					<top>685</top>
-					<width>100</width>
-					<height>100</height>
-					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-				</control>
-				-->
 				<include content="AEL_Platform_Icon">
-					<param name="left" value="50" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="40" />
 					<param name="top" value="685" />
+					<param name="box_width" value="120" />
+					<param name="box_height" value="120" />
 				</include>
 
 				<!-- Infolabels -->
