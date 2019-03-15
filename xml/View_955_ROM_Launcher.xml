@@ -156,12 +156,6 @@
 				<param name="width" value="654" />
 			</include>
 
-			<control type="group">
-				<left>273</left>
-				<top>590</top>
-				<include>UserRatingCircle</include>
-			</control>
-
 			<!-- Clearlogo or Banner -->
 			<control type="image">
 				<left>50</left>

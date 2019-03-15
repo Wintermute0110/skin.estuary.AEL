@@ -164,21 +164,6 @@
 					<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(502600)">conditional</animation>
 				</control>
 
-				<!--
-				<control type="group">
-					<left>310</left>
-					<top>936</top>
-					<include content="RatingCircle">
-						<param name="animation" value="True" />
-					</include>
-				</control>
-				-->
-				<control type="group">
-					<left>600</left>
-					<top>82</top>
-					<include>UserRatingCircle</include>
-				</control>
-
 				<!-- Matrix of images ---------------------------------------------------------- -->
 				<!-- First row -->
 				<include content="AEL_Matrix_Image_Title_or_Controller">

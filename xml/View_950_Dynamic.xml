@@ -160,12 +160,6 @@
 			<include content="ContentPanel">
 				<param name="width" value="1010" />
 			</include>
-
-			<control type="group">
-				<left>273</left>
-				<top>590</top>
-				<include>UserRatingCircle</include>
-			</control>
 			<!-- Common code ENDS -->
 
 			<!-- Dynamic view visibility control -->
@@ -261,12 +255,6 @@
 			<include content="ContentPanel">
 				<param name="width" value="1010" />
 			</include>
-
-			<control type="group">
-				<left>273</left>
-				<top>590</top>
-				<include>UserRatingCircle</include>
-			</control>
 			<!-- Common code ENDS -->
 
 			<!-- Dynamic view visibility control -->
@@ -383,12 +371,6 @@
 			<include content="ContentPanel">
 				<param name="width" value="1010" />
 			</include>
-
-			<control type="group">
-				<left>273</left>
-				<top>590</top>
-				<include>UserRatingCircle</include>
-			</control>
 			<!-- Common code ENDS -->
 
 			<!-- Dynamic view visibility control -->
@@ -493,12 +475,6 @@
 			<include content="ContentPanel">
 				<param name="width" value="1010" />
 			</include>
-
-			<control type="group">
-				<left>273</left>
-				<top>590</top>
-				<include>UserRatingCircle</include>
-			</control>
 			<!-- Common code ENDS -->
 
 			<!-- Dynamic view visibility control -->
@@ -668,12 +644,6 @@
 			<include content="ContentPanel">
 				<param name="width" value="1010" />
 			</include>
-
-			<control type="group">
-				<left>273</left>
-				<top>590</top>
-				<include>UserRatingCircle</include>
-			</control>
 			<!-- Common code ENDS -->
 
 			<!-- Dynamic view visibility control -->
