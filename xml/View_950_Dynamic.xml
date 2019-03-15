@@ -425,18 +425,12 @@
 			</control>
 
 			<!-- Platform AEL icon -->
-			<!--
-			<control type="image">
-				<left>800</left>
-				<top>140</top>
-				<width>100</width>
-				<height>100</height>
-				<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
-			</control>
-			-->
 			<include content="AEL_Platform_Icon">
 				<param name="left" value="800" />
 				<param name="top" value="140" />
+				<param name="debug_control" value="false" />
+				<param name="box_width" value="100" />
+				<param name="box_height" value="100" />
 			</include>
 
 			<!-- Icon or Poster -->
@@ -590,18 +584,12 @@
 			</control>
 
 			<!-- Platform AEL icon -->
-			<!--
-			<control type="image">
-				<left>40</left>
-				<top>790</top>
-				<width>100</width>
-				<height>100</height>
-				<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
-			</control>
-			-->
 			<include content="AEL_Platform_Icon">
 				<param name="left" value="40" />
 				<param name="top" value="790" />
+				<param name="debug_control" value="false" />
+				<param name="box_width" value="100" />
+				<param name="box_height" value="100" />
 			</include>
 
 			<!-- Metadata ================================================================== -->
@@ -751,6 +739,9 @@
 			<include content="AEL_Platform_Icon">
 				<param name="left" value="40" />
 				<param name="top" value="850" />
+				<param name="debug_control" value="false" />
+				<param name="box_width" value="100" />
+				<param name="box_height" value="100" />
 			</include>
 
 			<!-- Metadata ================================================================== -->

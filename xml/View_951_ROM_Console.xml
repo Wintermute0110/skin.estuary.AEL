@@ -272,6 +272,9 @@
 					<include content="AEL_Platform_Icon">
 						<param name="left" value="0" />
 						<param name="top" value="0" />
+						<param name="debug_control" value="false" />
+						<param name="box_width" value="100" />
+						<param name="box_height" value="100" />
 					</include>
 
 					<!-- Infolabels -->

@@ -352,16 +352,10 @@
 					<include content="AEL_Platform_Icon">
 						<param name="left" value="0" />
 						<param name="top" value="25" />
+						<param name="debug_control" value="false" />
+						<param name="box_width" value="100" />
+						<param name="box_height" value="100" />
 					</include>
-					<!--
-					<control type="image">
-						<left>0</left>
-						<top>25</top>
-						<width>100</width>
-						<height>100</height>
-						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-					</control>
-					-->
 
 					<!-- Lower part ============================================================ -->
 					<!--

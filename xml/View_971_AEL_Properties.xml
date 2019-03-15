@@ -184,9 +184,9 @@
 				<!-- Matrix of images ---------------------------------------------------------- -->
 				<!-- Platform AEL icon -->
 				<include content="AEL_Platform_Icon">
-					<param name="debug_control" value="false" />
 					<param name="left" value="50" />
 					<param name="top" value="90" />
+					<param name="debug_control" value="false" />
 					<param name="box_width" value="210" />
 					<param name="box_height" value="210" />
 				</include>

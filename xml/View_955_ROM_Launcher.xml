@@ -177,6 +177,9 @@
 			<include content="AEL_Platform_Icon">
 				<param name="left" value="465" />
 				<param name="top" value="110" />
+				<param name="debug_control" value="false" />
+				<param name="box_width" value="100" />
+				<param name="box_height" value="100" />
 			</include>
 
 			<!-- Metadata -->
