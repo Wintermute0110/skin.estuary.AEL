@@ -166,63 +166,94 @@
 
 				<!-- Matrix of images ---------------------------------------------------------- -->
 				<!-- First row -->
-				<include content="AEL_Matrix_Image_Title_or_Controller">
+				<include content="AEL_Matrix_Image">
+					<param name="debug_control" value="false" />
 					<param name="left" value="50" />
 					<param name="top" value="80" />
+					<param name="box_width" value="210" />
+					<param name="asset_label" value="Title" />
+					<param name="asset_image" value="$INFO[ListItem.Art(title)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
 					<param name="debug_control" value="false" />
-					<param name="left" value="340" />
+					<param name="left" value="280" />
 					<param name="top" value="80" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Snap" />
 					<param name="asset_image" value="$INFO[ListItem.Art(snap)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="630" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="510" />
 					<param name="top" value="80" />
+					<param name="box_width" value="210" />
+					<param name="asset_label" value="3D Box" />
+					<param name="asset_image" value="$INFO[ListItem.Art(3dbox)]" />
+				</include>
+				<include content="AEL_Matrix_Image">
+					<param name="debug_control" value="false" />
+					<param name="left" value="740" />
+					<param name="top" value="80" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Boxfront/Cabinet" />
 					<param name="asset_image" value="$INFO[ListItem.Art(boxfront)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="920" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="970" />
 					<param name="top" value="80" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Boxback/CPanel" />
 					<param name="asset_image" value="$INFO[ListItem.Art(boxback)]" />
 				</include>
 
 				<!-- Second row -->
 				<include content="AEL_Matrix_Image">
+					<param name="debug_control" value="false" />
 					<param name="left" value="50" />
 					<param name="top" value="275" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Cartridge/PCB" />
 					<param name="asset_image" value="$INFO[ListItem.Art(cartridge)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="340" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="280" />
 					<param name="top" value="275" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Flyer" />
 					<param name="asset_image" value="$INFO[ListItem.Art(flyer)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="630" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="510" />
 					<param name="top" value="275" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Map" />
 					<param name="asset_image" value="$INFO[ListItem.Art(map)]" />
 				</include>
+				<include content="AEL_Matrix_Image">
+					<param name="debug_control" value="false" />
+					<param name="left" value="740" />
+					<param name="top" value="275" />
+					<param name="box_width" value="210" />
+					<param name="asset_label" value="Controller" />
+					<param name="asset_image" value="$INFO[ListItem.Art(controller)]" />
+				</include>
 				<!-- Replace Art w/ Video Window -->
 				<control type="group">
-					<left>920</left>
+					<left>970</left>
 					<top>275</top>
 					<!-- Placeholder -->
 					<!--
 					<control type="image">
-						<width>260</width>
+						<width>210</width>
 						<height>190</height>
 						<texture border="0">special://skin/extras/backgrounds/pattern4.jpg</texture>
 					</control>
 					-->
 					<control type="label">
-						<width>260</width>
+						<width>210</width>
 						<height>25</height>
 						<label>Trailer</label>
 						<align>center</align>
@@ -234,7 +265,7 @@
 					<!--
 					<control type="image">
 						<top>25</top>
-						<width>260</width>
+						<width>210</width>
 						<height>165</height>
 						<fadetime>100</fadetime>
 						<texture background="true">special://skin/extras/backgrounds/pattern1.jpg</texture>
@@ -242,33 +273,49 @@
 					-->
 					<control type="videowindow">
 						<top>25</top>
-						<width>260</width>
+						<width>210</width>
 						<height>165</height>
 					</control>
 				</control>
 
 				<!-- Third row -->
 				<include content="AEL_Matrix_Image">
+					<param name="debug_control" value="false" />
 					<param name="left" value="50" />
 					<param name="top" value="470" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Icon" />
 					<param name="asset_image" value="$INFO[ListItem.Icon]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="340" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="280" />
 					<param name="top" value="470" />
+					<param name="box_width" value="210" />
+					<param name="asset_label" value="Fanart" />
+					<param name="asset_image" value="$INFO[ListItem.Fanart]" />
+				</include>
+				<include content="AEL_Matrix_Image">
+					<param name="debug_control" value="false" />
+					<param name="left" value="510" />
+					<param name="top" value="470" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Banner/Marquee" />
 					<param name="asset_image" value="$INFO[ListItem.Art(banner)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="630" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="740" />
 					<param name="top" value="470" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Poster" />
 					<param name="asset_image" value="$INFO[ListItem.Art(poster)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
-					<param name="left" value="920" />
+					<param name="debug_control" value="false" />
+					<param name="left" value="970" />
 					<param name="top" value="470" />
+					<param name="box_width" value="210" />
 					<param name="asset_label" value="Clearlogo" />
 					<param name="asset_image" value="$INFO[ListItem.Art(clearlogo)]" />
 				</include>
