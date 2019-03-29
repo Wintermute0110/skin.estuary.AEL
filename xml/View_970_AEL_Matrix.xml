@@ -293,7 +293,7 @@
 					<param name="top" value="470" />
 					<param name="box_width" value="210" />
 					<param name="asset_label" value="Fanart" />
-					<param name="asset_image" value="$INFO[ListItem.Fanart]" />
+					<param name="asset_image" value="$INFO[ListItem.Art(fanart)]" />
 				</include>
 				<include content="AEL_Matrix_Image">
 					<param name="debug_control" value="false" />
