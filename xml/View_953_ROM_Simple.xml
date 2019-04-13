@@ -226,10 +226,6 @@
 				</control>
 
 				<!-- Upper part of the view ==================================================== -->
-				<!--
-					Console: Boxfront/Cabinet
-					MAME: Flyer, if not Boxfront/Cabinet
-				-->
 				<control type="image">
 					<left>40</left>
 					<top>90</top>
