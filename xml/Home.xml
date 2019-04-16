@@ -941,9 +941,9 @@
 							WidgetListPoster is defined in Includes_Home.xml
 							WidgetListPoster param "sortby" values: "random", ...
 						-->
-						<include content="WidgetListCategories">
+						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.program.AML/?command=SKIN_SHOW_FAV_SLOTS"/>
-							<param name="widget_header" value="Advanced MAME Launcher Favourites"/>
+							<param name="widget_header" value="AML special launchers"/>
 							<param name="widget_target" value="programs"/>
 							<param name="list_id" value="23100"/>
 						</include>
