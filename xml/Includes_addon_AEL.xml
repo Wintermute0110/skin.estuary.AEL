@@ -267,6 +267,7 @@
 		<value condition="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Have)">[COLOR green]Have[/COLOR]</value>
 		<value condition="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Miss)">[COLOR red]Miss[/COLOR]</value>
 		<value condition="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Unknown)">[COLOR yellow]Unknown[/COLOR]</value>
+		<value condition="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Extra)">[COLOR limegreen]Extra[/COLOR]</value>
 	</variable>
 	<variable name="AEL_PClone_text">
 		<value condition="String.IsEqual(ListItem.Property(AEL_PClone_stat),PClone_Parent)">Parent</value>
@@ -372,7 +373,7 @@
 			<!-- AEL No-Intro status (multivalue) -->
 			<include content="TextFlag_AEL">
 				<param name="text" value="$VAR[AEL_NoIntro_text]" />
-				<param name="visible" value="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Have) | String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Miss) | String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Unknown)" />
+				<param name="visible" value="String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Have) | String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Miss) | String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Extra) | String.IsEqual(ListItem.Property(AEL_NoIntro_stat),NoIntro_Unknown)" />
 			</include>
 			<!-- AEL PClone status (multivalue) 
 				 Also used by AML
