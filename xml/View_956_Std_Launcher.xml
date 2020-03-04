@@ -30,7 +30,7 @@
 				<viewtype label="Std Launcher">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
-				<focusedlayout height="80" width="widelist_width">
+				<focusedlayout height="80" width="1400">
 					<control type="image">
 						<left>0</left>
 						<right>0</right>
@@ -79,7 +79,7 @@
 					</control>
 				</focusedlayout>
 
-				<itemlayout height="80" width="widelist_width">
+				<itemlayout height="80" width="1400">
 					<!-- Render year. If year is empty then render overlay icon -->
 					<control type="label">
 						<left>18</left>

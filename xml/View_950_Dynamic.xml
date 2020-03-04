@@ -30,7 +30,7 @@
 				<viewtype label="Dynamic">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
-				<focusedlayout height="80" width="widelist_width">
+				<focusedlayout height="80" width="1060">
 					<control type="image">
 						<left>0</left>
 						<right>0</right>
@@ -79,7 +79,7 @@
 					</control>
 				</focusedlayout>
 
-				<itemlayout height="80" width="widelist_width">
+				<itemlayout height="80" width="1060">
 					<!-- Render year. If year is empty then render overlay icon -->
 					<control type="label">
 						<left>18</left>
@@ -104,7 +104,7 @@
 						<left>105</left>
 						<top>0</top>
 						<bottom>0</bottom>
-						<right>100</right>
+						<right>110</right>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<shadowcolor>text_shadow</shadowcolor>
