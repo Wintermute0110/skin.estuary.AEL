@@ -70,10 +70,12 @@
 						<visible>!Control.HasFocus(952)</visible>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
+
 					<!-- Main label -->
+					<!-- Increasing <right> here reduces the label width!!! -->
 					<control type="label">
 						<left>105</left>
-						<right>70</right>
+						<right>15</right>
 						<top>0</top>
 						<bottom>0</bottom>
 						<aligny>center</aligny>
@@ -94,6 +96,7 @@
 						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
+
 					<!-- Trailer Trigger -->
 					<!-- Causes problems in Leia. Make strange transitions when changing rows
 					     on the listitem. Commented until I find a solution. -->
@@ -147,10 +150,11 @@
 						<visible>!Control.HasFocus(952)</visible>
 						<visible>String.IsEmpty(ListItem.Year)</visible>
 					</control>
+
 					<!-- Main label -->
 					<control type="label">
 						<left>105</left>
-						<right>70</right>
+						<right>15</right>
 						<top>0</top>
 						<bottom>0</bottom>
 						<aligny>center</aligny>

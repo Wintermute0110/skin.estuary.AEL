@@ -42,7 +42,7 @@
 					</control>
 					<control type="label">
 						<left>70</left>
-						<right>70</right>
+						<right>15</right>
 						<top>0</top>
 						<bottom>0</bottom>
 						<aligny>center</aligny>
@@ -81,6 +81,7 @@
 						<animation effect="fade" time="150">VisibleChange</animation>
 						<visible>!Control.HasFocus(971)</visible>
 					</control>
+
 					<!-- Trailer Trigger -->
 					<!-- Causes problems in Leia. Make strange transitions when changing rows
 					     on the listitem. Commented until I find a solution. -->
@@ -105,7 +106,7 @@
 				<itemlayout height="list_item_height">
 					<control type="label">
 						<left>70</left>
-						<right>70</right>
+						<right>15</right>
 						<top>0</top>
 						<bottom>0</bottom>
 						<aligny>center</aligny>
