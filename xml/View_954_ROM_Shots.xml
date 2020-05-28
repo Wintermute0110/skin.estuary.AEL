@@ -365,7 +365,7 @@
 						<param name="debug_control" value="false" />
 						<param name="left" value="0" />
 						<param name="top" value="120" />
-						<param name="label_text" value="ESRB" />
+						<param name="label_text" value="Rating" />
 						<param name="text" value="$INFO[ListItem.Rating]" />
 					</include>
 					<include content="AEL_Metadata_Text">
