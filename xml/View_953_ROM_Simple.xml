@@ -230,33 +230,36 @@
 				</control>
 
 				<!-- Upper part of the view ==================================================== -->
-				<control type="image">
-					<left>40</left>
-					<top>90</top>
-					<width>400</width>
-					<height>520</height>
-					<texture background="true">$VAR[ROM_Simple_Art_Main]</texture>
-					<aspectratio>keep</aspectratio>
-				</control>
-				<!--
-				<control type="image">
-					<left>40</left>
-					<top>90</top>
-					<width>400</width>
-					<height>520</height>
-					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-				</control>
-				-->
+				<include content="AEL_Artwork">
+					<param name="debug_control" value="false" />
+					<param name="left" value="50" />
+					<param name="top" value="90" />
+					<param name="width" value="400" />
+					<param name="height" value="500" />
+					<param name="asset_label" value="MAIN" />
+					<param name="asset_image" value="$VAR[ROM_Simple_Art_Main]" />
+				</include>
 
 				<!--
 					Console: Snap , if not present Cartridge/PCB
 					MAME: Snap, if not present Cartridge/PCB
 					If available play trailer instead of Snap
 					Ratio 710/520 = 1.36
+					For now disable trailer rendering until the stuttering problem is solved.
 				-->
+				<include content="AEL_Artwork">
+					<param name="debug_control" value="false" />
+					<param name="left" value="480" />
+					<param name="top" value="90" />
+					<param name="width" value="700" />
+					<param name="height" value="500" />
+					<param name="asset_label" value="SNAP" />
+					<param name="asset_image" value="$VAR[ROM_Simple_Art_Snap]" />
+				</include>
+				<!--
 				<control type="image">
-					<!-- In Leia next line must be commented, otherwise snap is never displayed -->
-					<!-- <visible>IsEmpty(ListItem.Trailer)</visible> -->
+					<!-- In Leia next line must be commented, otherwise snap is never displayed --
+					<!-- <visible>IsEmpty(ListItem.Trailer)</visible> --
 					<left>460</left>
 					<top>90</top>
 					<width>730</width>
@@ -271,88 +274,78 @@
 					<width>730</width>
 					<height>520</height>
 				</control>
-
-				<!--
-				<control type="image">
-					<left>460</left>
-					<top>90</top>
-					<width>730</width>
-					<height>520</height>
-					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-				</control>
 				-->
 
-				<!-- Console: Clearlogo, if not present Banner/Marquee
-					 MAME: Clearlogo, if not present Banner/Marquee
-				-->
-				<control type="image">
-					<left>810</left>
-					<top>110</top>
-					<width>350</width>
-					<height>90</height>
-					<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
-					<aspectratio>keep</aspectratio>
-				</control>
 				<!--
-				<control type="image">
-					<left>810</left>
-					<top>110</top>
-					<width>350</width>
-					<height>90</height>
-					<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
-				</control>
+					Console: Clearlogo, if not present Banner/Marquee
+					MAME: Clearlogo, if not present Banner/Marquee
 				-->
+				<include content="AEL_Artwork">
+					<param name="debug_control" value="false" />
+					<param name="left" value="810" />
+					<param name="top" value="110" />
+					<param name="width" value="350" />
+					<param name="height" value="90" />
+					<param name="asset_label" value="SIMPLE LOGO" />
+					<param name="asset_image" value="$VAR[ROM_Simple_Art_Logo]" />
+				</include>
 
 				<!-- Metadata ================================================================== -->
 				<control type="group">
-					<left>40</left>
-					<top>600</top>
+					<left>50</left>
+					<top>620</top>
 
 					<!-- Infolabels -->
-					<!-- Genre, Studio, NPlayers, ESRB, Rating, Platform -->
-					<include content="AEL_Matrix_Text">
+					<!-- Genre, Developer, NPlayers, ESRB, Rating, Platform -->
+					<include content="AEL_Metadata_Text">
+						<param name="debug_control" value="false" />
 						<param name="left" value="80" />
-						<param name="top" value="30" />
-						<param name="text_label" value="Genre" />
+						<param name="top" value="0" />
+						<param name="label_text" value="Genre" />
 						<param name="text" value="$INFO[ListItem.Genre]" />
 					</include>
-					<include content="AEL_Matrix_Text">
+					<include content="AEL_Metadata_Text">
+						<param name="debug_control" value="false" />
 						<param name="left" value="80" />
-						<param name="top" value="60" />
-						<param name="text_label" value="Developer" />
+						<param name="top" value="40" />
+						<param name="label_text" value="Developer" />
 						<param name="text" value="$INFO[ListItem.Studio]" />
 					</include>
-					<include content="AEL_Matrix_Text">
+					<include content="AEL_Metadata_Text">
+						<param name="debug_control" value="false" />
 						<param name="left" value="80" />
-						<param name="top" value="90" />
-						<param name="text_label" value="NPlayers" />
+						<param name="top" value="80" />
+						<param name="label_text" value="NPlayers" />
 						<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
 					</include>
 
-					<include content="AEL_Matrix_Text">
-						<param name="left" value="550" />
-						<param name="top" value="30" />
-						<param name="text_label" value="ESRB" />
+					<include content="AEL_Metadata_Text">
+						<param name="debug_control" value="false" />
+						<param name="left" value="570" />
+						<param name="top" value="0" />
+						<param name="label_text" value="ESRB" />
 						<param name="text" value="$INFO[ListItem.Property(esrb)]" />
 					</include>
-					<include content="AEL_Matrix_Text">
-						<param name="left" value="550" />
-						<param name="top" value="60" />
-						<param name="text_label" value="Rating" />
+					<include content="AEL_Metadata_Text">
+						<param name="debug_control" value="false" />
+						<param name="left" value="570" />
+						<param name="top" value="40" />
+						<param name="label_text" value="Rating" />
 						<param name="text" value="$INFO[ListItem.Rating]" />
 					</include>
-					<include content="AEL_Matrix_Text">
-						<param name="left" value="550" />
-						<param name="top" value="90" />
-						<param name="text_label" value="Platform" />
+					<include content="AEL_Metadata_Text">
+						<param name="debug_control" value="false" />
+						<param name="left" value="570" />
+						<param name="top" value="80" />
+						<param name="label_text" value="Platform" />
 						<param name="text" value="$INFO[ListItem.Property(platform)]" />
 					</include>
 
 					<!-- Platform AEL icon -->
 					<include content="AEL_Platform_Icon">
-						<param name="left" value="0" />
-						<param name="top" value="25" />
 						<param name="debug_control" value="false" />
+						<param name="left" value="0" />
+						<param name="top" value="0" />
 						<param name="box_width" value="100" />
 						<param name="box_height" value="100" />
 					</include>
@@ -362,43 +355,25 @@
 						Console: Title, if not present Boxback/CPanel
 						MAME: Title, if not present Boxback/CPanel
 					-->
-					<control type="image">
-						<left>0</left>
-						<top>140</top>
-						<width>400</width>
-						<height>270</height>
-						<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
-						<aspectratio>keep</aspectratio>
-					</control>
-					<!--
-					<control type="image">
-						<left>0</left>
-						<top>140</top>
-						<width>400</width>
-						<height>270</height>
-						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-					</control>
-					-->
+					<include content="AEL_Artwork">
+						<param name="debug_control" value="false" />
+						<param name="left" value="0" />
+						<param name="top" value="140" />
+						<param name="width" value="400" />
+						<param name="height" value="270" />
+						<param name="asset_label" value="TITLE" />
+						<param name="asset_image" value="$VAR[ROM_Simple_Art_Title]" />
+					</include>
 
 					<!-- Plot -->
-					<control type="textbox">
-						<left>420</left>
-						<top>140</top>
-						<width>730</width>
-						<height>270</height>
-						<font>font10</font>
-						<label>$INFO[ListItem.Plot]</label>
-						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
-					</control>
-					<!--
-					<control type="image">
-						<left>420</left>
-						<top>140</top>
-						<width>730</width>
-						<height>270</height>
-						<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-					</control>
-					-->
+					<include content="AEL_Plot_Text">
+						<param name="debug_control" value="false" />
+						<param name="left" value="420" />
+						<param name="top" value="140" />
+						<param name="width" value="710" />
+						<param name="height" value="270" />
+						<param name="text" value="$INFO[ListItem.Plot]" />
+					</include>
 				</control>
 			</control>
 		</control>
