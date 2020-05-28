@@ -8,18 +8,15 @@
 <includes>
 	<include name="View_950_Dynamic">
 		<!-- Right wide list ----------------------------------------------------------------- -->
-		<!--
-			In Includes.xml
-			<constant name="list_y_offset">0</constant>
-		-->
+		<!-- In Includes.xml, <constant name="list_y_offset">0</constant> -->
 		<control type="group">
 			<include>OpenClose_FadeSlide_Right</include>
 			<visible>Control.IsVisible(950)</visible>
 			<include>Visible_Right</include>
 
 			<control type="fixedlist" id="950">
-				<left>700</left>
-				<top>600</top>
+				<left>950</left>
+				<top>0</top>
 				<bottom>0</bottom>
 				<right>0</right>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -34,7 +31,7 @@
 				<viewtype label="Dynamic">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
-				<focusedlayout height="80" width="1200">
+				<focusedlayout height="80" width="1060">
 					<control type="image">
 						<left>0</left>
 						<right>0</right>
@@ -85,6 +82,7 @@
 
 				<itemlayout height="80" width="1200">
 					<!-- Debug texture -->
+					<!--
 					<control type="image">
 						<left>0</left>
 						<right>0</right>
@@ -92,7 +90,7 @@
 						<texture colordiffuse="FFFF9800">lists/focus.png</texture>
 						<visible>Control.hasFocus(950)</visible>
 					</control>
-
+					-->
 					<!-- Render year. If year is empty then render overlay icon -->
 					<control type="label">
 						<left>18</left>
@@ -143,7 +141,7 @@
 			<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
 			<control type="scrollbar" id="531">
 				<right>0</right>
-				<top>600</top>
+				<top>80</top>
 				<width>13</width>
 				<bottom>80</bottom>
 				<onleft>50</onleft>
@@ -157,12 +155,14 @@
 			</control>
 		</control>
 
+		<!-- --------------------------------------------------------------------------------- -->
 		<!-- Left panel for Categories ------------------------------------------------------- -->
+		<!-- --------------------------------------------------------------------------------- -->
 		<control type="group">
 			<!-- Dynamic view visibility control -->
 			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),launchers) + String.IsEqual(ListItem.Property(AEL_Content),category)</visible>
 
-			<!-- Common code START -->
+			<!-- Common code START ----------------------------------------------------------- -->
 			<!-- <include>OpenClose_Left</include> -->
 			<!-- <include>OpenClose_FadeSlide_Right</include> -->
 			<!-- <include>Visible_Left</include> -->
@@ -174,9 +174,8 @@
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="600" />
+				<param name="width" value="1010" />
 			</include>
-			<!-- Common code ENDS -->
 
 			<control type="label">
 				<left>35</left>
@@ -189,6 +188,7 @@
 				<font>font10</font>
 				<textcolor>white</textcolor>
 			</control>
+			<!-- Common code ENDS ------------------------------------------------------------ -->
 
 			<!-- Clearlogo or Banner -->
 			<!--
@@ -253,7 +253,9 @@
 			</control>
 		</control>
 
-		<!-- Left panel for Standalone Launchers ============================================== -->
+		<!-- --------------------------------------------------------------------------------- -->
+		<!-- Left panel for Standalone Launchers --------------------------------------------- -->
+		<!-- --------------------------------------------------------------------------------- -->
 		<control type="group">
 			<!-- Dynamic view visibility control -->
 			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),launchers) + String.IsEqual(ListItem.Property(AEL_Content),std_launcher)</visible>
@@ -370,12 +372,14 @@
 			</control>
 		</control>
 
-		<!-- Left panel for ROM Launchers ===================================================== -->
+		<!-- --------------------------------------------------------------------------------- -->
+		<!-- Left panel for ROM Launchers ---------------------------------------------------- -->
+		<!-- --------------------------------------------------------------------------------- -->
 		<control type="group">
 			<!-- Dynamic view visibility control -->
 			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),launchers) + String.IsEqual(ListItem.Property(AEL_Content),rom_launcher)</visible>
 
-			<!-- Common code START -->
+			<!-- Common code START ----------------------------------------------------------- -->
 			<!-- <include>OpenClose_Left</include> -->
 			<!-- <include>OpenClose_FadeSlide_Right</include> -->
 			<!-- <include>Visible_Left</include> -->
@@ -387,9 +391,8 @@
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="300" />
+				<param name="width" value="1010" />
 			</include>
-			<!-- Common code ENDS -->
 
 			<control type="label">
 				<left>35</left>
@@ -402,6 +405,7 @@
 				<font>font10</font>
 				<textcolor>white</textcolor>
 			</control>
+			<!-- Common code ENDS ------------------------------------------------------------ -->
 
 			<!-- Clearlogo or Banner -->
 			<!--
@@ -475,12 +479,14 @@
 			</control>
 		</control>
 
-		<!-- Left panel for non-MAME ROMs ===================================================== -->
+		<!-- --------------------------------------------------------------------------------- -->
+		<!-- Left panel for non-MAME ROMs ---------------------------------------------------- -->
+		<!-- --------------------------------------------------------------------------------- -->
 		<control type="group">
 			<!-- Dynamic view visibility control -->
 			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),roms) + !String.IsEqual(ListItem.Property(platform),MAME)</visible>
 
-			<!-- Common code START -->
+			<!-- Common code START ----------------------------------------------------------- -->
 			<!-- <include>OpenClose_Left</include> -->
 			<!-- <include>OpenClose_FadeSlide_Right</include> -->
 			<!-- <include>Visible_Left</include> -->
@@ -492,9 +498,8 @@
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="760" />
+				<param name="width" value="1010" />
 			</include>
-			<!-- Common code ENDS -->
 
 			<control type="label">
 				<left>35</left>
@@ -507,6 +512,7 @@
 				<font>font10</font>
 				<textcolor>white</textcolor>
 			</control>
+			<!-- Common code ENDS ------------------------------------------------------------ -->
 
 			<!-- Artwork --------------------------------------------------------------------- -->
 			<!-- Console: Snap, if not present Cartridge/PCB -->
@@ -628,12 +634,14 @@
 			</include>
 		</control>
 
+		<!-- --------------------------------------------------------------------------------- -->
 		<!-- Left panel for MAME ROMs -------------------------------------------------------- -->
+		<!-- --------------------------------------------------------------------------------- -->
 		<control type="group">
 			<!-- Dynamic view visibility control -->
 			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),roms) + String.IsEqual(ListItem.Property(platform),MAME)</visible>
 
-			<!-- Common code START -->
+			<!-- Common code START ----------------------------------------------------------- -->
 			<!-- <include>OpenClose_Left</include> -->
 			<!-- <include>OpenClose_FadeSlide_Right</include> -->
 			<!-- <include>Visible_Left</include> -->
@@ -647,7 +655,6 @@
 			<include content="ContentPanel">
 				<param name="width" value="1010" />
 			</include>
-			<!-- Common code ENDS -->
 
 			<control type="label">
 				<left>35</left>
@@ -660,8 +667,9 @@
 				<font>font10</font>
 				<textcolor>white</textcolor>
 			</control>
+			<!-- Common code ENDS ------------------------------------------------------------ -->
 
-			<!-- Artwork ====================================================================== -->
+			<!-- Artwork --------------------------------------------------------------------- -->
 			<!--
 				Console: Snap , if not present Cartridge/PCB
 				MAME: Snap, if not present Cartridge/PCB
@@ -716,7 +724,7 @@
 				<param name="box_height" value="100" />
 			</include>
 
-			<!-- Metadata ================================================================== -->
+			<!-- Metadata -------------------------------------------------------------------- -->
 			<control type="group">
 				<left>140</left>
 				<top>825</top>
