@@ -49,6 +49,49 @@
 	</variable>
 
 	<!-- Parametrizable view includes ========================================================== -->
+	<include name="AEL_Artwork">
+		<!-- true or false -->
+		<param name="debug_control" default="false" />
+		<param name="left" default="0" />
+		<param name="top" default="0" />
+		<param name="width" default="500" />
+		<param name="height" default="500" />
+		<param name="asset_label" value="Artwork" />
+		<param name="asset_image" value="$INFO[ListItem.Art(title)]" />
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<!-- Placeholder image, display if debug is true -->
+				<control type="image">
+					<visible>$PARAM[debug_control]</visible>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture border="0">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				<!-- Actual image -->
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$PARAM[asset_image]</texture>
+				</control>
+				<!-- In debug mode print label of asset -->
+				<control type="label">
+					<visible>$PARAM[debug_control]</visible>
+					<top>25</top>
+					<width>$PARAM[width]</width>
+					<height>25</height>
+					<label>$PARAM[asset_label]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font24</font>
+					<textcolor>white</textcolor>
+				</control>
+			</control>
+		</definition>
+	</include>
+
 	<include name="AEL_Matrix_Image">
 		<!-- true or false -->
 		<param name="debug_control" default="false" />
@@ -156,6 +199,82 @@
 				<texture background="true">$INFO[ListItem.Art(controller)]</texture>
 			</control>
 		</control>
+	</include>
+
+	<include name="AEL_Metadata_Text">
+		<param name="debug_control" default="false" />
+		<param name="left" default="0" />
+		<param name="top" default="0" />
+		<param name="label_colour" default="blue" />
+		<param name="label_text" />
+		<param name="text" />
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<height>25</height>
+				<!-- Placeholder image for label, display if debug is true -->
+				<control type="image">
+					<visible>$PARAM[debug_control]</visible>
+					<width>150</width>
+					<fadetime>100</fadetime>
+					<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
+				</control>
+				<control type="image">
+					<visible>$PARAM[debug_control]</visible>
+					<left>160</left>
+					<width>400</width>
+					<fadetime>100</fadetime>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				<!-- Text labels -->
+				<control type="label">
+					<width>150</width>
+					<label>$PARAM[label_text]</label>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>$PARAM[label_colour]</textcolor>
+				</control>
+				<control type="fadelabel">
+					<left>160</left>
+					<width>400</width>
+					<label fallback="">$PARAM[text]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<scrollout>false</scrollout>
+					<pauseatend>1000</pauseatend>
+				</control>
+			</control>
+		</definition>
+	</include>
+
+	<include name="AEL_Plot_Text">
+		<param name="debug_control" default="false" />
+		<param name="left" />
+		<param name="top" />
+		<param name="width" />
+		<param name="height" />
+		<param name="text" />
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<!-- Placeholder image for label, display if debug is true -->
+				<control type="image">
+					<visible>$PARAM[debug_control]</visible>
+					<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
+				</control>
+				<control type="textbox">
+					<font>font10</font>
+					<label>$INFO[ListItem.Plot]</label>
+					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+				</control>
+			</control>
+		</definition>
 	</include>
 
 	<include name="AEL_Matrix_Text">

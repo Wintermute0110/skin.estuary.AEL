@@ -7,16 +7,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="View_950_Dynamic">
-		<!-- Right wide list =================================================================== -->
+		<!-- Right wide list ----------------------------------------------------------------- -->
+		<!--
+			In Includes.xml
+			<constant name="list_y_offset">0</constant>
+		-->
 		<control type="group">
 			<include>OpenClose_FadeSlide_Right</include>
 			<visible>Control.IsVisible(950)</visible>
 			<include>Visible_Right</include>
 
 			<control type="fixedlist" id="950">
-				<left>950</left>
-				<top>list_y_offset</top>
-				<bottom>list_y_offset</bottom>
+				<left>700</left>
+				<top>600</top>
+				<bottom>0</bottom>
 				<right>0</right>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>vertical</orientation>
@@ -30,7 +34,7 @@
 				<viewtype label="Dynamic">list</viewtype>
 				<visible>Window.IsActive(MyPrograms.xml)</visible>
 
-				<focusedlayout height="80" width="1060">
+				<focusedlayout height="80" width="1200">
 					<control type="image">
 						<left>0</left>
 						<right>0</right>
@@ -79,7 +83,16 @@
 					</control>
 				</focusedlayout>
 
-				<itemlayout height="80" width="1060">
+				<itemlayout height="80" width="1200">
+					<!-- Debug texture -->
+					<control type="image">
+						<left>0</left>
+						<right>0</right>
+						<bottom>0</bottom>
+						<texture colordiffuse="FFFF9800">lists/focus.png</texture>
+						<visible>Control.hasFocus(950)</visible>
+					</control>
+
 					<!-- Render year. If year is empty then render overlay icon -->
 					<control type="label">
 						<left>18</left>
@@ -130,7 +143,7 @@
 			<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
 			<control type="scrollbar" id="531">
 				<right>0</right>
-				<top>80</top>
+				<top>600</top>
 				<width>13</width>
 				<bottom>80</bottom>
 				<onleft>50</onleft>
@@ -144,8 +157,11 @@
 			</control>
 		</control>
 
-		<!-- Left panel for Categories ======================================================== -->
+		<!-- Left panel for Categories ------------------------------------------------------- -->
 		<control type="group">
+			<!-- Dynamic view visibility control -->
+			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),launchers) + String.IsEqual(ListItem.Property(AEL_Content),category)</visible>
+
 			<!-- Common code START -->
 			<!-- <include>OpenClose_Left</include> -->
 			<!-- <include>OpenClose_FadeSlide_Right</include> -->
@@ -158,12 +174,10 @@
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="1010" />
+				<param name="width" value="600" />
 			</include>
 			<!-- Common code ENDS -->
 
-			<!-- Dynamic view visibility control -->
-			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),launchers) + String.IsEqual(ListItem.Property(AEL_Content),category)</visible>
 			<control type="label">
 				<left>35</left>
 				<top>80</top>
@@ -241,6 +255,9 @@
 
 		<!-- Left panel for Standalone Launchers ============================================== -->
 		<control type="group">
+			<!-- Dynamic view visibility control -->
+			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),launchers) + String.IsEqual(ListItem.Property(AEL_Content),std_launcher)</visible>
+
 			<!-- Common code START -->
 			<!-- <include>OpenClose_Left</include> -->
 			<!-- <include>OpenClose_FadeSlide_Right</include> -->
@@ -257,8 +274,6 @@
 			</include>
 			<!-- Common code ENDS -->
 
-			<!-- Dynamic view visibility control -->
-			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),launchers) + String.IsEqual(ListItem.Property(AEL_Content),std_launcher)</visible>
 			<control type="label">
 				<left>35</left>
 				<top>80</top>
@@ -357,6 +372,9 @@
 
 		<!-- Left panel for ROM Launchers ===================================================== -->
 		<control type="group">
+			<!-- Dynamic view visibility control -->
+			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),launchers) + String.IsEqual(ListItem.Property(AEL_Content),rom_launcher)</visible>
+
 			<!-- Common code START -->
 			<!-- <include>OpenClose_Left</include> -->
 			<!-- <include>OpenClose_FadeSlide_Right</include> -->
@@ -369,12 +387,10 @@
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="1010" />
+				<param name="width" value="300" />
 			</include>
 			<!-- Common code ENDS -->
 
-			<!-- Dynamic view visibility control -->
-			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),launchers) + String.IsEqual(ListItem.Property(AEL_Content),rom_launcher)</visible>
 			<control type="label">
 				<left>35</left>
 				<top>80</top>
@@ -461,6 +477,9 @@
 
 		<!-- Left panel for non-MAME ROMs ===================================================== -->
 		<control type="group">
+			<!-- Dynamic view visibility control -->
+			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),roms) + !String.IsEqual(ListItem.Property(platform),MAME)</visible>
+
 			<!-- Common code START -->
 			<!-- <include>OpenClose_Left</include> -->
 			<!-- <include>OpenClose_FadeSlide_Right</include> -->
@@ -473,12 +492,10 @@
 			<!-- Code taken from <include name="ListThumbInfoPanel"> @View_50_List.xml -->
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="1010" />
+				<param name="width" value="760" />
 			</include>
 			<!-- Common code ENDS -->
 
-			<!-- Dynamic view visibility control -->
-			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),roms) + !String.IsEqual(ListItem.Property(platform),MAME)</visible>
 			<control type="label">
 				<left>35</left>
 				<top>80</top>
@@ -491,145 +508,131 @@
 				<textcolor>white</textcolor>
 			</control>
 
-			<!-- Artwork ====================================================================== -->
-			<!--
-				Console: Snap , if not present Cartridge/PCB
-				MAME: Snap, if not present Cartridge/PCB
-				If available play trailer instead of Snap
-			-->
-			<!--
-			<control type="image">
-				<left>60</left>
-				<top>130</top>
-				<width>850</width>
-				<height>650</height>
-				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-			</control>
-			-->
-			<control type="image">
-				<left>60</left>
-				<top>130</top>
-				<width>850</width>
-				<height>650</height>
-				<texture background="true">$VAR[ROM_Simple_Art_Snap]</texture>
-				<aspectratio>keep</aspectratio>
-			</control>
+			<!-- Artwork --------------------------------------------------------------------- -->
+			<!-- Console: Snap, if not present Cartridge/PCB -->
+			<include content="AEL_Artwork">
+				<param name="debug_control" value="true" />
+				<param name="left" value="100" />
+				<param name="top" value="200" />
+				<param name="width" value="400" />
+				<param name="height" value="300" />
+				<param name="asset_label" value="SNAP" />
+				<param name="asset_image" value="$INFO[ListItem.Art(snap)]" />
+			</include>
 
-			<!--
-				Console: Title, if not present Boxback/CPanel
-				MAME: Title, if not present Boxback/CPanel
-			-->
-			<!--
-			<control type="image">
-				<left>550</left>
-				<top>510</top>
-				<width>330</width>
-				<height>250</height>
-				<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
-			</control>
-			-->
-			<control type="image">
-				<left>550</left>
-				<top>510</top>
-				<width>330</width>
-				<height>250</height>
-				<texture background="true">$VAR[ROM_Simple_Art_Title]</texture>
-				<aspectratio>keep</aspectratio>
-			</control>
+			<!-- Console: Title, if not present Boxback/CPanel -->
+			<include content="AEL_Artwork">
+				<param name="debug_control" value="true" />
+				<param name="left" value="600" />
+				<param name="top" value="200" />
+				<param name="width" value="400" />
+				<param name="height" value="300" />
+				<param name="asset_label" value="TITLE" />
+				<param name="asset_image" value="$INFO[ListItem.Art(title)]" />
+			</include>
 
-			<!--
-				Console: Clearlogo, if not present Banner/Marquee
-				MAME: Clearlogo, if not present Banner/Marquee
-			-->
-			<!--
-			<control type="image">
-				<left>580</left>
-				<top>160</top>
-				<width>300</width>
-				<height>100</height>
-				<texture background="true">special://skin/extras/backgrounds/pattern2.jpg</texture>
-			</control>
-			-->
-			<control type="image">
-				<left>580</left>
-				<top>160</top>
-				<width>300</width>
-				<height>100</height>
-				<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
-				<aspectratio>keep</aspectratio>
-			</control>
+			<!-- Console: Clearlogo, if not present Banner/Marquee -->
+			<include content="AEL_Artwork">
+				<param name="debug_control" value="true" />
+				<param name="left" value="1100" />
+				<param name="top" value="200" />
+				<param name="width" value="300" />
+				<param name="height" value="100" />
+				<param name="asset_label" value="CLEARLOGO" />
+				<param name="asset_image" value="$INFO[ListItem.Art(clearlogo)]" />
+			</include>
+
+			<!-- Console: Cartridge -->
+			<include content="AEL_Artwork">
+				<param name="debug_control" value="true" />
+				<param name="left" value="1100" />
+				<param name="top" value="400" />
+				<param name="width" value="300" />
+				<param name="height" value="200" />
+				<param name="asset_label" value="CARTRIDGE" />
+				<param name="asset_image" value="$INFO[ListItem.Art(cartridge)]" />
+			</include>
+
+			<!-- Console: 3Dbox or boxfront -->
+			<include content="AEL_Artwork">
+				<param name="debug_control" value="true" />
+				<param name="left" value="1500" />
+				<param name="top" value="200" />
+				<param name="width" value="300" />
+				<param name="height" value="400" />
+				<param name="asset_label" value="3D BOX" />
+				<param name="asset_image" value="$INFO[ListItem.Art(3dbox)]" />
+			</include>
 
 			<!-- Platform AEL icon -->
 			<include content="AEL_Platform_Icon">
+				<param name="debug_control" value="true" />
 				<param name="left" value="40" />
-				<param name="top" value="790" />
-				<param name="debug_control" value="false" />
+				<param name="top" value="600" />
 				<param name="box_width" value="100" />
 				<param name="box_height" value="100" />
 			</include>
 
-			<!-- Metadata ================================================================== -->
+			<!-- Metadata -------------------------------------------------------------------- -->
 			<control type="group">
-				<left>140</left>
+				<left>40</left>
 				<top>760</top>
 
 				<!-- Infolabels -->
-				<!-- Genre, Studio, NPlayers, ESRB, Rating, Platform -->
-				<include content="AEL_Matrix_Text">
+				<!-- Genre, Developer, NPlayers, ESRB, Rating, Platform -->
+				<include content="AEL_Metadata_Text">
+					<param name="debug_control" value="true" />
 					<param name="left" value="0" />
-					<param name="top" value="30" />
-					<param name="text_label" value="Genre" />
+					<param name="top" value="0" />
+					<param name="label_text" value="Genre" />
 					<param name="text" value="$INFO[ListItem.Genre]" />
 				</include>
-				<include content="AEL_Matrix_Text">
+				<include content="AEL_Metadata_Text">
+					<param name="debug_control" value="true" />
 					<param name="left" value="0" />
-					<param name="top" value="60" />
-					<param name="text_label" value="NPlayers" />
-					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
-				</include>
-				<include content="AEL_Matrix_Text">
-					<param name="left" value="0" />
-					<param name="top" value="90" />
-					<param name="text_label" value="Developer" />
+					<param name="top" value="30" />
+					<param name="label_text" value="Developer" />
 					<param name="text" value="$INFO[ListItem.Studio]" />
 				</include>
-				<include content="AEL_Matrix_Text">
-					<param name="left" value="280" />
-					<param name="top" value="30" />
-					<param name="text_label" value="ESRB" />
+				<include content="AEL_Metadata_Text">
+					<param name="debug_control" value="true" />
+					<param name="left" value="0" />
+					<param name="top" value="60" />
+					<param name="label_text" value="NPlayers" />
+					<param name="text" value="$INFO[ListItem.Property(nplayers)]" />
+				</include>
+				<include content="AEL_Metadata_Text">
+					<param name="debug_control" value="true" />
+					<param name="left" value="0" />
+					<param name="top" value="90" />
+					<param name="label_text" value="ESRB" />
 					<param name="text" value="$INFO[ListItem.Property(esrb)]" />
 				</include>
-				<include content="AEL_Matrix_Text">
-					<param name="left" value="280" />
-					<param name="top" value="60" />
-					<param name="text_label" value="Rating" />
+				<include content="AEL_Metadata_Text">
+					<param name="debug_control" value="true" />
+					<param name="left" value="0" />
+					<param name="top" value="120" />
+					<param name="label_text" value="Rating" />
 					<param name="text" value="$INFO[ListItem.Rating]" />
 				</include>
 			</control>
 
 			<!-- Plot -->
-			<!--
-			<control type="image">
-				<left>40</left>
-				<width>870</width>
-				<top>900</top>
-				<height>120</height>
-				<texture background="true">special://skin/extras/backgrounds/pattern4.jpg</texture>
-			</control>
-			-->
-			<control type="textbox">
-				<left>40</left>
-				<width>870</width>
-				<top>900</top>
-				<height>120</height>
-				<font>font10</font>
-				<label>$INFO[ListItem.Plot]</label>
-				<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
-			</control>
+			<include content="AEL_Plot_Text">
+				<param name="debug_control" value="true" />
+				<param name="left" value="40" />
+				<param name="top" value="950" />
+				<param name="width" value="600" />
+				<param name="height" value="120" />
+				<param name="text" value="$INFO[ListItem.Plot]" />
+			</include>
 		</control>
 
-		<!-- Left panel for MAME ROMs ========================================================= -->
+		<!-- Left panel for MAME ROMs -------------------------------------------------------- -->
 		<control type="group">
+			<!-- Dynamic view visibility control -->
+			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),roms) + String.IsEqual(ListItem.Property(platform),MAME)</visible>
+
 			<!-- Common code START -->
 			<!-- <include>OpenClose_Left</include> -->
 			<!-- <include>OpenClose_FadeSlide_Right</include> -->
@@ -646,8 +649,6 @@
 			</include>
 			<!-- Common code ENDS -->
 
-			<!-- Dynamic view visibility control -->
-			<visible>Control.IsVisible(950) + String.IsEqual(Window(10000).Property(AEL_Content),roms) + String.IsEqual(ListItem.Property(platform),MAME)</visible>
 			<control type="label">
 				<left>35</left>
 				<top>80</top>
@@ -704,6 +705,7 @@
 				<texture background="true">$VAR[ROM_Simple_Art_Logo]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
+
 
 			<!-- Platform AEL icon -->
 			<include content="AEL_Platform_Icon">
