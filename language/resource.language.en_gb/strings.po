@@ -2,6 +2,9 @@
 # Addon Name: Estuary
 # Addon id: skin.estuary
 # Addon Provider: phil65, Ichabod Fletchman
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: phil65, Ichabod Fletchman
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
@@ -154,7 +157,9 @@ msgctxt "#31026"
 msgid "Timeshift"
 msgstr ""
 
-#empty string with id 31027
+msgctxt "#31027"
+msgid "Next aired"
+msgstr ""
 
 #: /xml/DialogAlbumInfo.xml /xml/DialogVideoInfo.xml
 msgctxt "#31028"
@@ -201,7 +206,10 @@ msgctxt "#31036"
 msgid "items"
 msgstr ""
 
-#empty string with id 31037
+#: /xml/Includes.xml
+msgctxt "#31037"
+msgid "Selected track"
+msgstr ""
 
 #: /xml/Variables.xml
 msgctxt "#31038"
@@ -252,14 +260,7 @@ msgctxt "#31048"
 msgid "Available"
 msgstr ""
 
-#empty string with id 31049
-
-#: /xml/Variables.xml
-msgctxt "#31050"
-msgid "Press [B]OK[/B] to stop"
-msgstr ""
-
-#empty string with id 31051
+#empty strings with id 31049 to 31051
 
 #: /xml/Includes.xml
 msgctxt "#31052"
@@ -273,10 +274,13 @@ msgstr ""
 
 #: /xml/Variables.xml
 msgctxt "#31054"
-msgid "Press [B]Left[/B] to rewind, or [B]Right[/B] to fast-forward"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
 msgstr ""
 
-#empty string with id 31055
+#: /xml/Variables.xml
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr ""
 
 #: /xml/MyMusicNav.xml /xml/MyVideoNav.xml
 msgctxt "#31056"
@@ -293,7 +297,15 @@ msgctxt "#31058"
 msgid "Automatic Login on startup"
 msgstr ""
 
-#empty strings from id 31059 to 31060
+#: /xml/GameOSD.xml
+msgctxt "#31059"
+msgid "Select + X"
+msgstr ""
+
+#: /xml/GameOSD.xml
+msgctxt "#31060"
+msgid "Select + Start"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31061"
@@ -349,7 +361,15 @@ msgctxt "#31072"
 msgid "Power Options"
 msgstr ""
 
-#empty strings from id 31073 to 31074
+#: /xml/MyPlaylist.xml
+msgctxt "#31073"
+msgid "Total length"
+msgstr ""
+
+#: /xml/MyPlaylist.xml
+msgctxt "#31074"
+msgid "Total duration"
+msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31075"
@@ -392,12 +412,7 @@ msgctxt "#31089"
 msgid "Available groups"
 msgstr ""
 
-#: /xml/DialogVideoInfo.xml
-msgctxt "#31090"
-msgid "Search trailer"
-msgstr ""
-
-#empty string with id 31091
+#empty strings from id 31090 to 31091
 
 #: /xml/VideoOSD.xml /xml/Variables.xml
 msgctxt "#31092"
@@ -503,15 +518,12 @@ msgctxt "#31113"
 msgid "Search local library"
 msgstr ""
 
-#: /xml/Custom_1107_SearchDialog.xml /xml/DialogMusicInfo.xml
+#: /xml/Custom_1107_SearchDialog.xml
 msgctxt "#31114"
 msgid "Search YouTube"
 msgstr ""
 
-#: /xml/Custom_1107_SearchDialog.xml
-msgctxt "#31115"
-msgid "Search TheMovieDB"
-msgstr ""
+#empty string with id 31115
 
 #: /xml/Includes_Home.xml
 msgctxt "#31116"
@@ -553,10 +565,7 @@ msgctxt "#31123"
 msgid "Same director"
 msgstr ""
 
-#: /xml/MyPics.xml
-msgctxt "#31124"
-msgid "Show images on map"
-msgstr ""
+#empty string with id 31124
 
 #: /xml/DialogVideoInfo.xml
 msgctxt "#31125"
@@ -608,7 +617,10 @@ msgctxt "#31134"
 msgid "Remaining"
 msgstr ""
 
-#empty string with id 31135
+#: /xml/DialogAddonInfo.xml
+msgctxt "#31135"
+msgid "Binary"
+msgstr ""
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31136"
@@ -660,7 +672,13 @@ msgctxt "#31145"
 msgid "Search add-ons"
 msgstr ""
 
-#empty strings from id 31146 to 31147
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr ""
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31148"
@@ -674,7 +692,7 @@ msgstr ""
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31150"
-msgid "Repository"
+msgid "Origin"
 msgstr ""
 
 #: /xml/Home.xml
@@ -764,4 +782,16 @@ msgstr ""
 #: /xml/SkinSettings.xml
 msgctxt "#31167"
 msgid "Animate background"
+msgstr ""
+
+#. Label of a setting
+#: /xml/SkinSettings.xml
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr ""
+
+#. Description label for skin settings area
+#: /xml/Variables.xml
+msgctxt "#31169"
+msgid "Artwork related settings."
 msgstr ""
